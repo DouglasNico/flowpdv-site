@@ -10,7 +10,7 @@
   --bg-surface-1: #1e293b;
   --bg-surface-2: #273549;
   --bg-surface-3: #334155;
-  --bg-card: rgba(30, 41, 59, 0.8);
+  --bg-card: rgba(30, 41, 59, 0.85);
   --border-card: #334155;
   --border-highlight: rgba(99, 102, 241, 0.5);
 
@@ -45,7 +45,6 @@
 }
 
 html {
-  scroll-padding-top: 110px;
   scroll-behavior: smooth;
 }
 
@@ -86,9 +85,13 @@ body {
   padding: 0 24px;
 }
 
-/* Scroll Margins para links de âncora */
-section, [id] {
-  scroll-margin-top: 110px;
+/* Scroll Margins exatas para as seções pararem com folga perfeita */
+#recursos,
+#gestao-mobile,
+#comparativo,
+#precos,
+#faq {
+  scroll-margin-top: 90px;
 }
 
 /* ==========================================================================
@@ -98,12 +101,11 @@ section, [id] {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(15, 23, 42, 0.92);
+  background: rgba(15, 23, 42, 0.94);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   border-bottom: 1px solid var(--border-card);
   padding: 16px 0;
-  transition: all 0.2s ease;
 }
 
 .nav-container {
@@ -120,9 +122,9 @@ section, [id] {
 }
 
 .brand-logo img {
-  width: 42px;
-  height: 42px;
-  border-radius: 12px;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
   border: 1px solid rgba(255, 255, 255, 0.15);
 }
@@ -319,7 +321,7 @@ section, [id] {
 }
 
 /* ==========================================================================
-   SHOWCASE INTERATIVO DO PRODUTO (UI MOCKUP 100% VETORIAL & CRISTALINO)
+   SHOWCASE INTERATIVO DO PRODUTO (PRINTS REAIS EM ALTA RESOLUÇÃO)
    ========================================================================== */
 .product-showcase-wrapper {
   position: relative;
@@ -364,72 +366,29 @@ section, [id] {
 .window-dot.green { background: #10b981; }
 
 .mockup-window-title {
-  font-size: 12px;
+  font-size: 12.5px;
   font-weight: 700;
   color: var(--text-muted);
   font-family: 'JetBrains Mono', monospace;
 }
 
-.mockup-preview-area {
-  min-height: 480px;
+.mockup-image-frame {
+  width: 100%;
+  aspect-ratio: 16 / 9.8;
   background: #090d16;
-  padding: 18px;
+  overflow: hidden;
+  position: relative;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Telas Renderizadas Limpas */
-.showcase-screen-view {
-  display: none;
-  flex-direction: column;
-  gap: 14px;
+.mockup-screenshot-img {
   width: 100%;
-  animation: fadeIn 0.25s ease;
-}
-
-.showcase-screen-view.active {
-  display: flex;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(4px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* Frente de Caixa Preview */
-.pdv-preview-layout {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 16px;
-  width: 100%;
-}
-
-.pdv-products-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
-}
-
-.pdv-item-card {
-  background: var(--bg-surface-1);
-  border: 1px solid var(--border-card);
-  border-radius: var(--radius-md);
-  padding: 12px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 8px;
-  box-shadow: var(--shadow-sm);
-}
-
-.pdv-cart-card {
-  background: var(--bg-surface-1);
-  border: 1px solid var(--border-card);
-  border-radius: var(--radius-md);
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: opacity 0.2s ease;
 }
 
 /* Tabs do Showcase */
@@ -945,8 +904,5 @@ section, [id] {
   }
   .pricing-card.featured {
     transform: none;
-  }
-  .pdv-preview-layout {
-    grid-template-columns: 1fr;
   }
 }
