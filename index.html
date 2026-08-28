@@ -57,8 +57,43 @@
           ⚡ Testar Grátis
         </a>
       </div>
+
+      <!-- Botão Hambúrguer Mobile -->
+      <button type="button" class="btn-hamburger-mobile" id="btn-menu-mobile" onclick="SiteApp.toggleMenuMobile()" aria-label="Abrir Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </header>
+
+  <!-- Gaveta de Navegação Mobile -->
+  <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+    <div class="mobile-nav-header">
+      <div class="brand-logo">
+        <img src="assets/icon.png" alt="FlowPDV Icon">
+        <span class="brand-logo-text">Flow<span>PDV</span></span>
+      </div>
+      <button type="button" class="btn-close-mobile-nav" onclick="SiteApp.fecharMenuMobile()" aria-label="Fechar Menu">✕</button>
+    </div>
+    <ul class="mobile-nav-links">
+      <li><a href="javascript:void(0)" class="mobile-nav-link" onclick="SiteApp.rolarPara('inicio', event)">🏠 Início</a></li>
+      <li><a href="javascript:void(0)" class="mobile-nav-link" onclick="SiteApp.rolarPara('recursos', event)">⚡ Recursos do Sistema</a></li>
+      <li><a href="javascript:void(0)" class="mobile-nav-link" onclick="SiteApp.rolarPara('gestao-mobile', event)">📱 Flow Gestor no Celular</a></li>
+      <li><a href="javascript:void(0)" class="mobile-nav-link" onclick="SiteApp.rolarPara('comparativo', event)">📊 Comparativo</a></li>
+      <li><a href="javascript:void(0)" class="mobile-nav-link" onclick="SiteApp.rolarPara('precos', event)">💎 Planos & Preços</a></li>
+      <li><a href="javascript:void(0)" class="mobile-nav-link" onclick="SiteApp.rolarPara('faq', event)">❓ Perguntas Frequentes</a></li>
+    </ul>
+    <div class="mobile-nav-actions">
+      <a href="https://cliente.flowpdv.com.br" target="_blank" class="btn-mobile-drawer secondary">
+        📱 Acessar Flow Gestor
+      </a>
+      <a href="https://wa.me/5519999997777?text=Ol%C3%A1!%20Gostaria%20de%20testar%20o%20FlowPDV%20na%20minha%20loja." target="_blank" class="btn-mobile-drawer primary">
+        💬 Falar no WhatsApp
+      </a>
+    </div>
+  </div>
+  <div class="mobile-nav-overlay" id="mobile-nav-overlay" onclick="SiteApp.fecharMenuMobile()"></div>
 
   <!-- ========================================================
        HERO SECTION DE ALTO IMPACTO
@@ -592,19 +627,54 @@
         }
       },
 
+      toggleMenuMobile() {
+        const drawer = document.getElementById('mobile-nav-drawer');
+        const overlay = document.getElementById('mobile-nav-overlay');
+        const btn = document.getElementById('btn-menu-mobile');
+        if (drawer && overlay) {
+          const isOpen = drawer.classList.contains('active');
+          if (isOpen) {
+            drawer.classList.remove('active');
+            overlay.classList.remove('active');
+            if (btn) btn.classList.remove('active');
+          } else {
+            drawer.classList.add('active');
+            overlay.classList.add('active');
+            if (btn) btn.classList.add('active');
+          }
+        }
+      },
+
+      fecharMenuMobile() {
+        const drawer = document.getElementById('mobile-nav-drawer');
+        const overlay = document.getElementById('mobile-nav-overlay');
+        const btn = document.getElementById('btn-menu-mobile');
+        if (drawer) drawer.classList.remove('active');
+        if (overlay) overlay.classList.remove('active');
+        if (btn) btn.classList.remove('active');
+      },
+
       rolarPara(sectionId, event) {
         if (event) {
           event.preventDefault();
         }
+        this.fecharMenuMobile();
+
+        if (sectionId === 'inicio') {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          return;
+        }
+
         const el = document.getElementById(sectionId);
         if (!el) return;
 
-        const navHeight = 78;
-        const elementPosition = el.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.pageYOffset - navHeight;
+        // Procura o cabeçalho interno da seção para parar rente ao título sem espaço vazio
+        const target = el.querySelector('.section-header') || el.querySelector('.section-title') || el;
+        const navHeight = window.innerWidth <= 768 ? 64 : 72;
+        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - (navHeight + 16);
 
         window.scrollTo({
-          top: offsetPosition,
+          top: Math.max(0, targetPosition),
           behavior: 'smooth'
         });
       },
