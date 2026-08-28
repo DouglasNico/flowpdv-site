@@ -1,6 +1,7 @@
 /* ==========================================================================
    FLOWPDV OFICIAL — DESIGN SYSTEM MASTER ADMIN INSPIRATION
    Dark Slate #0f172a • Indigo & Cyan Accents • Emerald Success • Glassmorphism
+   100% Responsivo: Desktop • Notebooks (125%/150%) • Tablets • Mobile
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@500;700;800&display=swap');
@@ -85,15 +86,6 @@ body {
   padding: 0 24px;
 }
 
-/* Scroll Margins exatas para as seções pararem com folga perfeita */
-#recursos,
-#gestao-mobile,
-#comparativo,
-#precos,
-#faq {
-  scroll-margin-top: 90px;
-}
-
 /* ==========================================================================
    HEADER / NAVBAR FIXA
    ========================================================================== */
@@ -101,11 +93,11 @@ body {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(15, 23, 42, 0.94);
+  background: rgba(15, 23, 42, 0.95);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   border-bottom: 1px solid var(--border-card);
-  padding: 16px 0;
+  padding: 14px 0;
 }
 
 .nav-container {
@@ -119,11 +111,12 @@ body {
   align-items: center;
   gap: 12px;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .brand-logo img {
-  width: 40px;
-  height: 40px;
+  width: 38px;
+  height: 38px;
   border-radius: 10px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -143,16 +136,17 @@ body {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 24px;
   list-style: none;
 }
 
 .nav-link {
   color: var(--text-muted);
   text-decoration: none;
-  font-size: 14.5px;
-  font-weight: 600;
+  font-size: 14px;
+  font-weight: 700;
   transition: color 0.15s ease;
+  cursor: pointer;
 }
 
 .nav-link:hover {
@@ -185,9 +179,9 @@ body {
 .btn-primary-glow {
   background: linear-gradient(135deg, var(--accent-purple), #4f46e5);
   color: #ffffff;
-  padding: 10px 22px;
+  padding: 9px 20px;
   border-radius: var(--radius-sm);
-  font-size: 14px;
+  font-size: 13.5px;
   font-weight: 800;
   text-decoration: none;
   display: inline-flex;
@@ -208,7 +202,7 @@ body {
    HERO SECTION
    ========================================================================== */
 .hero-section {
-  padding: 70px 0 50px 0;
+  padding: 60px 0 40px 0;
   text-align: center;
   position: relative;
 }
@@ -229,12 +223,12 @@ body {
 }
 
 .hero-title {
-  font-size: 54px;
+  font-size: 52px;
   font-weight: 900;
   line-height: 1.15;
   letter-spacing: -1.5px;
   max-width: 960px;
-  margin: 0 auto 24px auto;
+  margin: 0 auto 22px auto;
 }
 
 .hero-title .gradient-text {
@@ -244,10 +238,10 @@ body {
 }
 
 .hero-description {
-  font-size: 19px;
+  font-size: 18.5px;
   color: var(--text-muted);
   max-width: 760px;
-  margin: 0 auto 36px auto;
+  margin: 0 auto 34px auto;
   font-weight: 500;
 }
 
@@ -256,14 +250,14 @@ body {
   align-items: center;
   justify-content: center;
   gap: 16px;
-  margin-bottom: 40px;
+  margin-bottom: 36px;
   flex-wrap: wrap;
 }
 
 .btn-hero-main {
-  height: 54px;
-  padding: 0 32px;
-  font-size: 16px;
+  height: 52px;
+  padding: 0 30px;
+  font-size: 15.5px;
   font-weight: 800;
   border-radius: var(--radius-md);
   display: inline-flex;
@@ -282,8 +276,8 @@ body {
 }
 
 .btn-hero-secondary {
-  height: 54px;
-  padding: 0 26px;
+  height: 52px;
+  padding: 0 24px;
   font-size: 15px;
   font-weight: 700;
   border-radius: var(--radius-md);
@@ -295,6 +289,7 @@ body {
   color: #ffffff;
   text-decoration: none;
   transition: all 0.15s ease;
+  cursor: pointer;
 }
 
 .btn-hero-secondary:hover {
@@ -321,11 +316,11 @@ body {
 }
 
 /* ==========================================================================
-   SHOWCASE INTERATIVO DO PRODUTO (PRINTS REAIS EM ALTA RESOLUÇÃO)
+   SHOWCASE INTERATIVO DO PRODUTO (PRINTS REAIS 100% ENQUADRADOS SEM ZOOM)
    ========================================================================== */
 .product-showcase-wrapper {
   position: relative;
-  max-width: 1100px;
+  max-width: 1120px;
   margin: 0 auto;
   border-radius: var(--radius-lg);
   padding: 8px;
@@ -372,22 +367,24 @@ body {
   font-family: 'JetBrains Mono', monospace;
 }
 
+/* Moldura que preserva 100% da imagem sem corte ou zoom excessivo */
 .mockup-image-frame {
   width: 100%;
-  aspect-ratio: 16 / 9.8;
-  background: #090d16;
+  background: #0b0f19;
   overflow: hidden;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0;
 }
 
 .mockup-screenshot-img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  border-radius: 0 0 14px 14px;
   transition: opacity 0.2s ease;
 }
 
@@ -428,37 +425,37 @@ body {
 }
 
 /* ==========================================================================
-   CARDS DE BENEFÍCIOS & FEATURES
+   CARDS DE BENEFÍCIOS & FEATURES (GRID COM MINMAX)
    ========================================================================== */
 .section-padding {
-  padding: 85px 0;
+  padding: 60px 0;
 }
 
 .section-header {
   text-align: center;
   max-width: 720px;
-  margin: 0 auto 50px auto;
+  margin: 0 auto 40px auto;
 }
 
 .section-tag {
   color: var(--accent-cyan);
-  font-size: 12.5px;
+  font-size: 12px;
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   display: block;
 }
 
 .section-title {
-  font-size: 38px;
+  font-size: 36px;
   font-weight: 900;
   letter-spacing: -1px;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
 }
 
 .section-subtitle {
-  font-size: 17px;
+  font-size: 16.5px;
   color: var(--text-muted);
 }
 
@@ -474,10 +471,10 @@ body {
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border-card);
   border-radius: var(--radius-lg);
-  padding: 32px 28px;
+  padding: 30px 26px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 14px;
   transition: all 0.2s ease;
   position: relative;
   overflow: hidden;
@@ -491,27 +488,27 @@ body {
 }
 
 .feature-icon-box {
-  width: 52px;
-  height: 52px;
-  border-radius: 14px;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
+  font-size: 22px;
   background: rgba(124, 58, 237, 0.15);
   border: 1px solid rgba(124, 58, 237, 0.3);
   color: #c084fc;
 }
 
 .feature-card-title {
-  font-size: 20px;
+  font-size: 19px;
   font-weight: 800;
   color: #ffffff;
   letter-spacing: -0.3px;
 }
 
 .feature-card-desc {
-  font-size: 14.5px;
+  font-size: 14px;
   color: var(--text-muted);
   line-height: 1.6;
 }
@@ -523,11 +520,11 @@ body {
   background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
   border: 1px solid var(--border-card);
   border-radius: var(--radius-xl);
-  padding: 60px 50px;
-  margin: 30px 0 60px 0;
+  padding: 50px 40px;
+  margin: 30px 0 50px 0;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 50px;
+  gap: 40px;
   align-items: center;
   box-shadow: var(--shadow-card);
 }
@@ -535,7 +532,7 @@ body {
 .companion-content {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 18px;
 }
 
 .companion-pill {
@@ -553,7 +550,7 @@ body {
 }
 
 .companion-title {
-  font-size: 36px;
+  font-size: 34px;
   font-weight: 900;
   line-height: 1.2;
 }
@@ -569,7 +566,7 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 15px;
+  font-size: 14.5px;
   color: var(--text-muted);
   font-weight: 600;
 }
@@ -660,10 +657,10 @@ body {
   background: var(--bg-card);
   border: 1px solid var(--border-card);
   border-radius: var(--radius-lg);
-  padding: 36px 30px;
+  padding: 34px 28px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 18px;
   position: relative;
   transition: all 0.2s ease;
   box-shadow: var(--shadow-card);
@@ -673,7 +670,7 @@ body {
   background: linear-gradient(180deg, #273549 0%, #1e293b 100%);
   border-color: #6366f1;
   box-shadow: 0 0 35px rgba(99, 102, 241, 0.3);
-  transform: scale(1.03);
+  transform: scale(1.02);
 }
 
 .pricing-badge-popular {
@@ -711,14 +708,14 @@ body {
 }
 
 .pricing-value {
-  font-size: 42px;
+  font-size: 40px;
   font-weight: 900;
   font-family: 'JetBrains Mono', monospace;
   color: #ffffff;
 }
 
 .pricing-period {
-  font-size: 14px;
+  font-size: 13.5px;
   color: var(--text-dim);
 }
 
@@ -726,16 +723,16 @@ body {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 11px;
   border-top: 1px solid var(--border-card);
-  padding-top: 20px;
+  padding-top: 18px;
 }
 
 .pricing-feature-item {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 14px;
+  font-size: 13.5px;
   color: var(--text-muted);
 }
 
@@ -746,9 +743,9 @@ body {
 
 .btn-pricing-cta {
   width: 100%;
-  height: 48px;
+  height: 46px;
   border-radius: var(--radius-sm);
-  font-size: 14.5px;
+  font-size: 14px;
   font-weight: 800;
   display: flex;
   align-items: center;
@@ -805,11 +802,11 @@ body {
 
 .faq-question {
   width: 100%;
-  padding: 20px 24px;
+  padding: 18px 22px;
   background: transparent;
   border: none;
   color: #ffffff;
-  font-size: 16px;
+  font-size: 15.5px;
   font-weight: 700;
   text-align: left;
   display: flex;
@@ -830,9 +827,9 @@ body {
 
 .faq-answer {
   display: none;
-  padding: 0 24px 20px 24px;
+  padding: 0 22px 18px 22px;
   color: var(--text-muted);
-  font-size: 14.5px;
+  font-size: 14px;
   line-height: 1.6;
 }
 
@@ -847,15 +844,15 @@ body {
   background: radial-gradient(circle at center, #1e1b4b 0%, #0f172a 100%);
   border: 1px solid rgba(99, 102, 241, 0.4);
   border-radius: var(--radius-xl);
-  padding: 70px 40px;
+  padding: 60px 30px;
   text-align: center;
   box-shadow: 0 0 50px rgba(99, 102, 241, 0.25);
-  margin-bottom: 70px;
+  margin-bottom: 60px;
 }
 
 .footer {
   border-top: 1px solid var(--border-card);
-  padding: 40px 0;
+  padding: 36px 0;
   color: var(--text-dim);
   font-size: 13.5px;
 }
@@ -877,6 +874,7 @@ body {
 .footer-link {
   color: var(--text-muted);
   text-decoration: none;
+  cursor: pointer;
 }
 
 .footer-link:hover {
@@ -884,25 +882,61 @@ body {
 }
 
 /* ==========================================================================
-   RESPONSIVIDADE MOBILE
+   RESPONSIVIDADE: TABLETS & NOTEBOOKS MENORES (769px a 1024px)
    ========================================================================== */
-@media (max-width: 900px) {
+@media (min-width: 769px) and (max-width: 1024px) {
   .hero-title {
-    font-size: 38px;
-    letter-spacing: -0.5px;
+    font-size: 42px;
   }
-  .features-grid,
+  .features-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
   .pricing-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+  }
+  .pricing-card {
+    padding: 24px 18px;
+  }
+  .pricing-value {
+    font-size: 32px;
   }
   .companion-section {
-    grid-template-columns: 1fr;
-    padding: 36px 24px;
+    padding: 36px 28px;
+    gap: 24px;
   }
+}
+
+/* ==========================================================================
+   RESPONSIVIDADE: CELULARES & SMARTPHONES (Até 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
   .nav-links {
     display: none;
   }
+  .hero-title {
+    font-size: 32px;
+    letter-spacing: -0.5px;
+  }
+  .hero-description {
+    font-size: 16px;
+  }
+  .features-grid,
+  .pricing-grid,
+  .companion-section {
+    grid-template-columns: 1fr;
+  }
+  .companion-section {
+    padding: 30px 20px;
+  }
   .pricing-card.featured {
     transform: none;
+  }
+  .showcase-tab-selector {
+    gap: 6px;
+  }
+  .showcase-tab-btn {
+    font-size: 12px;
+    padding: 8px 14px;
   }
 }
