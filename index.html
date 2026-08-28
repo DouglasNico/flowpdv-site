@@ -8,8 +8,8 @@
   <!-- SEO Primário -->
   <title>FlowPDV — O Sistema de Frente de Caixa e Gestão Mais Rápido do Brasil</title>
   <meta name="title" content="FlowPDV — O Sistema de Frente de Caixa e Gestão Mais Rápido do Brasil">
-  <meta name="description" content="Sistema de PDV Ágil, Estoque com Curva ABC, Caderneta de Fiado com WhatsApp e App do Dono no celular. Venda sem travar em 0ms mesmo sem internet!">
-  <meta name="keywords" content="sistema pdv, frente de caixa, pdv adega, sistema mercadinho, pdv offline, controle de estoque, curva abc, fiado whatsapp, sistema comercial">
+  <meta name="description" content="Sistema de PDV Ágil, Estoque com Curva ABC, Caderneta de Fiado com WhatsApp e Flow Gestor no celular. Venda sem travar em 0ms mesmo sem internet!">
+  <meta name="keywords" content="sistema pdv, frente de caixa, pdv adega, sistema mercadinho, pdv offline, controle de estoque, curva abc, fiado whatsapp, gestor mobile, sistema comercial">
   <meta name="author" content="Douglas Batista / FlowPDV">
   <meta name="robots" content="index, follow">
 
@@ -17,14 +17,14 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.flowpdv.com.br/">
   <meta property="og:title" content="FlowPDV — Frente de Caixa & Gestão Comercial Inteligente">
-  <meta property="og:description" content="Venda em milissegundos sem travar mesmo sem internet. Acompanhe seu faturamento em tempo real pelo celular.">
+  <meta property="og:description" content="Venda em milissegundos sem travar mesmo sem internet. Acompanhe seu faturamento em tempo real pelo Flow Gestor no celular.">
   <meta property="og:image" content="assets/logoflow.png">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="assets/icon.png">
   <link rel="apple-touch-icon" href="assets/icon.png">
 
-  <link rel="stylesheet" href="style.css?v=1.0.0">
+  <link rel="stylesheet" href="style.css?v=1.1.0">
 </head>
 <body>
 
@@ -41,7 +41,7 @@
       <nav>
         <ul class="nav-links">
           <li><a href="#recursos" class="nav-link">Recursos</a></li>
-          <li><a href="#app-mobile" class="nav-link">App do Dono 📱</a></li>
+          <li><a href="#gestao-mobile" class="nav-link">Gestão Mobile 📱</a></li>
           <li><a href="#comparativo" class="nav-link">Comparativo</a></li>
           <li><a href="#precos" class="nav-link">Planos & Preços</a></li>
           <li><a href="#faq" class="nav-link">Dúvidas</a></li>
@@ -50,7 +50,7 @@
 
       <div class="nav-actions">
         <a href="https://cliente.flowpdv.com.br" target="_blank" class="btn-nav-secondary">
-          📱 Entrar no Gestor
+          📱 Flow Gestor
         </a>
         <a href="https://wa.me/5519999997777?text=Ol%C3%A1!%20Gostaria%20de%20testar%20o%20FlowPDV%20na%20minha%20loja." target="_blank" class="btn-primary-glow">
           ⚡ Testar Grátis
@@ -76,7 +76,7 @@
       </h1>
 
       <p class="hero-description">
-        Venda em milissegundos sem travar mesmo sem internet. Estoque com Curva ABC, Caderneta de Fiado com cobrança no WhatsApp e <strong>App do Dono no celular</strong> para você acompanhar seu negócio do sofá de casa.
+        Venda em milissegundos sem travar mesmo sem internet. Estoque com Curva ABC, Caderneta de Fiado com cobrança no WhatsApp e <strong>Flow Gestor no celular</strong> para você acompanhar seu faturamento de qualquer lugar.
       </p>
 
       <div class="hero-cta-group">
@@ -84,8 +84,8 @@
           <span>💬 Falar no WhatsApp com Especialista</span>
           <span>➔</span>
         </a>
-        <a href="#app-mobile" class="btn-hero-secondary">
-          <span>📱 Conhecer o App do Celular</span>
+        <a href="#gestao-mobile" class="btn-hero-secondary">
+          <span>📱 Conhecer o Flow Gestor Mobile</span>
         </a>
       </div>
 
@@ -108,7 +108,7 @@
         </div>
       </div>
 
-      <!-- SHOWCASE DO SISTEMA (MOCKUP INTERATIVO COM SCREENSHOTS REAIS) -->
+      <!-- SHOWCASE DO SISTEMA (MOCKUP LIMPO, CRISTALINO E 100% FUNCIONAL) -->
       <div class="product-showcase-wrapper">
         <div class="product-mockup-window">
           <div class="mockup-window-header">
@@ -117,27 +117,246 @@
               <span class="window-dot yellow"></span>
               <span class="window-dot green"></span>
             </div>
-            <span class="mockup-window-title" id="showcase-window-title">FlowPDV — Frente de Caixa [F1]</span>
+            <span class="mockup-window-title" id="showcase-window-title">FlowPDV — Frente de Caixa [F1] • Caixa Aberto</span>
             <span style="font-size: 11px; color: var(--accent-green); font-weight: 700;">● Online & Seguro</span>
           </div>
 
-          <div class="mockup-image-frame">
-            <img src="assets/screenshot-pdv.png" id="showcase-main-img" alt="Tela do FlowPDV" class="mockup-screenshot-img">
+          <div class="mockup-preview-area">
+            
+            <!-- TELA 1: FRENTE DE CAIXA LIMPA -->
+            <div class="showcase-screen-view active" id="view-pdv">
+              <div class="pdv-preview-layout">
+                
+                <!-- Esquerda: Catálogo & Busca -->
+                <div style="display: flex; flex-direction: column; gap: 12px;">
+                  <div style="background: #111827; padding: 10px 14px; border-radius: 8px; border: 1px solid var(--border-card); display: flex; align-items: center; gap: 10px;">
+                    <span>🔍</span>
+                    <span style="font-size: 13px; color: var(--text-muted);">Bipe o código de barras ou digite o produto... (F2)</span>
+                  </div>
+
+                  <div class="pdv-products-grid">
+                    <div class="pdv-item-card">
+                      <strong style="font-size: 13px; color: #fff;">🍺 Cerveja Heineken 330ml</strong>
+                      <span style="font-size: 11px; color: var(--text-dim);">Estoque: 84 un</span>
+                      <strong style="font-size: 15px; color: var(--accent-green); font-family: 'JetBrains Mono';">R$ 8,99</strong>
+                    </div>
+                    <div class="pdv-item-card">
+                      <strong style="font-size: 13px; color: #fff;">🍸 Gin Tanqueray 750ml</strong>
+                      <span style="font-size: 11px; color: var(--text-dim);">Estoque: 12 un</span>
+                      <strong style="font-size: 15px; color: var(--accent-green); font-family: 'JetBrains Mono';">R$ 119,90</strong>
+                    </div>
+                    <div class="pdv-item-card">
+                      <strong style="font-size: 13px; color: #fff;">⚡ Energético Red Bull 250ml</strong>
+                      <span style="font-size: 11px; color: var(--text-dim);">Estoque: 48 un</span>
+                      <strong style="font-size: 15px; color: var(--accent-green); font-family: 'JetBrains Mono';">R$ 10,50</strong>
+                    </div>
+                    <div class="pdv-item-card">
+                      <strong style="font-size: 13px; color: #fff;">🥃 Whisky Red Label 1L</strong>
+                      <span style="font-size: 11px; color: var(--text-dim);">Estoque: 8 un</span>
+                      <strong style="font-size: 15px; color: var(--accent-green); font-family: 'JetBrains Mono';">R$ 94,90</strong>
+                    </div>
+                    <div class="pdv-item-card">
+                      <strong style="font-size: 13px; color: #fff;">🧊 Gelo Filtrado 5kg</strong>
+                      <span style="font-size: 11px; color: var(--text-dim);">Estoque: 35 un</span>
+                      <strong style="font-size: 15px; color: var(--accent-green); font-family: 'JetBrains Mono';">R$ 14,00</strong>
+                    </div>
+                    <div class="pdv-item-card">
+                      <strong style="font-size: 13px; color: #fff;">🍷 Vinho Casillero Diablo 750ml</strong>
+                      <span style="font-size: 11px; color: var(--text-dim);">Estoque: 16 un</span>
+                      <strong style="font-size: 15px; color: var(--accent-green); font-family: 'JetBrains Mono';">R$ 49,90</strong>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Direita: Carrinho Ativo e Pagamento -->
+                <div class="pdv-cart-card">
+                  <div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-card); padding-bottom: 8px; margin-bottom: 10px;">
+                      <strong style="font-size: 14px; color: #fff;">🛒 Carrinho Atual (4 Itens)</strong>
+                      <span class="badge-pill-count">Operador: Caixa 01</span>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 8px; font-size: 12.5px;">
+                      <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed rgba(255,255,255,0.06); padding-bottom: 4px;">
+                        <span>2x Cerveja Heineken 330ml</span>
+                        <strong style="font-family: 'JetBrains Mono'; color: #fff;">R$ 17,98</strong>
+                      </div>
+                      <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed rgba(255,255,255,0.06); padding-bottom: 4px;">
+                        <span>1x Gin Tanqueray 750ml</span>
+                        <strong style="font-family: 'JetBrains Mono'; color: #fff;">R$ 119,90</strong>
+                      </div>
+                      <div style="display: flex; justify-content: space-between; border-bottom: 1px dashed rgba(255,255,255,0.06); padding-bottom: 4px;">
+                        <span>2x Red Bull 250ml</span>
+                        <strong style="font-family: 'JetBrains Mono'; color: #fff;">R$ 21,00</strong>
+                      </div>
+                      <div style="display: flex; justify-content: space-between;">
+                        <span>1x Gelo Filtrado 5kg</span>
+                        <strong style="font-family: 'JetBrains Mono'; color: #fff;">R$ 14,00</strong>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div style="margin-top: 20px;">
+                    <div style="background: #0b0f19; padding: 14px; border-radius: 8px; border: 1px solid var(--border-card); display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                      <span style="font-size: 13px; color: var(--text-muted); font-weight: 700;">TOTAL DA VENDA</span>
+                      <strong style="font-size: 26px; color: var(--accent-green); font-family: 'JetBrains Mono';">R$ 172,88</strong>
+                    </div>
+
+                    <button type="button" class="btn-primary-glow" style="width: 100%; justify-content: center; height: 48px; font-size: 15px;">
+                      <span>💳 Finalizar Venda & Pagamento [F3]</span>
+                    </button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- TELA 2: CURVA ABC & FATURAMENTO -->
+            <div class="showcase-screen-view" id="view-curva-abc">
+              <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 14px;">
+                <div style="background: var(--bg-surface-1); padding: 14px; border-radius: 10px; border: 1px solid rgba(16,185,129,0.3);">
+                  <span style="font-size: 11px; font-weight: 800; color: var(--accent-green);">CLASSE A (80% DO FATURAMENTO)</span>
+                  <strong style="display: block; font-size: 20px; font-family: 'JetBrains Mono'; color: #fff; margin-top: 4px;">R$ 48.290,00</strong>
+                  <span style="font-size: 11px; color: var(--text-muted);">14 produtos líderes de venda</span>
+                </div>
+                <div style="background: var(--bg-surface-1); padding: 14px; border-radius: 10px; border: 1px solid rgba(56,189,248,0.3);">
+                  <span style="font-size: 11px; font-weight: 800; color: var(--accent-cyan);">CLASSE B (15% DO FATURAMENTO)</span>
+                  <strong style="display: block; font-size: 20px; font-family: 'JetBrains Mono'; color: #fff; margin-top: 4px;">R$ 9.150,00</strong>
+                  <span style="font-size: 11px; color: var(--text-muted);">28 produtos intermediários</span>
+                </div>
+                <div style="background: var(--bg-surface-1); padding: 14px; border-radius: 10px; border: 1px solid rgba(148,163,184,0.3);">
+                  <span style="font-size: 11px; font-weight: 800; color: var(--text-muted);">CLASSE C (5% DO FATURAMENTO)</span>
+                  <strong style="display: block; font-size: 20px; font-family: 'JetBrains Mono'; color: #fff; margin-top: 4px;">R$ 3.020,00</strong>
+                  <span style="font-size: 11px; color: var(--text-muted);">62 produtos de baixo giro</span>
+                </div>
+              </div>
+
+              <div style="background: var(--bg-surface-1); border-radius: 10px; border: 1px solid var(--border-card); overflow: hidden;">
+                <div style="padding: 12px 16px; background: var(--bg-surface-2); font-weight: 800; font-size: 13px; color: #fff; display: flex; justify-content: space-between;">
+                  <span>Ranking de Produtos por Rentabilidade Real</span>
+                  <span>Margem Média: 41,2%</span>
+                </div>
+                <div style="padding: 12px 16px; display: flex; flex-direction: column; gap: 8px; font-size: 13px;">
+                  <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 6px;">
+                    <span>🥇 1. Cerveja Heineken 330ml</span>
+                    <span>1.648 un vendidas</span>
+                    <strong style="color: var(--accent-green); font-family: 'JetBrains Mono';">R$ 14.815,52 (Classe A)</strong>
+                  </div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 6px;">
+                    <span>🥈 2. Gin Tanqueray London Dry 750ml</span>
+                    <span>82 un vendidas</span>
+                    <strong style="color: var(--accent-green); font-family: 'JetBrains Mono';">R$ 9.831,80 (Classe A)</strong>
+                  </div>
+                  <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 6px;">
+                    <span>🥉 3. Whisky Johnnie Walker Red 1L</span>
+                    <span>88 un vendidas</span>
+                    <strong style="color: var(--accent-green); font-family: 'JetBrains Mono';">R$ 8.351,20 (Classe A)</strong>
+                  </div>
+                  <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span>4. Energético Red Bull Energy 250ml</span>
+                    <span>612 un vendidas</span>
+                    <strong style="color: var(--accent-green); font-family: 'JetBrains Mono';">R$ 6.426,00 (Classe A)</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- TELA 3: ESTOQUE & REPOSIÇÃO -->
+            <div class="showcase-screen-view" id="view-estoque">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                <div style="display: flex; gap: 8px;">
+                  <button type="button" class="chip-btn active">Todos (184)</button>
+                  <button type="button" class="chip-btn">⚠️ Baixo (6)</button>
+                  <button type="button" class="chip-btn">🚨 Validade (2)</button>
+                  <button type="button" class="chip-btn">🛒 Sugestão de Compra</button>
+                </div>
+                <button type="button" class="btn-primary-glow" style="padding: 6px 14px; font-size: 12.5px;">+ Novo Produto</button>
+              </div>
+
+              <div style="background: var(--bg-surface-1); border-radius: 10px; border: 1px solid var(--border-card); overflow: hidden;">
+                <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 13px;">
+                  <thead>
+                    <tr style="background: var(--bg-surface-2); color: var(--text-muted); font-size: 11.5px; font-weight: 800;">
+                      <th style="padding: 10px 14px;">PRODUTO</th>
+                      <th style="padding: 10px 14px;">CATEGORIA</th>
+                      <th style="padding: 10px 14px;">PREÇO CUSTO</th>
+                      <th style="padding: 10px 14px;">PREÇO VENDA</th>
+                      <th style="padding: 10px 14px;">ESTOQUE ATUAL</th>
+                      <th style="padding: 10px 14px;">STATUS</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                      <td style="padding: 10px 14px; font-weight: 700; color: #fff;">Cerveja Corona Extra 330ml</td>
+                      <td style="padding: 10px 14px; color: var(--text-muted);">🍺 Cervejas</td>
+                      <td style="padding: 10px 14px; font-family: 'JetBrains Mono';">R$ 5,80</td>
+                      <td style="padding: 10px 14px; font-family: 'JetBrains Mono'; font-weight: 800; color: var(--accent-green);">R$ 9,50</td>
+                      <td style="padding: 10px 14px; font-weight: 800;">48 un</td>
+                      <td style="padding: 10px 14px;"><span class="badge-tag-sm ok">✅ Normal</span></td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid rgba(255,255,255,0.05);">
+                      <td style="padding: 10px 14px; font-weight: 700; color: #fff;">Gin Tanqueray London Dry 750ml</td>
+                      <td style="padding: 10px 14px; color: var(--text-muted);">🍸 Destilados</td>
+                      <td style="padding: 10px 14px; font-family: 'JetBrains Mono';">R$ 78,00</td>
+                      <td style="padding: 10px 14px; font-family: 'JetBrains Mono'; font-weight: 800; color: var(--accent-green);">R$ 119,90</td>
+                      <td style="padding: 10px 14px; font-weight: 800; color: var(--accent-amber);">3 un</td>
+                      <td style="padding: 10px 14px;"><span class="badge-tag-sm low">⚠️ Repor +12 un</span></td>
+                    </tr>
+                    <tr>
+                      <td style="padding: 10px 14px; font-weight: 700; color: #fff;">Energético Monster Energy 473ml</td>
+                      <td style="padding: 10px 14px; color: var(--text-muted);">⚡ Energéticos</td>
+                      <td style="padding: 10px 14px; font-family: 'JetBrains Mono';">R$ 6,20</td>
+                      <td style="padding: 10px 14px; font-family: 'JetBrains Mono'; font-weight: 800; color: var(--accent-green);">R$ 10,99</td>
+                      <td style="padding: 10px 14px; font-weight: 800; color: var(--accent-red);">0 un</td>
+                      <td style="padding: 10px 14px;"><span class="badge-tag-sm zero">🚨 Esgotado (+24 un)</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <!-- TELA 4: AUDITORIA & FECHAMENTO CEGO -->
+            <div class="showcase-screen-view" id="view-auditoria">
+              <div style="display: flex; flex-direction: column; gap: 10px;">
+                <div style="background: var(--bg-surface-1); border: 1px solid var(--border-card); border-radius: 10px; padding: 14px;">
+                  <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span class="badge-tag-sm ok">💰 Fechamento Cego de Caixa</span>
+                    <span style="font-size: 11px; color: var(--text-dim); font-family: 'JetBrains Mono';">Hoje às 17:00</span>
+                  </div>
+                  <p style="font-size: 13.5px; font-weight: 800; color: #fff; margin: 6px 0;">Fechamento de Turno #0014 — Operador Douglas Batista</p>
+                  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; background: #0b0f19; padding: 10px; border-radius: 8px; text-align: center; font-size: 12px;">
+                    <div><span style="color: var(--text-dim); display: block;">Esperado no Caixa</span><strong style="color: var(--accent-cyan); font-family: 'JetBrains Mono';">R$ 1.842,50</strong></div>
+                    <div><span style="color: var(--text-dim); display: block;">Informado pelo Operador</span><strong style="color: #fff; font-family: 'JetBrains Mono';">R$ 1.842,50</strong></div>
+                    <div><span style="color: var(--text-dim); display: block;">Divergência</span><strong style="color: var(--accent-green); font-family: 'JetBrains Mono';">R$ 0,00 (Caixa Exato)</strong></div>
+                  </div>
+                </div>
+
+                <div style="background: var(--bg-surface-1); border: 1px solid var(--border-card); border-radius: 10px; padding: 14px;">
+                  <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span class="badge-tag-sm purple">🎁 Cortesia Concedida [F7]</span>
+                    <span style="font-size: 11px; color: var(--text-dim); font-family: 'JetBrains Mono';">Hoje às 15:32</span>
+                  </div>
+                  <p style="font-size: 13.5px; font-weight: 800; color: #fff; margin: 6px 0;">Motivo: Degustação Parceiro VIP (Aprovado com PIN Gerente)</p>
+                  <span style="font-size: 12px; color: var(--text-muted);">Itens: 1x Gin Tanqueray 750ml (R$ 119,90) • Operador: Douglas</span>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
 
         <!-- Seletor de Telas -->
         <div class="showcase-tab-selector">
-          <button type="button" class="showcase-tab-btn active" onclick="SiteApp.trocarScreenshot('pdv')">
+          <button type="button" class="showcase-tab-btn active" onclick="SiteApp.trocarVisualizacao('pdv', this)">
             <span>🛒 Frente de Caixa [F1]</span>
           </button>
-          <button type="button" class="showcase-tab-btn" onclick="SiteApp.trocarScreenshot('curva-abc')">
-            <span>📊 Curva ABC & Faturamento</span>
+          <button type="button" class="showcase-tab-btn" onclick="SiteApp.trocarVisualizacao('curva-abc', this)">
+            <span>📊 Curva ABC & Lucro</span>
           </button>
-          <button type="button" class="showcase-tab-btn" onclick="SiteApp.trocarScreenshot('estoque')">
+          <button type="button" class="showcase-tab-btn" onclick="SiteApp.trocarVisualizacao('estoque', this)">
             <span>📦 Estoque & Reposição</span>
           </button>
-          <button type="button" class="showcase-tab-btn" onclick="SiteApp.trocarScreenshot('auditoria')">
+          <button type="button" class="showcase-tab-btn" onclick="SiteApp.trocarVisualizacao('auditoria', this)">
             <span>🛡️ Auditoria & Fechamento Cego</span>
           </button>
         </div>
@@ -165,7 +384,7 @@
           <div class="feature-icon-box">⚡</div>
           <h3 class="feature-card-title">Frente de Caixa em 0ms (Local-First)</h3>
           <p class="feature-card-desc">
-            Nunca mais veja sua fila travar porque a internet oscilou. Toda a venda, leitura de código de barras e impressão térmica acontecem 100% no seu hardware em milissegundos.
+            Nunca mais veja sua fila travar porque a internet oscilou. Toda a venda, leitura de código de barras e impressão térmica acontecem 100% no seu computador em milissegundos.
           </p>
         </div>
 
@@ -220,22 +439,22 @@
   </section>
 
   <!-- ========================================================
-       SEÇÃO: APP COMPANION NO CELULAR (SPOTLIGHT)
+       SEÇÃO: GESTÃO MOBILE (FLOW GESTOR)
        ======================================================== -->
-  <section class="container" id="app-mobile">
+  <section class="container" id="gestao-mobile">
     <div class="companion-section">
       
       <div class="companion-content">
-        <span class="companion-pill">📱 Módulo Exclusivo Incluso</span>
-        <h2 class="companion-title">Acompanhe sua loja direto do sofá pelo celular</h2>
+        <span class="companion-pill">📱 Flow Gestor Mobile Incluso</span>
+        <h2 class="companion-title">Acompanhe seu faturamento ao vivo direto do celular</h2>
         <p style="color: var(--text-muted); font-size: 16px; line-height: 1.6;">
-          Fechou a loja e foi para casa? Não precisa ligar o computador. Abra o <strong>FlowPDV Gestor</strong> no seu smartphone para ver tudo em tempo real.
+          Fechou a loja e foi para casa? Não precisa ligar o computador. Abra o <strong>Flow Gestor</strong> no seu smartphone para acompanhar tudo em tempo real na nuvem.
         </p>
 
         <ul class="companion-list">
           <li class="companion-list-item">
             <span>✅</span>
-            <span>Faturamento do dia e do mês em tempo real</span>
+            <span>Faturamento do dia e do mês atualizados em tempo real</span>
           </li>
           <li class="companion-list-item">
             <span>✅</span>
@@ -243,11 +462,11 @@
           </li>
           <li class="companion-list-item">
             <span>✅</span>
-            <span>Alertas de produtos esgotados e precisando de compra</span>
+            <span>Alertas de produtos esgotados e sugestão de reposição</span>
           </li>
           <li class="companion-list-item">
             <span>✅</span>
-            <span>Auditoria ao vivo de cortesias e sangrias de funcionários</span>
+            <span>Auditoria ao vivo de cortesias e sangrias de operadores</span>
           </li>
           <li class="companion-list-item">
             <span>✅</span>
@@ -257,7 +476,7 @@
 
         <div style="margin-top: 10px;">
           <a href="https://cliente.flowpdv.com.br" target="_blank" class="btn-primary-glow" style="padding: 14px 28px; font-size: 15px;">
-            <span>🚀 Acessar o App do Gestor</span>
+            <span>🚀 Abrir o Flow Gestor Mobile</span>
             <span>➔</span>
           </a>
         </div>
@@ -267,33 +486,33 @@
       <div>
         <div class="companion-phone-mockup">
           <div class="phone-screen">
-            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #1e293b; padding-bottom: 8px;">
-              <strong style="font-size: 13px; color: #fff;">FlowPDV Gestor</strong>
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-card); padding-bottom: 8px;">
+              <strong style="font-size: 13px; color: #fff;">Flow Gestor Mobile</strong>
               <span style="font-size: 10px; color: #10b981; font-weight: 800;">● Ao Vivo</span>
             </div>
             
-            <div style="background: #111827; padding: 12px; border-radius: 12px; border: 1px solid #1e293b;">
-              <span style="font-size: 10px; color: #94a3b8; text-transform: uppercase; font-weight: 800;">💰 Vendas de Hoje</span>
+            <div style="background: var(--bg-surface-1); padding: 12px; border-radius: 12px; border: 1px solid var(--border-card);">
+              <span style="font-size: 10px; color: var(--text-muted); text-transform: uppercase; font-weight: 800;">💰 Vendas de Hoje</span>
               <strong style="font-size: 22px; color: #fff; font-family: 'JetBrains Mono'; display: block; margin-top: 2px;">R$ 4.892,40</strong>
               <span style="font-size: 11px; color: #10b981; font-weight: 700;">▲ 42 vendas realizadas</span>
             </div>
 
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
-              <div style="background: #111827; padding: 10px; border-radius: 10px; border: 1px solid #1e293b;">
-                <span style="font-size: 9.5px; color: #94a3b8;">💵 Na Gaveta</span>
-                <strong style="font-size: 14px; color: #38bdf8; display: block; font-family: 'JetBrains Mono';">R$ 1.250,00</strong>
+              <div style="background: var(--bg-surface-1); padding: 10px; border-radius: 10px; border: 1px solid var(--border-card);">
+                <span style="font-size: 9.5px; color: var(--text-muted);">💵 Na Gaveta</span>
+                <strong style="font-size: 14px; color: var(--accent-cyan); display: block; font-family: 'JetBrains Mono';">R$ 1.250,00</strong>
               </div>
-              <div style="background: #111827; padding: 10px; border-radius: 10px; border: 1px solid #1e293b;">
-                <span style="font-size: 9.5px; color: #94a3b8;">⚠️ Reposição</span>
-                <strong style="font-size: 14px; color: #f97316; display: block;">4 produtos</strong>
+              <div style="background: var(--bg-surface-1); padding: 10px; border-radius: 10px; border: 1px solid var(--border-card);">
+                <span style="font-size: 9.5px; color: var(--text-muted);">⚠️ Reposição</span>
+                <strong style="font-size: 14px; color: var(--accent-amber); display: block;">4 produtos</strong>
               </div>
             </div>
 
-            <div style="background: #111827; padding: 10px; border-radius: 10px; border: 1px solid #1e293b; font-size: 11px;">
-              <span style="color: #94a3b8; font-weight: 700;">Última Venda:</span>
+            <div style="background: var(--bg-surface-1); padding: 10px; border-radius: 10px; border: 1px solid var(--border-card); font-size: 11px;">
+              <span style="color: var(--text-muted); font-weight: 700;">Última Venda:</span>
               <div style="display: flex; justify-content: space-between; margin-top: 4px; color: #fff; font-weight: 800;">
                 <span>2x Cerveja Heineken</span>
-                <span style="color: #10b981;">R$ 17,98 (PIX)</span>
+                <span style="color: var(--accent-green);">R$ 17,98 (PIX)</span>
               </div>
             </div>
           </div>
@@ -336,7 +555,7 @@
               <td>❌ Não, se cair o sinal você não vende</td>
             </tr>
             <tr>
-              <td><strong>App do Dono no Celular Incluso?</strong></td>
+              <td><strong>Flow Gestor no Celular Incluso?</strong></td>
               <td class="flow-col">✅ Sim, sem custo adicional</td>
               <td>❌ Cobram mensalidade extra ou não têm</td>
             </tr>
@@ -400,7 +619,7 @@
             <li class="pricing-feature-item"><span>✓</span> Frente de Caixa PDV Completa</li>
             <li class="pricing-feature-item"><span>✓</span> Controle de Estoque & Reposição</li>
             <li class="pricing-feature-item"><span>✓</span> Caderneta de Fiado com WhatsApp</li>
-            <li class="pricing-feature-item"><span>✓</span> App do Dono no Celular Incluso</li>
+            <li class="pricing-feature-item"><span>✓</span> Flow Gestor Mobile Incluso</li>
             <li class="pricing-feature-item"><span>✓</span> Backup Automático em Nuvem</li>
             <li class="pricing-feature-item"><span>✓</span> Suporte Técnico por WhatsApp</li>
           </ul>
@@ -424,7 +643,7 @@
 
           <ul class="pricing-features-list">
             <li class="pricing-feature-item"><span>✓</span> <strong>Tudo do Plano Mensal</strong></li>
-            <li class="pricing-feature-item"><span>✓</span> Curva ABC & Central do Dono VIP</li>
+            <li class="pricing-feature-item"><span>✓</span> Curva ABC & Gestão de Lucro VIP</li>
             <li class="pricing-feature-item"><span>✓</span> Suporte Prioritário no WhatsApp</li>
             <li class="pricing-feature-item"><span>✓</span> Importação Grátis da sua Planilha</li>
             <li class="pricing-feature-item"><span>✓</span> Atualizações Novas Gratuitas</li>
@@ -451,7 +670,7 @@
             <li class="pricing-feature-item"><span>✓</span> Frente de Caixa PDV Completa</li>
             <li class="pricing-feature-item"><span>✓</span> Controle de Estoque & Reposição</li>
             <li class="pricing-feature-item"><span>✓</span> Caderneta de Fiado com WhatsApp</li>
-            <li class="pricing-feature-item"><span>✓</span> App do Dono no Celular Incluso</li>
+            <li class="pricing-feature-item"><span>✓</span> Flow Gestor Mobile Incluso</li>
             <li class="pricing-feature-item"><span>✓</span> Backup Automático em Nuvem</li>
             <li class="pricing-feature-item"><span>✓</span> Suporte Técnico por WhatsApp</li>
           </ul>
@@ -497,7 +716,7 @@
 
         <div class="faq-item">
           <button type="button" class="faq-question" onclick="SiteApp.toggleFaq(this)">
-            <span>Como o dono acessa o aplicativo pelo celular?</span>
+            <span>Como o gestor acessa o aplicativo pelo celular?</span>
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
@@ -561,7 +780,7 @@
 
       <ul class="footer-links">
         <li><a href="#recursos" class="footer-link">Recursos</a></li>
-        <li><a href="#app-mobile" class="footer-link">App do Dono</a></li>
+        <li><a href="#gestao-mobile" class="footer-link">Gestão Mobile</a></li>
         <li><a href="#precos" class="footer-link">Preços</a></li>
         <li><a href="https://cliente.flowpdv.com.br" target="_blank" class="footer-link">Área do Cliente</a></li>
       </ul>
@@ -571,45 +790,31 @@
   <!-- SCRIPT JS INTERATIVO -->
   <script>
     window.SiteApp = {
-      screenshots: {
-        'pdv': {
-          src: 'assets/screenshot-pdv.png',
-          title: 'FlowPDV — Frente de Caixa [F1]'
-        },
-        'curva-abc': {
-          src: 'assets/screenshot-curva-abc.png',
-          title: 'FlowPDV — Curva ABC & Central do Dono'
-        },
-        'estoque': {
-          src: 'assets/screenshot-estoque.png',
-          title: 'FlowPDV — Estoque & Lista de Compras'
-        },
-        'auditoria': {
-          src: 'assets/screenshot-auditoria.png',
-          title: 'FlowPDV — Auditoria & Fechamento Cego'
-        }
+      titulos: {
+        'pdv': 'FlowPDV — Frente de Caixa [F1] • Caixa Aberto',
+        'curva-abc': 'FlowPDV — Curva ABC & Rentabilidade Real (80/15/5)',
+        'estoque': 'FlowPDV — Estoque & Lista de Compras Automática',
+        'auditoria': 'FlowPDV — Auditoria & Fechamento Cego de Caixa'
       },
 
-      trocarScreenshot(tipo) {
-        const item = this.screenshots[tipo];
-        if (!item) return;
+      trocarVisualizacao(tipo, btnClicado) {
+        // Oculta todas as telas do showcase
+        document.querySelectorAll('.showcase-screen-view').forEach(v => v.classList.remove('active'));
+        
+        // Ativa a tela escolhida
+        const tela = document.getElementById(`view-${tipo}`);
+        if (tela) tela.classList.add('active');
 
-        const img = document.getElementById('showcase-main-img');
-        const title = document.getElementById('showcase-window-title');
-
-        if (img) {
-          img.style.opacity = '0.3';
-          setTimeout(() => {
-            img.src = item.src;
-            img.style.opacity = '1';
-          }, 150);
+        // Atualiza o título na moldura
+        const titleEl = document.getElementById('showcase-window-title');
+        if (titleEl && this.titulos[tipo]) {
+          titleEl.textContent = this.titulos[tipo];
         }
 
-        if (title) title.textContent = item.title;
-
-        document.querySelectorAll('.showcase-tab-btn').forEach(btn => btn.classList.remove('active'));
-        if (event && event.currentTarget) {
-          event.currentTarget.classList.add('active');
+        // Atualiza botão ativo
+        document.querySelectorAll('.showcase-tab-btn').forEach(b => b.classList.remove('active'));
+        if (btnClicado) {
+          btnClicado.classList.add('active');
         }
       },
 

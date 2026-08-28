@@ -44,11 +44,15 @@
   --shadow-glow-purple: 0 0 35px rgba(124, 58, 237, 0.25);
 }
 
+html {
+  scroll-padding-top: 110px;
+  scroll-behavior: smooth;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  scroll-behavior: smooth;
 }
 
 body {
@@ -82,6 +86,11 @@ body {
   padding: 0 24px;
 }
 
+/* Scroll Margins para links de âncora */
+section, [id] {
+  scroll-margin-top: 110px;
+}
+
 /* ==========================================================================
    HEADER / NAVBAR FIXA
    ========================================================================== */
@@ -89,7 +98,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(15, 23, 42, 0.88);
+  background: rgba(15, 23, 42, 0.92);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   border-bottom: 1px solid var(--border-card);
@@ -197,7 +206,7 @@ body {
    HERO SECTION
    ========================================================================== */
 .hero-section {
-  padding: 80px 0 60px 0;
+  padding: 70px 0 50px 0;
   text-align: center;
   position: relative;
 }
@@ -299,7 +308,7 @@ body {
   color: var(--text-muted);
   font-size: 13.5px;
   font-weight: 600;
-  margin-bottom: 50px;
+  margin-bottom: 45px;
   flex-wrap: wrap;
 }
 
@@ -310,7 +319,7 @@ body {
 }
 
 /* ==========================================================================
-   SHOWCASE INTERATIVO DO PRODUTO (MOCKUP / SCREENSHOT)
+   SHOWCASE INTERATIVO DO PRODUTO (UI MOCKUP 100% VETORIAL & CRISTALINO)
    ========================================================================== */
 .product-showcase-wrapper {
   position: relative;
@@ -327,6 +336,7 @@ body {
   border-radius: 14px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.12);
+  text-align: left;
 }
 
 .mockup-window-header {
@@ -360,23 +370,66 @@ body {
   font-family: 'JetBrains Mono', monospace;
 }
 
-.mockup-image-frame {
-  width: 100%;
-  aspect-ratio: 16 / 9.5;
+.mockup-preview-area {
+  min-height: 480px;
   background: #090d16;
-  overflow: hidden;
-  position: relative;
+  padding: 18px;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
 }
 
-.mockup-screenshot-img {
+/* Telas Renderizadas Limpas */
+.showcase-screen-view {
+  display: none;
+  flex-direction: column;
+  gap: 14px;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;
-  transition: opacity 0.3s ease;
+  animation: fadeIn 0.25s ease;
+}
+
+.showcase-screen-view.active {
+  display: flex;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Frente de Caixa Preview */
+.pdv-preview-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 16px;
+  width: 100%;
+}
+
+.pdv-products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.pdv-item-card {
+  background: var(--bg-surface-1);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
+  box-shadow: var(--shadow-sm);
+}
+
+.pdv-cart-card {
+  background: var(--bg-surface-1);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 /* Tabs do Showcase */
@@ -416,16 +469,16 @@ body {
 }
 
 /* ==========================================================================
-   CARDS DE BENEFÍCIOS & FEATURES (GRID RESPONSIVO COM MINMAX)
+   CARDS DE BENEFÍCIOS & FEATURES
    ========================================================================== */
 .section-padding {
-  padding: 90px 0;
+  padding: 85px 0;
 }
 
 .section-header {
   text-align: center;
   max-width: 720px;
-  margin: 0 auto 60px auto;
+  margin: 0 auto 50px auto;
 }
 
 .section-tag {
@@ -505,14 +558,14 @@ body {
 }
 
 /* ==========================================================================
-   APP COMPANION (MOBILE CALLOUT SECTION)
+   APP COMPANION (GESTÃO MOBILE SECTION)
    ========================================================================== */
 .companion-section {
   background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
   border: 1px solid var(--border-card);
   border-radius: var(--radius-xl);
   padding: 60px 50px;
-  margin: 40px 0;
+  margin: 30px 0 60px 0;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 50px;
@@ -587,7 +640,7 @@ body {
 }
 
 /* ==========================================================================
-   TABELA COMPARATIVA: FLOWPDV VS SISTEMAS TRADICIONAIS
+   TABELA COMPARATIVA
    ========================================================================== */
 .comparison-table-card {
   background: var(--bg-card);
@@ -872,7 +925,7 @@ body {
 }
 
 /* ==========================================================================
-   RESPONSIVIDADE MOBILE (TELAS MENORES)
+   RESPONSIVIDADE MOBILE
    ========================================================================== */
 @media (max-width: 900px) {
   .hero-title {
@@ -892,5 +945,8 @@ body {
   }
   .pricing-card.featured {
     transform: none;
+  }
+  .pdv-preview-layout {
+    grid-template-columns: 1fr;
   }
 }
