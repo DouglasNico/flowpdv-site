@@ -316,35 +316,136 @@
       <div>
         <div class="companion-phone-mockup">
           <div class="phone-screen">
-            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-card); padding-bottom: 8px;">
-              <strong style="font-size: 13px; color: #fff;">Flow Gestor Mobile</strong>
-              <span style="font-size: 10px; color: #10b981; font-weight: 800;">● Ao Vivo</span>
+            
+            <!-- Topo do App Mobile -->
+            <div class="mockup-header">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                <img src="assets/icon.png" alt="Logo FlowPDV" style="width: 26px; height: 26px; border-radius: 6px;">
+                <div>
+                  <strong style="font-size: 12.5px; color: #fff; display: block; line-height: 1.2;">Empresa de Teste</strong>
+                  <span style="font-size: 9.5px; color: var(--accent-green); font-weight: 700; display: flex; align-items: center; gap: 4px;">
+                    <span style="font-size: 6px;">🟢</span> Ao Vivo na Nuvem
+                  </span>
+                </div>
+              </div>
+              <div style="display: flex; gap: 6px;">
+                <span class="mockup-header-btn">🔄</span>
+                <span class="mockup-header-btn">🚪</span>
+              </div>
             </div>
             
-            <div style="background: var(--bg-surface-1); padding: 12px; border-radius: 12px; border: 1px solid var(--border-card);">
-              <span style="font-size: 10px; color: var(--text-muted); text-transform: uppercase; font-weight: 800;">💰 Vendas de Hoje</span>
-              <strong style="font-size: 22px; color: #fff; font-family: 'JetBrains Mono'; display: block; margin-top: 2px;">R$ 4.892,40</strong>
-              <span style="font-size: 11px; color: #10b981; font-weight: 700;">▲ 42 vendas realizadas</span>
-            </div>
-
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
-              <div style="background: var(--bg-surface-1); padding: 10px; border-radius: 10px; border: 1px solid var(--border-card);">
-                <span style="font-size: 9.5px; color: var(--text-muted);">💵 Na Gaveta</span>
-                <strong style="font-size: 14px; color: var(--accent-cyan); display: block; font-family: 'JetBrains Mono';">R$ 1.250,00</strong>
+            <!-- Hero: Faturamento Hoje -->
+            <div class="mockup-hero-card">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 9px; color: var(--text-muted); text-transform: uppercase; font-weight: 800;">💰 FATURAMENTO HOJE</span>
+                <span style="font-size: 9px; color: var(--text-dim); font-weight: 700;">HOJE</span>
               </div>
-              <div style="background: var(--bg-surface-1); padding: 10px; border-radius: 10px; border: 1px solid var(--border-card);">
-                <span style="font-size: 9.5px; color: var(--text-muted);">⚠️ Reposição</span>
-                <strong style="font-size: 14px; color: var(--accent-amber); display: block;">4 produtos</strong>
+              <strong style="font-size: 22px; color: #fff; font-family: 'JetBrains Mono'; display: block; margin: 4px 0;">R$ 4.892,40</strong>
+              <div style="font-size: 10px; color: var(--text-muted); font-weight: 600; display: flex; gap: 8px; align-items: center;">
+                <span>🧾 <strong style="color: #fff;">42</strong> vendas</span>
+                <span>•</span>
+                <span>🎯 Ticket Médio: <strong style="color: #fff;">R$ 116,48</strong></span>
               </div>
             </div>
 
-            <div style="background: var(--bg-surface-1); padding: 10px; border-radius: 10px; border: 1px solid var(--border-card); font-size: 11px;">
-              <span style="color: var(--text-muted); font-weight: 700;">Última Venda:</span>
-              <div style="display: flex; justify-content: space-between; margin-top: 4px; color: #fff; font-weight: 800;">
-                <span>2x Cerveja Heineken</span>
-                <span style="color: var(--accent-green);">R$ 17,98 (PIX)</span>
+            <!-- 2 Mini Cards: Total no Caixa & Faturamento Mês -->
+            <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px;">
+              <div class="mockup-small-card">
+                <span style="font-size: 8.5px; color: var(--text-dim); text-transform: uppercase; font-weight: 800; display: block;">💵 Total no Caixa</span>
+                <strong style="font-size: 13.5px; color: var(--accent-cyan); display: block; font-family: 'JetBrains Mono'; margin-top: 2px;">R$ 1.250,00</strong>
+              </div>
+              <div class="mockup-small-card">
+                <span style="font-size: 8.5px; color: var(--text-dim); text-transform: uppercase; font-weight: 800; display: block;">📅 Faturamento Mês</span>
+                <strong style="font-size: 13.5px; color: var(--accent-green); display: block; font-family: 'JetBrains Mono'; margin-top: 2px;">R$ 28.450,00</strong>
               </div>
             </div>
+
+            <!-- Alerta de Estoque Baixo -->
+            <div class="mockup-alert-card">
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <div style="display: flex; align-items: center; gap: 6px;">
+                  <span style="font-size: 14px;">⚠️</span>
+                  <div>
+                    <strong style="font-size: 10.5px; color: #fca5a5; display: block;">Itens com Estoque Baixo</strong>
+                    <span style="font-size: 9px; color: var(--text-muted);">1 produto precisa de reposição</span>
+                  </div>
+                </div>
+                <span class="mockup-badge-danger">1</span>
+              </div>
+            </div>
+
+            <!-- Breakdown de Pagamentos -->
+            <div style="background: var(--bg-surface-1); border: 1px solid var(--border-card); border-radius: 10px; padding: 10px; display: flex; flex-direction: column; gap: 8px;">
+              <div style="display: flex; justify-content: space-between; font-size: 10.5px; font-weight: 800; color: #fff;">
+                <span>💳 Vendas por Pagamento</span>
+              </div>
+
+              <!-- PIX -->
+              <div>
+                <div style="display: flex; justify-content: space-between; font-size: 10px; font-weight: 700; margin-bottom: 3px;">
+                  <span>⚡ PIX</span>
+                  <span style="font-family: 'JetBrains Mono'; color: #fff;">R$ 2.450,00 <small style="color: var(--text-dim);">(50%)</small></span>
+                </div>
+                <div class="mockup-progress-track">
+                  <div class="mockup-progress-bar" style="width: 50%; background: linear-gradient(90deg, #06b6d4, #38bdf8);"></div>
+                </div>
+              </div>
+
+              <!-- Dinheiro -->
+              <div>
+                <div style="display: flex; justify-content: space-between; font-size: 10px; font-weight: 700; margin-bottom: 3px;">
+                  <span>💵 Dinheiro</span>
+                  <span style="font-family: 'JetBrains Mono'; color: #fff;">R$ 1.250,00 <small style="color: var(--text-dim);">(26%)</small></span>
+                </div>
+                <div class="mockup-progress-track">
+                  <div class="mockup-progress-bar" style="width: 26%; background: linear-gradient(90deg, #059669, #10b981);"></div>
+                </div>
+              </div>
+
+              <!-- Cartão Crédito -->
+              <div>
+                <div style="display: flex; justify-content: space-between; font-size: 10px; font-weight: 700; margin-bottom: 3px;">
+                  <span>💳 Cartão Crédito</span>
+                  <span style="font-family: 'JetBrains Mono'; color: #fff;">R$ 910,00 <small style="color: var(--text-dim);">(18%)</small></span>
+                </div>
+                <div class="mockup-progress-track">
+                  <div class="mockup-progress-bar" style="width: 18%; background: linear-gradient(90deg, #6366f1, #a855f7);"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Venda Recente -->
+            <div style="background: var(--bg-surface-1); border: 1px solid var(--border-card); border-radius: 10px; padding: 9px 10px;">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <strong style="font-size: 10.5px; color: #fff;">Venda #01042</strong>
+                <span style="font-size: 11px; font-weight: 800; font-family: 'JetBrains Mono'; color: var(--accent-green);">R$ 17,98</span>
+              </div>
+              <div style="display: flex; justify-content: space-between; font-size: 9px; color: var(--text-muted); margin-top: 4px;">
+                <span>👤 Caixa 01 • 📦 2 itens</span>
+                <span>🕒 10:14 • <span class="mockup-badge-pix">PIX</span></span>
+              </div>
+            </div>
+
+            <!-- Bottom Tabbar do Mockup com Aba Resumo Ativa -->
+            <div class="mockup-tabbar">
+              <div class="mockup-tab-item active">
+                <span style="font-size: 12px;">📊</span>
+                <span>Resumo</span>
+              </div>
+              <div class="mockup-tab-item">
+                <span style="font-size: 12px;">📦</span>
+                <span>Estoque</span>
+              </div>
+              <div class="mockup-tab-item">
+                <span style="font-size: 12px;">💸</span>
+                <span>Financeiro</span>
+              </div>
+              <div class="mockup-tab-item">
+                <span style="font-size: 12px;">🛡️</span>
+                <span>Auditoria</span>
+              </div>
+            </div>
+
           </div>
         </div>
       </div>
