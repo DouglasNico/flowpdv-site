@@ -115,7 +115,7 @@
     <div class="container">
       
       <div class="hero-pill-badge">
-        <span>🚀 Versão v1.9.1 Oficial</span>
+        <span id="hero-version-badge">🚀 Versão v2.0.0 Oficial</span>
         <span>•</span>
         <span>Tecnologia 100% Offline-First</span>
       </div>
@@ -735,6 +735,24 @@
   <!-- SCRIPT JS INTERATIVO -->
   <script>
     window.SiteApp = {
+      init() {
+        this.carregarVersaoOficial();
+      },
+
+      async carregarVersaoOficial() {
+        try {
+          const res = await fetch('https://api.github.com/repos/DouglasNico/flowpdv/releases/latest');
+          if (res.ok) {
+            const data = await res.json();
+            if (data && data.tag_name) {
+              const tag = data.tag_name.startsWith('v') ? data.tag_name : `v${data.tag_name}`;
+              const badge = document.getElementById('hero-version-badge');
+              if (badge) badge.textContent = `🚀 Versão ${tag} Oficial`;
+            }
+          }
+        } catch(e) {}
+      },
+
       screenshots: {
         'pdv': {
           src: 'assets/screenshot-pdv.png',
@@ -841,6 +859,8 @@
         }
       }
     };
+
+    document.addEventListener('DOMContentLoaded', () => SiteApp.init());
   </script>
 </body>
 </html>
