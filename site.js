@@ -113,8 +113,11 @@
   document.querySelector('#close-dialog').addEventListener('click',()=>dialog.close());
   dialog.addEventListener('click',event=>{if(event.target===dialog) {const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dialog.close();}});
   dialog.addEventListener('close',unlockPage);
-  document.querySelectorAll('.faq details').forEach(item=>item.addEventListener('toggle',()=>{
-    if(item.open && !reduceMotion.matches) item.querySelector('p').animate([{opacity:0,transform:'translateY(-8px)'},{opacity:1,transform:'translateY(0)'}],{duration:260,easing:'ease-out'});
+  const faqItems = [...document.querySelectorAll('.faq details')];
+  faqItems.forEach(item => item.addEventListener('toggle', () => {
+    if (!item.open) return;
+    faqItems.forEach(other => { if (other !== item) other.removeAttribute('open'); });
+    if (!reduceMotion.matches) item.querySelector('p').animate([{opacity:0,transform:'translateY(-8px)'},{opacity:1,transform:'translateY(0)'}],{duration:260,easing:'ease-out'});
   }));
   const backTop = document.querySelector('#back-top');
   function syncBackTop() {
