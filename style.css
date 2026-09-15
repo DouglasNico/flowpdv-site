@@ -235,10 +235,13 @@ dialog img{max-height:calc(94dvh - 70px);object-fit:contain;display:block}
 #dialog-hint{text-align:center;font-size:12px;line-height:1.4;margin-top:8px;color:#43554b}
 @media(max-width:680px){
   .showcase .shell{width:calc(100% - 32px)}
+  .carousel-footer{display:flex;flex-direction:column;align-items:center;gap:14px}
+  .carousel-footer .gallery-controls{order:-1;justify-content:center;width:100%;gap:20px}
+  .carousel-footer .carousel-note{max-width:none;justify-content:center;text-align:center}
   .carousel-stage{padding:10px 0 18px}
   .carousel-peek{display:none}
   .carousel-stage .gallery-image{position:relative}
-  .carousel-stage .gallery-image:after{content:'Toque para ampliar ↗';display:block;padding:11px;background:#e5eae3;color:#183528;font-size:12px;text-align:center}
+  .carousel-stage .gallery-image:after{content:'Toque para ampliar';display:block;padding:11px;background:#e5eae3;color:#183528;font-size:12px;text-align:center}
 }
 @media(max-width:680px),(max-height:500px) and (pointer:coarse){
   #screen-dialog{width:100%;max-width:100%;height:100dvh;max-height:100dvh;margin:0;border:0;border-radius:0}

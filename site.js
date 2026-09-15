@@ -120,6 +120,13 @@
   let dialogIndex = 0;
   let zoomed = false;
   let dialogPointer = null;
+  let dialogRequest = 0;
+  let displayedDialogIndex = 0;
+  function cancelDialogTransition() {
+    dialogRequest++;
+    dialogImage.getAnimations().forEach(animation => animation.cancel());
+    viewport.removeAttribute('aria-busy');
+  }
   function setZoom(value) {
     zoomed = value;
     viewport.classList.toggle('is-zoomed', value);
@@ -130,15 +137,48 @@
       : 'Deslize para trocar. Toque em Ver detalhes para ampliar.';
     viewport.scrollTo({left:0, top:0, behavior:'instant'});
   }
-  function showDialogScreen(index) {
+  async function showDialogScreen(index) {
+    const direction = index >= dialogIndex ? 1 : -1;
+    const animate = dialog.open && !reduceMotion.matches;
+    cancelDialogTransition();
+    const request = dialogRequest;
     dialogIndex = (index + dialogKeys.length) % dialogKeys.length;
+    const nextIndex = dialogIndex;
     const key = dialogKeys[dialogIndex];
     const screen = screens[key];
+    if (animate) {
+      viewport.setAttribute('aria-busy', 'true');
+      const preload = new Image();
+      preload.src = screen.file;
+      // Keep the current image visible until the next one is decoded.
+      try { await preload.decode(); }
+      catch {
+        if (request === dialogRequest) {
+          dialogIndex = displayedDialogIndex;
+          viewport.removeAttribute('aria-busy');
+        }
+        return;
+      }
+      if (request !== dialogRequest || !dialog.open) return;
+      const outgoing = dialogImage.animate([
+        {opacity:1, transform:'translateX(0)'},
+        {opacity:0, transform:'translateX(' + (-direction * 24) + 'px)'}
+      ], {duration:140, easing:'ease-in', fill:'forwards'});
+      await outgoing.finished.catch(() => {});
+      if (request !== dialogRequest || !dialog.open) return;
+      outgoing.cancel();
+    }
     dialogImage.src = screen.file;
     dialogImage.alt = screen.title + ' do FlowPDV, ampliada';
     document.querySelector('#dialog-title').textContent = screen.title;
     document.querySelector('#dialog-position').textContent = String(dialogIndex + 1).padStart(2,'0') + ' / ' + String(dialogKeys.length).padStart(2,'0');
     viewport.scrollTo({left:0, top:0, behavior:'instant'});
+    displayedDialogIndex = nextIndex;
+    viewport.removeAttribute('aria-busy');
+    if (animate) dialogImage.animate([
+      {opacity:0, transform:'translateX(' + (direction * 32) + 'px)'},
+      {opacity:1, transform:'translateX(0)'}
+    ], {duration:300, easing:'cubic-bezier(.22,.8,.22,1)'});
     if (opener === galleryButton) selectScreen(key);
   }
   document.querySelectorAll('.screenshot-open').forEach(button => button.addEventListener('click', () => {
@@ -180,7 +220,7 @@
     const r = dialog.getBoundingClientRect();
     if (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom) dialog.close();
   });
-  dialog.addEventListener('close', () => { dialogPointer = null; setZoom(false); unlockPage(); });
+  dialog.addEventListener('close', () => { cancelDialogTransition(); dialogPointer = null; setZoom(false); unlockPage(); });
   const faqList = document.querySelector('.faq-items');
   const faqItems = [...document.querySelectorAll('.faq details')];
   faqItems.forEach((item) => {
