@@ -113,10 +113,74 @@
     window.scrollTo({top:savedScroll,behavior:'instant'});
     opener?.focus({preventScroll:true});
   }
-  document.querySelectorAll('.screenshot-open').forEach(button => button.addEventListener('click',()=> { const screen=screens[button.dataset.screen]; if(!screen)return; opener=button; document.querySelector('#dialog-image').src=screen.file; document.querySelector('#dialog-image').alt=screen.title+' do FlowPDV, ampliada'; document.querySelector('#dialog-title').textContent=screen.title; lockPage(); dialog.showModal(); }));
-  document.querySelector('#close-dialog').addEventListener('click',()=>dialog.close());
-  dialog.addEventListener('click',event=>{if(event.target===dialog) {const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dialog.close();}});
-  dialog.addEventListener('close',unlockPage);
+  const dialogImage = document.querySelector('#dialog-image');
+  const viewport = document.querySelector('#dialog-viewport');
+  const zoomButton = document.querySelector('#dialog-zoom');
+  const dialogKeys = tabs.map(tab => tab.dataset.screen);
+  let dialogIndex = 0;
+  let zoomed = false;
+  let dialogPointer = null;
+  function setZoom(value) {
+    zoomed = value;
+    viewport.classList.toggle('is-zoomed', value);
+    zoomButton.setAttribute('aria-pressed', String(value));
+    zoomButton.textContent = value ? 'Ver tela inteira −' : 'Ver detalhes +';
+    document.querySelector('#dialog-hint').textContent = value
+      ? 'Arraste para explorar os detalhes. Use as setas para trocar de tela.'
+      : 'Deslize para trocar. Toque em Ver detalhes para ampliar.';
+    viewport.scrollTo({left:0, top:0, behavior:'instant'});
+  }
+  function showDialogScreen(index) {
+    dialogIndex = (index + dialogKeys.length) % dialogKeys.length;
+    const key = dialogKeys[dialogIndex];
+    const screen = screens[key];
+    dialogImage.src = screen.file;
+    dialogImage.alt = screen.title + ' do FlowPDV, ampliada';
+    document.querySelector('#dialog-title').textContent = screen.title;
+    document.querySelector('#dialog-position').textContent = String(dialogIndex + 1).padStart(2,'0') + ' / ' + String(dialogKeys.length).padStart(2,'0');
+    viewport.scrollTo({left:0, top:0, behavior:'instant'});
+    if (opener === galleryButton) selectScreen(key);
+  }
+  document.querySelectorAll('.screenshot-open').forEach(button => button.addEventListener('click', () => {
+    const index = dialogKeys.indexOf(button.dataset.screen);
+    if (index < 0) return;
+    opener = button;
+    setZoom(false);
+    showDialogScreen(index);
+    lockPage();
+    dialog.showModal();
+  }));
+  zoomButton.addEventListener('click', () => setZoom(!zoomed));
+  viewport.addEventListener('dblclick', () => setZoom(!zoomed));
+  document.querySelector('#dialog-prev').addEventListener('click', () => showDialogScreen(dialogIndex - 1));
+  document.querySelector('#dialog-next').addEventListener('click', () => showDialogScreen(dialogIndex + 1));
+  dialog.addEventListener('keydown', event => {
+    if (event.altKey || event.ctrlKey || event.metaKey || (zoomed && event.target === viewport)) return;
+    if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+    event.preventDefault();
+    showDialogScreen(dialogIndex + (event.key === 'ArrowRight' ? 1 : -1));
+  });
+  viewport.addEventListener('pointerdown', event => {
+    if (!event.isPrimary) { dialogPointer = null; return; }
+    if (zoomed || event.button !== 0) return;
+    dialogPointer = {x:event.clientX, y:event.clientY, id:event.pointerId};
+    viewport.setPointerCapture(event.pointerId);
+  });
+  viewport.addEventListener('pointercancel', () => { dialogPointer = null; });
+  viewport.addEventListener('pointerup', event => {
+    if (!dialogPointer || dialogPointer.id !== event.pointerId) return;
+    const dx = event.clientX - dialogPointer.x;
+    const dy = event.clientY - dialogPointer.y;
+    dialogPointer = null;
+    if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy) * 1.3) showDialogScreen(dialogIndex + (dx < 0 ? 1 : -1));
+  });
+  document.querySelector('#close-dialog').addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', event => {
+    if (event.target !== dialog) return;
+    const r = dialog.getBoundingClientRect();
+    if (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom) dialog.close();
+  });
+  dialog.addEventListener('close', () => { dialogPointer = null; setZoom(false); unlockPage(); });
   const faqList = document.querySelector('.faq-items');
   const faqItems = [...document.querySelectorAll('.faq details')];
   faqItems.forEach((item) => {

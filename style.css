@@ -217,3 +217,35 @@ dialog img{max-height:calc(94dvh - 70px);object-fit:contain;display:block}
   .plans{padding:56px 0 64px}
   .faq{padding:36px 0 56px}
 }
+
+/* Visualizador: navegação persistente e detalhes com rolagem independente. */
+#screen-dialog{width:min(1500px,96vw);height:min(960px,94dvh);max-height:94dvh;overflow:hidden}
+#screen-dialog[open]{display:flex;flex-direction:column}
+#screen-dialog .dialog-toolbar{position:static;flex:none;gap:12px;border-bottom:1px solid #b4c1b6}
+.dialog-actions{display:flex;align-items:center;gap:8px;flex:none}
+#dialog-zoom{background:var(--ink);color:#fff;border-color:var(--ink)}
+#dialog-viewport{flex:1;min-height:0;overflow:auto;overscroll-behavior:contain;touch-action:pan-y pinch-zoom;display:flex;align-items:center;background:#0e201b}
+#dialog-image{display:block;flex:none;width:100%;height:100%;max-width:none;max-height:none;object-fit:contain;user-select:none}
+#dialog-viewport.is-zoomed{display:block;touch-action:pan-x pan-y pinch-zoom}
+#dialog-viewport.is-zoomed #dialog-image{width:max(1100px,170%);height:auto;max-height:none;object-fit:initial}
+.dialog-bottom{flex:none;padding:10px 18px 12px;border-top:1px solid #b4c1b6}
+.dialog-navigation{display:flex;align-items:center;justify-content:center;gap:24px}
+.dialog-navigation button{width:48px;height:44px;border:1px solid #9dac9f;border-radius:6px;background:transparent;color:var(--ink);font-size:22px}
+#dialog-position{font-size:12px;letter-spacing:.14em;font-variant-numeric:tabular-nums;min-width:64px;text-align:center}
+#dialog-hint{text-align:center;font-size:12px;line-height:1.4;margin-top:8px;color:#43554b}
+@media(max-width:680px){
+  .showcase .shell{width:calc(100% - 32px)}
+  .carousel-stage{padding:10px 0 18px}
+  .carousel-peek{display:none}
+  .carousel-stage .gallery-image{position:relative}
+  .carousel-stage .gallery-image:after{content:'Toque para ampliar ↗';display:block;padding:11px;background:#e5eae3;color:#183528;font-size:12px;text-align:center}
+}
+@media(max-width:680px),(max-height:500px) and (pointer:coarse){
+  #screen-dialog{width:100%;max-width:100%;height:100dvh;max-height:100dvh;margin:0;border:0;border-radius:0}
+  #screen-dialog .dialog-toolbar{padding:calc(8px + env(safe-area-inset-top)) max(10px,env(safe-area-inset-right)) 8px max(10px,env(safe-area-inset-left));gap:8px}
+  #screen-dialog .dialog-toolbar h2{font-size:12px;line-height:1.4}
+  #screen-dialog .dialog-toolbar button{padding:8px 10px;font-size:11px;min-height:44px}
+  .dialog-actions{gap:6px}
+  .dialog-bottom{padding:8px max(12px,env(safe-area-inset-right)) calc(10px + env(safe-area-inset-bottom)) max(12px,env(safe-area-inset-left))}
+  #dialog-hint{font-size:11px}
+}
