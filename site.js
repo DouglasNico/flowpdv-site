@@ -50,12 +50,16 @@
     event.preventDefault();
     closeMenu();
     scrollToSection(id);
-    history.pushState(null, '', href);
+    if (location.hash) history.replaceState(null, '', location.pathname + location.search);
   });
   window.addEventListener('resize', syncScrollPadding);
   syncScrollPadding();
   if (location.hash) {
-    requestAnimationFrame(() => scrollToSection(decodeURIComponent(location.hash.slice(1))));
+    const startId = decodeURIComponent(location.hash.slice(1));
+    requestAnimationFrame(() => {
+      scrollToSection(startId);
+      history.replaceState(null, '', location.pathname + location.search);
+    });
   }
   let currentScreen = 0;
   function selectScreen(key,focus=false) {
