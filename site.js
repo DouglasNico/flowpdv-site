@@ -116,4 +116,10 @@
   document.querySelectorAll('.faq details').forEach(item=>item.addEventListener('toggle',()=>{
     if(item.open && !reduceMotion.matches) item.querySelector('p').animate([{opacity:0,transform:'translateY(-8px)'},{opacity:1,transform:'translateY(0)'}],{duration:260,easing:'ease-out'});
   }));
+  const backTop = document.querySelector('#back-top');
+  function syncBackTop() {
+    if (backTop) backTop.classList.toggle('is-visible', window.scrollY > 420);
+  }
+  window.addEventListener('scroll', syncBackTop, { passive: true });
+  syncBackTop();
 })();
