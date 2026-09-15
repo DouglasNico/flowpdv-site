@@ -122,4 +122,70 @@
   }
   window.addEventListener('scroll', syncBackTop, { passive: true });
   syncBackTop();
+  (function startHeroFade() {
+    const button = document.querySelector('.hero-screen');
+    const label = document.querySelector('#hero-label');
+    const frames = [...document.querySelectorAll('.hero-slide')];
+    if (!button || frames.length < 2 || reduceMotion.matches) return;
+    const keys = ['pdv', 'estoque', 'financeiro', 'comandas', 'curva-abc', 'auditoria'];
+    keys.forEach((key) => { const preload = new Image(); preload.src = screens[key].file; });
+    let index = 0;
+    let showing = 0;
+    let timer = 0;
+    let hover = false;
+    let offscreen = false;
+    function paused() {
+      return hover || offscreen || document.hidden;
+    }
+    function applyMeta(key, nextIndex) {
+      const screen = screens[key];
+      button.dataset.screen = key;
+      button.setAttribute('aria-label', 'Ampliar a tela de ' + screen.title.toLowerCase());
+      if (label) label.textContent = String(nextIndex + 1).padStart(2, '0') + ' / ' + screen.title.toUpperCase();
+    }
+    function show(nextIndex) {
+      const key = keys[nextIndex];
+      const screen = screens[key];
+      const incoming = frames[1 - showing];
+      const reveal = () => {
+        frames[showing].classList.remove('is-active');
+        frames[showing].setAttribute('aria-hidden', 'true');
+        incoming.classList.add('is-active');
+        incoming.removeAttribute('aria-hidden');
+        incoming.alt = screen.title + ' do FlowPDV';
+        showing = 1 - showing;
+        index = nextIndex;
+        applyMeta(key, nextIndex);
+      };
+      if (incoming.getAttribute('src') === screen.file && incoming.complete) {
+        reveal();
+        return;
+      }
+      incoming.onload = () => { incoming.onload = null; reveal(); };
+      incoming.src = screen.file;
+    }
+    function arm() {
+      clearTimeout(timer);
+      if (paused()) return;
+      timer = setTimeout(() => {
+        show((index + 1) % keys.length);
+        arm();
+      }, 6800);
+    }
+    const product = button.closest('.hero-product');
+    product.addEventListener('mouseenter', () => { hover = true; clearTimeout(timer); });
+    product.addEventListener('mouseleave', () => { hover = false; arm(); });
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) clearTimeout(timer);
+      else arm();
+    });
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver((entries) => {
+        offscreen = !entries[0].isIntersecting;
+        if (offscreen) clearTimeout(timer);
+        else arm();
+      }, { threshold: 0.35 }).observe(product);
+    }
+    arm();
+  })();
 })();

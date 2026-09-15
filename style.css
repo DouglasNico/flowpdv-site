@@ -20,6 +20,10 @@ html{scrollbar-gutter:stable}
 .hero .hero-screen{transform:none;max-width:100%}
 .hero .hero-screen img{aspect-ratio:16/9;object-fit:contain}
 .hero-product{overflow:hidden}
+.hero-fade{display:grid;width:100%}
+.hero-fade .hero-slide{grid-area:1/1;width:100%;opacity:0;transition:opacity 1.8s ease}
+.hero-fade .hero-slide.is-active{opacity:1}
+#hero-label{transition:opacity .6s ease}
 .screen-tabs{flex-wrap:wrap;overflow:visible;gap:8px;margin-right:0;padding-right:0}
 .screen-tabs button{transition:background .22s,color .22s,box-shadow .22s,transform .22s;border-radius:7px}
 .screen-tabs button[aria-selected=true]{box-shadow:0 4px 14px #0002;border-color:#e5ece0}
