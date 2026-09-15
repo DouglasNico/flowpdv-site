@@ -133,6 +133,14 @@ dialog img{max-height:calc(94dvh - 70px);object-fit:contain;display:block}
 @media(prefers-reduced-motion:reduce){.float-whatsapp:after{animation:none}}
 .button .arrow-out,.feature a .arrow-out{width:15px;height:15px;flex:none;display:block}
 .button.small .arrow-out{width:13px;height:13px}
+.arrow-out,.arrow-down{width:13px;height:13px;flex:none;display:block}
+.text-link{align-items:center;gap:10px}
+.expand-tag{display:inline-flex;align-items:center;gap:6px}
+.expand-tag .arrow-out{width:11px;height:11px}
+.screen-brand,.screen-description>span,.footer-top>div a,.footer-bottom>a,.nav-mobile-link,.client-link{display:inline-flex;align-items:center;gap:6px}
+.screen-brand .arrow-out,.screen-description .arrow-out,.footer .arrow-out,.nav-mobile-link .arrow-out,.client-link .arrow-out{width:11px;height:11px}
+.contact-row > div{width:100%}
+.contact-email{align-self:stretch}
 
 /* Notebooks, 125%/150% e telas menores: o menu não estoura e o miolo aperta. */
 .header{position:sticky;top:0;z-index:20;overflow:visible}
@@ -191,6 +199,12 @@ dialog img{max-height:calc(94dvh - 70px);object-fit:contain;display:block}
   .navigation{top:70px}
   .nav-actions{display:none}
   .contact-row h2{font-size:clamp(46px,12vw,69px)}
+  .hero-actions{flex-direction:column;align-items:stretch;gap:14px}
+  .hero-actions .button{width:100%}
+  .hero-actions .text-link{align-self:flex-start}
+  .screen-brand .arrow-out{width:10px;height:10px}
+  .contact-row > div{align-items:stretch;width:100%}
+  .contact-email{width:100%;margin-top:14px}
 }
 @media(max-height:820px) and (min-width:681px){
   .hero{padding-top:36px}
