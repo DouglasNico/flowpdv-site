@@ -17,11 +17,11 @@ dialog{width:min(1500px,96vw);max-height:94dvh;padding:0;border:1px solid #879b9
 /* Refinamento: enquadramento, navegação visível e movimento discreto. */
 html{scrollbar-gutter:stable}
 .hero>*,.showcase .shell{min-width:0}
-.hero .hero-screen{transform:none;max-width:100%}
-.hero .hero-screen img{aspect-ratio:16/9;object-fit:contain}
+.hero .hero-screen{transform:none;max-width:100%;overflow:hidden}
+.hero .hero-screen img{aspect-ratio:auto;width:100%;height:100%;object-fit:cover;object-position:center top}
 .hero-product{overflow:hidden}
-.hero-fade{display:grid;width:100%}
-.hero-fade .hero-slide{grid-area:1/1;width:100%;opacity:0;transition:opacity 1.8s ease}
+.hero-fade{display:grid;width:100%;aspect-ratio:16/9;overflow:hidden;background:#152824}
+.hero-fade .hero-slide{grid-area:1/1;width:100%;height:100%;max-width:none;opacity:0;transition:opacity 1.8s ease;object-fit:cover;object-position:center top}
 .hero-fade .hero-slide.is-active{opacity:1}
 #hero-label{transition:opacity .6s ease}
 .screen-tabs{flex-wrap:wrap;overflow:visible;gap:8px;margin-right:0;padding-right:0}
@@ -36,6 +36,7 @@ html{scrollbar-gutter:stable}
 .screen-panel{margin-top:14px}
 .gallery-image{overflow:hidden}
 .gallery-image img{aspect-ratio:16/9;object-fit:contain;object-position:center}
+.faq-items,.contact-band{overflow-anchor:none}
 .faq details{transition:background .25s,border-color .25s;border-radius:5px}
 .faq summary{padding-inline:14px;transition:color .22s,padding .22s}
 .faq summary span{flex:none;display:grid;place-items:center;width:28px;height:28px;border-radius:50%;transition:transform .3s,background .25s,color .25s}
@@ -102,7 +103,10 @@ dialog img{max-height:calc(94dvh - 70px);object-fit:contain;display:block}
  .thumb-label small{display:none}
  .thumb-image{padding:3px;border-radius:5px}
 }
-@media(prefers-reduced-motion:reduce){.showcase .screen-tabs button:hover{transform:none}}
+@media(max-width:680px){
+  .hero-fade{aspect-ratio:16/10}
+  .hero .hero-screen img,.hero-fade .hero-slide{aspect-ratio:auto;object-fit:cover;background:transparent}
+}
 
 .contact-row > div{display:flex;flex-direction:column;align-items:flex-start}
 .contact-email{display:inline-flex;margin-top:18px;font-size:14px;font-weight:600;color:#3a2414;border-bottom:1px solid #8a5a32;padding:4px 0}

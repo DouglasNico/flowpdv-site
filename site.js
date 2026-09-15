@@ -117,12 +117,24 @@
   document.querySelector('#close-dialog').addEventListener('click',()=>dialog.close());
   dialog.addEventListener('click',event=>{if(event.target===dialog) {const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dialog.close();}});
   dialog.addEventListener('close',unlockPage);
+  const faqList = document.querySelector('.faq-items');
   const faqItems = [...document.querySelectorAll('.faq details')];
-  faqItems.forEach(item => item.addEventListener('toggle', () => {
-    if (!item.open) return;
-    faqItems.forEach(other => { if (other !== item) other.removeAttribute('open'); });
-    if (!reduceMotion.matches) item.querySelector('p').animate([{opacity:0,transform:'translateY(-8px)'},{opacity:1,transform:'translateY(0)'}],{duration:260,easing:'ease-out'});
-  }));
+  faqItems.forEach((item) => {
+    item.querySelector('summary').addEventListener('click', (event) => {
+      event.preventDefault();
+      if (item.open) {
+        item.open = false;
+        return;
+      }
+      const previous = faqItems.find((other) => other.open);
+      if (previous) faqList.style.minHeight = faqList.offsetHeight + 'px';
+      faqItems.forEach((other) => { other.open = false; });
+      item.open = true;
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => { faqList.style.minHeight = ''; });
+      });
+    });
+  });
   const backTop = document.querySelector('#back-top');
   function syncBackTop() {
     if (backTop) backTop.classList.toggle('is-visible', window.scrollY > 420);
@@ -134,7 +146,7 @@
     const label = document.querySelector('#hero-label');
     const frames = [...document.querySelectorAll('.hero-slide')];
     if (!button || frames.length < 2 || reduceMotion.matches) return;
-    const keys = ['pdv', 'estoque', 'financeiro', 'comandas', 'curva-abc', 'auditoria'];
+    const keys = ['pdv', 'estoque', 'financeiro', 'comandas', 'curva-abc', 'auditoria', 'login'];
     keys.forEach((key) => { const preload = new Image(); preload.src = screens[key].file; });
     let index = 0;
     let showing = 0;
