@@ -21,6 +21,40 @@
   document.querySelector('#year').textContent = new Date().getFullYear();
   const tabs = [...document.querySelectorAll('[role=tab]')];
   const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');
+  const header = document.querySelector('.header');
+  function headerOffset() {
+    return Math.ceil((header ? header.getBoundingClientRect().height : 90) + 18);
+  }
+  function syncScrollPadding() {
+    document.documentElement.style.setProperty('--nav-h', headerOffset() + 'px');
+  }
+  function scrollToSection(id) {
+    if (!id || id === 'inicio' || id === 'conteudo') {
+      window.scrollTo({ top: 0, behavior: reduceMotion.matches ? 'auto' : 'smooth' });
+      return;
+    }
+    const el = document.getElementById(id);
+    if (!el) return;
+    const y = el.getBoundingClientRect().top + window.scrollY - headerOffset();
+    window.scrollTo({ top: Math.max(0, y), behavior: reduceMotion.matches ? 'auto' : 'smooth' });
+  }
+  document.addEventListener('click', (event) => {
+    const link = event.target.closest('a[href^="#"]');
+    if (!link || event.defaultPrevented) return;
+    const href = link.getAttribute('href');
+    if (!href || href.length < 2) return;
+    const id = decodeURIComponent(href.slice(1));
+    if (!document.getElementById(id) && id !== 'inicio' && id !== 'conteudo') return;
+    event.preventDefault();
+    closeMenu();
+    scrollToSection(id);
+    history.pushState(null, '', href);
+  });
+  window.addEventListener('resize', syncScrollPadding);
+  syncScrollPadding();
+  if (location.hash) {
+    requestAnimationFrame(() => scrollToSection(decodeURIComponent(location.hash.slice(1))));
+  }
   let currentScreen = 0;
   function selectScreen(key,focus=false) {
     const screen = screens[key]; if(!screen) return;
