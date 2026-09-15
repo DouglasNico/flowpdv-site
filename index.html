@@ -1,864 +1,107 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-  <!-- SEO Primário -->
-  <title>FlowPDV — O Sistema de Frente de Caixa e Gestão Mais Rápido do Brasil</title>
-  <meta name="title" content="FlowPDV — O Sistema de Frente de Caixa e Gestão Mais Rápido do Brasil">
-  <meta name="description" content="Sistema de PDV Ágil, Estoque com Curva ABC, Caderneta de Fiado com WhatsApp e Flow Gestor no celular. Venda sem travar em 0ms mesmo sem internet!">
-  <meta name="keywords" content="sistema pdv, frente de caixa, pdv adega, sistema mercadinho, pdv offline, controle de estoque, curva abc, fiado whatsapp, gestor mobile, sistema comercial">
-  <meta name="author" content="Douglas Batista / FlowPDV">
-  <meta name="robots" content="index, follow">
-
-  <!-- Open Graph / Facebook / WhatsApp -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>FlowPDV — Seu comércio. No seu ritmo.</title>
+  <meta name="description" content="Frente de caixa, estoque, financeiro e gestão pelo celular. Conheça o FlowPDV e organize a operação da sua loja, do balcão ao fechamento.">
+  <link rel="canonical" href="https://www.flowpdv.com.br/">
+  <meta name="theme-color" content="#f7f7f2">
   <meta property="og:type" content="website">
+  <meta property="og:title" content="FlowPDV — Seu comércio. No seu ritmo.">
+  <meta property="og:description" content="O caixa acompanha o movimento. Você acompanha o negócio.">
   <meta property="og:url" content="https://www.flowpdv.com.br/">
-  <meta property="og:title" content="FlowPDV — Frente de Caixa & Gestão Comercial Inteligente">
-  <meta property="og:description" content="Venda em milissegundos sem travar mesmo sem internet. Acompanhe seu faturamento em tempo real pelo Flow Gestor no celular.">
-  <meta property="og:image" content="assets/logos/FlowPDV-horizontal-claro.png">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="assets/logos/FlowPDV-icone-claro.png">
+  <meta property="og:image" content="https://www.flowpdv.com.br/assets/screenshot-pdv.png">
+  <link rel="icon" href="assets/logos/FlowPDV-icone-claro.png">
   <link rel="apple-touch-icon" href="assets/logos/FlowPDV-icone-claro.png">
-
-  <link rel="stylesheet" href="style.css?v=1.3.0">
-
-  <script>
-    // 🚫 Desativa zoom por duplo clique e gestos de pinça no celular
-    document.addEventListener('gesturestart', function (e) { e.preventDefault(); });
-    let lastTouch = 0;
-    document.addEventListener('touchend', function (event) {
-      const now = Date.now();
-      if (now - lastTouch <= 300) {
-        event.preventDefault();
-      }
-      lastTouch = now;
-    }, { passive: false });
-  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=20260915c">
+  <script src="site.js?v=20260915c" defer></script>
 </head>
 <body>
-
-  <!-- ========================================================
-       BARRA DE NAVEGAÇÃO SUPERIOR
-       ======================================================== -->
-  <header class="navbar">
-    <div class="container nav-container">
-      <a href="javascript:void(0)" class="brand-logo" onclick="SiteApp.rolarPara('inicio', event)">
-        <img src="assets/logos/FlowPDV-horizontal-escuro.png" alt="FlowPDV" class="brand-logo-img">
-      </a>
-
-      <nav>
-        <ul class="nav-links">
-          <li><a href="javascript:void(0)" class="nav-link" onclick="SiteApp.rolarPara('inicio', event)">Início</a></li>
-          <li><a href="javascript:void(0)" class="nav-link" onclick="SiteApp.rolarPara('recursos', event)">Recursos</a></li>
-          <li><a href="javascript:void(0)" class="nav-link" onclick="SiteApp.rolarPara('gestao-mobile', event)">Gestão Mobile 📱</a></li>
-          <li><a href="javascript:void(0)" class="nav-link" onclick="SiteApp.rolarPara('comparativo', event)">Comparativo</a></li>
-          <li><a href="javascript:void(0)" class="nav-link" onclick="SiteApp.rolarPara('precos', event)">Planos & Preços</a></li>
-          <li><a href="javascript:void(0)" class="nav-link" onclick="SiteApp.rolarPara('faq', event)">Dúvidas</a></li>
-        </ul>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+  <header class="header">
+    <div class="shell nav-row">
+      <a class="brand" href="#inicio" aria-label="FlowPDV, início"><img src="assets/logos/FlowPDV-horizontal-claro.png" width="158" height="42" alt="FlowPDV"></a>
+      <nav id="navigation" class="navigation" aria-label="Principal">
+        <a href="#inicio">Início</a><a href="#sistema">O sistema</a><a href="#recursos">Recursos</a><a href="#gestao">Gestão no celular</a><a href="#planos">Planos</a>
+        <a class="nav-mobile-link" href="https://cliente.flowpdv.com.br/">Área do cliente ↗</a>
       </nav>
-
-      <div class="nav-actions">
-        <a href="https://cliente.flowpdv.com.br" target="_blank" class="btn-nav-secondary">
-          📱 Flow Gestor
-        </a>
-        <a href="https://wa.me/5519989632127?text=Ol%C3%A1%20Douglas!%20Gostaria%20de%20testar%20o%20FlowPDV%20na%20minha%20loja." target="_blank" class="btn-primary-glow">
-          ⚡ Testar Grátis
-        </a>
-      </div>
-
-      <!-- Botão Hambúrguer Mobile -->
-      <button type="button" class="btn-hamburger-mobile" id="btn-menu-mobile" onclick="SiteApp.toggleMenuMobile()" aria-label="Abrir Menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <div class="nav-actions"><a class="client-link" href="https://cliente.flowpdv.com.br/">Área do cliente ↗</a><a class="button small dark" data-contact="Quero conhecer o FlowPDV para minha loja." href="https://wa.me/5519989632127">Agendar demonstração <span aria-hidden="true">↗</span></a></div>
+      <button class="menu-toggle" aria-controls="navigation" aria-expanded="false" aria-label="Abrir menu"><span></span><span></span></button>
     </div>
   </header>
-
-  <!-- Gaveta de Navegação Mobile -->
-  <div class="mobile-nav-drawer" id="mobile-nav-drawer">
-    <div class="mobile-nav-header">
-      <div class="brand-logo">
-        <img src="assets/logos/FlowPDV-horizontal-escuro.png" alt="FlowPDV" class="brand-logo-img">
+  <main id="conteudo">
+    <section class="hero shell" id="inicio">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="orange-dot"></span> GESTÃO PARA O COMÉRCIO DE VERDADE</div>
+        <h1>Seu comércio.<br>No seu <em>ritmo.</em></h1>
+        <p class="hero-description">Do primeiro cliente ao último fechamento.<br class="desktop-break"> Um sistema que conecta o caixa, o estoque e as decisões da sua loja.</p>
+        <div class="hero-actions"><a class="button orange" data-contact="Quero ver uma demonstração do FlowPDV." href="https://wa.me/5519989632127">Conhecer o FlowPDV <span aria-hidden="true">↗</span></a><a class="text-link" href="#sistema">Ver o sistema em ação <span aria-hidden="true">↓</span></a></div>
+        <p class="hero-note"><span aria-hidden="true">✓</span> Atendimento direto. Implantação acompanhada.</p>
       </div>
-      <button type="button" class="btn-close-mobile-nav" onclick="SiteApp.fecharMenuMobile()" aria-label="Fechar Menu">✕</button>
-    </div>
-    <ul class="mobile-nav-links">
-      <li><a href="javascript:void(0)" class="mobile-nav-link" onclick="SiteApp.rolarPara('inicio', event)">🏠 Início</a></li>
-      <li><a href="javascript:void(0)" class="mobile-nav-link" onclick="SiteApp.rolarPara('recursos', event)">⚡ Recursos do Sistema</a></li>
-      <li><a href="javascript:void(0)" class="mobile-nav-link" onclick="SiteApp.rolarPara('gestao-mobile', event)">📱 Flow Gestor no Celular</a></li>
-      <li><a href="javascript:void(0)" class="mobile-nav-link" onclick="SiteApp.rolarPara('comparativo', event)">📊 Comparativo</a></li>
-      <li><a href="javascript:void(0)" class="mobile-nav-link" onclick="SiteApp.rolarPara('precos', event)">💎 Planos & Preços</a></li>
-      <li><a href="javascript:void(0)" class="mobile-nav-link" onclick="SiteApp.rolarPara('faq', event)">❓ Perguntas Frequentes</a></li>
-    </ul>
-    <div class="mobile-nav-actions">
-      <a href="https://cliente.flowpdv.com.br" target="_blank" class="btn-mobile-drawer secondary">
-        📱 Acessar Flow Gestor
-      </a>
-      <a href="https://wa.me/5519989632127?text=Ol%C3%A1%20Douglas!%20Gostaria%20de%20testar%20o%20FlowPDV%20na%20minha%20loja." target="_blank" class="btn-mobile-drawer primary">
-        💬 Falar no WhatsApp
-      </a>
-    </div>
-  </div>
-  <div class="mobile-nav-overlay" id="mobile-nav-overlay" onclick="SiteApp.fecharMenuMobile()"></div>
-
-  <!-- ========================================================
-       HERO SECTION DE ALTO IMPACTO
-       ======================================================== -->
-  <section class="hero-section" id="inicio">
-    <div class="container">
-      
-      <div class="hero-pill-badge">
-        <span id="hero-version-badge">🚀 Versão v2.0.0 Oficial</span>
-        <span>•</span>
-        <span>Tecnologia 100% Offline-First</span>
+      <div class="hero-product">
+        <div class="product-label"><span>01 / FRENTE DE CAIXA</span><span>Feito para o seu dia a dia</span></div>
+        <button class="hero-screen screenshot-open" data-screen="pdv" aria-label="Ampliar a tela da frente de caixa"><img src="assets/screenshot-pdv.png" width="1440" height="900" alt="Frente de caixa do FlowPDV: produtos, carrinho e fechamento da venda" fetchpriority="high"><span class="expand-tag" aria-hidden="true">Explorar a tela ↗</span></button>
+        <div class="product-foot"><span class="status-dot"></span><span>O movimento do balcão.<br><strong>A clareza na gestão.</strong></span><span class="product-index" aria-hidden="true">F.</span></div>
       </div>
+      <div class="hero-bottom"><span>UM SISTEMA. TODA A OPERAÇÃO.</span><div><span>Caixa</span><i>/</i><span>Estoque</span><i>/</i><span>Financeiro</span><i>/</i><span>Gestão</span></div></div>
+    </section>
 
-      <h1 class="hero-title">
-        O PDV Mais <span class="gradient-text">Rápido, Elegante & Confiável</span> do Brasil
-      </h1>
-
-      <p class="hero-description">
-        Venda em milissegundos sem travar mesmo sem internet. Estoque com Curva ABC, Caderneta de Fiado com cobrança no WhatsApp e <strong>Flow Gestor no celular</strong> para você acompanhar seu faturamento de qualquer lugar.
-      </p>
-
-      <div class="hero-cta-group">
-        <a href="https://wa.me/5519989632127?text=Ol%C3%A1%20Douglas!%20Quero%20uma%20demonstra%C3%A7%C3%A3o%20do%20FlowPDV%20no%20meu%20computador." target="_blank" class="btn-hero-main">
-          <span>💬 Falar no WhatsApp com Douglas Batista</span>
-          <span>➔</span>
-        </a>
-        <a href="javascript:void(0)" class="btn-hero-secondary" onclick="SiteApp.rolarPara('gestao-mobile', event)">
-          <span>📱 Conhecer o Flow Gestor Mobile</span>
-        </a>
+    <section class="intro shell" id="recursos">
+      <div class="section-label">MENOS IMPROVISO. MAIS CONTROLE.</div>
+      <div class="intro-grid"><h2>Quando tudo se conecta,<br>o comércio <em>flui.</em></h2><p>A venda baixa o estoque. O fechamento organiza o caixa. Os números chegam ao celular. O FlowPDV aproxima as partes da operação que você precisa acompanhar todos os dias.</p></div>
+      <div class="feature-grid">
+        <article class="feature"><span class="feature-number">01</span><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M5 7h22v15H5zM11 27h10M16 22v5M9 12h8m-8 5h14"/></svg><h3>Um caixa que acompanha.</h3><p>Busca de produtos, atalhos de teclado, pagamentos divididos e comprovantes. Uma rotina de venda mais direta para quem está no balcão.</p><a href="#sistema" data-tab-link="pdv">Conhecer o caixa <span aria-hidden="true">↗</span></a></article>
+        <article class="feature"><span class="feature-number">02</span><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="m16 3 12 7v13l-12 7L4 23V10zM4 10l12 7 12-7M16 17v13M10 6l12 7"/></svg><h3>Estoque sob controle.</h3><p>Entradas, saídas, inventário e alertas de validade. Enxergue o que está girando e o que precisa de reposição antes de faltar.</p><a href="#sistema" data-tab-link="estoque">Explorar o estoque <span aria-hidden="true">↗</span></a></article>
+        <article class="feature"><span class="feature-number">03</span><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M5 27h23M8 22v-6m8 6V9m8 13V4M6 9l6-5 6 2 7-4"/></svg><h3>Números que orientam.</h3><p>Contas a pagar, fiado, relatórios e curva ABC. Transforme o registro das vendas em uma visão mais clara do seu negócio.</p><a href="#sistema" data-tab-link="curva-abc">Ver os indicadores <span aria-hidden="true">↗</span></a></article>
       </div>
+    </section>
 
-      <div class="hero-badges-row">
-        <div class="hero-badge-item">
-          <span>⚡</span>
-          <span>0ms de Latência no Caixa</span>
+    <section class="showcase" id="sistema">
+      <div class="shell">
+        <div class="showcase-heading"><div><div class="section-label">POR DENTRO DO FLOWPDV</div><h2>Conheça o sistema.<br><em>De perto.</em></h2></div><p>Telas da operação, do jeito que ela acontece.<br>Escolha um módulo para explorar.</p></div>
+        <div class="carousel-stage" aria-label="Galeria de telas do FlowPDV" aria-roledescription="carrossel">
+          <button class="carousel-peek peek-prev" data-step="-1" aria-label="Ver tela anterior"><img id="peek-prev-image" alt=""><span aria-hidden="true">←</span></button>
+        <div class="screen-panel" id="screen-panel" role="tabpanel" aria-labelledby="tab-login" tabindex="0">
+          <div class="screen-top"><span class="screen-caption">Acesso por operador</span><span>FlowPDV <span aria-hidden="true">↗</span></span></div>
+          <button class="gallery-image screenshot-open" data-screen="login" aria-label="Ampliar a tela selecionada"><img id="gallery-image" src="assets/screenshot-login.png" width="1440" height="900" alt="Acesso por operador do FlowPDV" loading="lazy"></button>
         </div>
-        <div class="hero-badge-item">
-          <span>🔒</span>
-          <span>Funciona 100% Sem Internet</span>
+
+          <button class="carousel-peek peek-next" data-step="1" aria-label="Ver próxima tela"><img id="peek-next-image" alt=""><span aria-hidden="true">→</span></button>
         </div>
-        <div class="hero-badge-item">
-          <span>🖨️</span>
-          <span>Compatível com Leitores & Balanças</span>
+        <div class="carousel-footer"><div class="carousel-note"><span class="carousel-dot"></span> EXPLORE CADA DETALHE</div><div class="gallery-controls" aria-label="Navegar pelas telas"><button type="button" id="screen-prev" aria-label="Tela anterior">←</button><span id="screen-position" aria-live="polite">01 / 07</span><button type="button" id="screen-next" aria-label="Próxima tela">→</button></div></div>
+        <div class="screen-tabs" role="tablist" aria-label="Telas do sistema">
+          <button id="tab-login" role="tab" aria-selected="true" aria-controls="screen-panel" tabindex="0" data-screen="login"><span class="thumb-image"><img src="assets/screenshot-login.png" alt="" loading="lazy" draggable="false"></span><span class="thumb-label"><small aria-hidden="true">01</small>Login</span></button>
+          <button id="tab-pdv" role="tab" aria-selected="false" aria-controls="screen-panel" tabindex="-1" data-screen="pdv"><span class="thumb-image"><img src="assets/screenshot-pdv.png" alt="" loading="lazy" draggable="false"></span><span class="thumb-label"><small aria-hidden="true">02</small>Frente de caixa</span></button>
+          <button id="tab-estoque" role="tab" aria-selected="false" aria-controls="screen-panel" tabindex="-1" data-screen="estoque"><span class="thumb-image"><img src="assets/screenshot-estoque.png" alt="" loading="lazy" draggable="false"></span><span class="thumb-label"><small aria-hidden="true">03</small>Estoque</span></button>
+          <button id="tab-curva-abc" role="tab" aria-selected="false" aria-controls="screen-panel" tabindex="-1" data-screen="curva-abc"><span class="thumb-image"><img src="assets/screenshot-curva-abc.png" alt="" loading="lazy" draggable="false"></span><span class="thumb-label"><small aria-hidden="true">04</small>Curva ABC</span></button>
+          <button id="tab-auditoria" role="tab" aria-selected="false" aria-controls="screen-panel" tabindex="-1" data-screen="auditoria"><span class="thumb-image"><img src="assets/screenshot-auditoria.png" alt="" loading="lazy" draggable="false"></span><span class="thumb-label"><small aria-hidden="true">05</small>Auditoria</span></button>
+          <button id="tab-financeiro" role="tab" aria-selected="false" aria-controls="screen-panel" tabindex="-1" data-screen="financeiro"><span class="thumb-image"><img src="assets/screenshot-financeiro.png" alt="" loading="lazy" draggable="false"></span><span class="thumb-label"><small aria-hidden="true">06</small>Financeiro</span></button>
+          <button id="tab-comandas" role="tab" aria-selected="false" aria-controls="screen-panel" tabindex="-1" data-screen="comandas"><span class="thumb-image"><img src="assets/screenshot-comandas.png" alt="" loading="lazy" draggable="false"></span><span class="thumb-label"><small aria-hidden="true">07</small>Comandas</span></button>
         </div>
-        <div class="hero-badge-item">
-          <span>☁️</span>
-          <span>Backup Automático em Nuvem</span>
-        </div>
+        <div class="screen-description"><p id="screen-description">Acesso por perfil para organizar as responsabilidades da equipe.</p><span>Selecione a imagem para ampliar ↗</span></div>
       </div>
+    </section>
 
-      <!-- SHOWCASE DO SISTEMA (PRINTS REAIS EM ALTA RESOLUÇÃO 100% ENQUADRADOS) -->
-      <div class="product-showcase-wrapper">
-        <div class="product-mockup-window">
-          <div class="mockup-window-header">
-            <div class="mockup-window-dots">
-              <span class="window-dot red"></span>
-              <span class="window-dot yellow"></span>
-              <span class="window-dot green"></span>
-            </div>
-            <span class="mockup-window-title" id="showcase-window-title">FlowPDV — Frente de Caixa [F1]</span>
-            <span style="font-size: 11px; color: var(--accent-green); font-weight: 700;">● Licença Ativa</span>
-          </div>
+    <section class="mobile-section shell" id="gestao">
+      <div class="mobile-visual"><div class="mobile-orbit" aria-hidden="true"></div><div class="phone"><div class="phone-speaker" aria-hidden="true"></div><img id="mobile-screenshot" src="assets/screenshot-mobile.png" width="390" height="844" alt="Painel Flow Gestor no celular" loading="lazy"></div><span class="visual-caption">FLOW GESTOR / PAINEL DO CLIENTE</span></div>
+      <div class="mobile-copy"><div class="section-label">A LOJA CONTINUA COM VOCÊ.</div><h2>Presente na gestão.<br>Mesmo <em>de longe.</em></h2><p>Você não precisa estar atrás do balcão para saber como a loja está. Acompanhe os dados sincronizados pelo PDV na Central de Gestão, pelo celular ou computador.</p><ul class="check-list"><li>Vendas e indicadores do dia</li><li>Estoque e necessidade de reposição</li><li>Contas, fiado e movimentações do caixa</li><li>Equipe, auditoria e mesas em atendimento</li></ul><a class="button dark" href="https://cliente.flowpdv.com.br/">Acessar o Flow Gestor <span aria-hidden="true">↗</span></a><small>O painel recebe as atualizações quando o PDV está conectado à internet.</small></div>
+    </section>
 
-          <div class="mockup-image-frame">
-            <img src="assets/screenshot-pdv.png" id="showcase-main-img" alt="Tela Real do FlowPDV" class="mockup-screenshot-img">
-          </div>
-        </div>
+    <section class="operation-section shell"><div class="section-label">DO SEU JEITO, NO SEU BALCÃO.</div><div class="operation-grid"><h2>Cada loja tem<br>o seu <em>movimento.</em></h2><div><p>Uma adega vende unidades e fardos. Um mercado trabalha com peso e validade. Uma lanchonete acompanha mesas e comandas. Configure os recursos para a rotina do seu comércio.</p><div class="segments"><span>Adegas</span><span>Mercados</span><span>Conveniências</span><span>Padarias</span><span>Lanchonetes</span><span>Varejo</span></div></div></div>
+      <div class="details-row"><article><h3>O balcão segue offline.</h3><p>As vendas locais continuam sem internet. Sincronização, emissão fiscal e pagamentos integrados dependem dos respectivos serviços e configurações.</p></article><article><h3>Integração quando fizer sentido.</h3><p>Use a maquininha separadamente ou configure TEF com um provedor compatível. A implantação considera os equipamentos e módulos da sua loja.</p></article><article><h3>Quem atende conhece o produto.</h3><p>Converse diretamente com a equipe para entender a operação, preparar a instalação e orientar os primeiros passos.</p></article></div>
+    </section>
 
-        <!-- Seletor de Telas -->
-        <div class="showcase-tab-selector">
-          <button type="button" class="showcase-tab-btn active" onclick="SiteApp.trocarScreenshot('pdv', this)">
-            <span>🛒 Frente de Caixa [F1]</span>
-          </button>
-          <button type="button" class="showcase-tab-btn" onclick="SiteApp.trocarScreenshot('curva-abc', this)">
-            <span>📊 Curva ABC & Faturamento</span>
-          </button>
-          <button type="button" class="showcase-tab-btn" onclick="SiteApp.trocarScreenshot('estoque', this)">
-            <span>📦 Estoque & Reposição</span>
-          </button>
-          <button type="button" class="showcase-tab-btn" onclick="SiteApp.trocarScreenshot('auditoria', this)">
-            <span>🛡️ Auditoria & Fechamento Cego</span>
-          </button>
-        </div>
-      </div>
+    <section class="plans shell" id="planos"><div class="plan-intro"><div class="section-label">O PRÓXIMO PASSO É SIMPLES.</div><h2>Um plano para<br>a sua <em>operação.</em></h2><p>Conte como a sua loja funciona. A gente apresenta os módulos, os equipamentos compatíveis e a configuração adequada para começar.</p><a class="text-link" data-contact="Quero conversar sobre os planos do FlowPDV." href="https://wa.me/5519989632127">Conversar sobre minha loja ↗</a></div><article class="plan-card"><div class="plan-top"><span>FLOWPDV</span><span>Plano mensal</span></div><div class="price"><span>R$</span><strong>89,90</strong><span>/mês</span></div><p>Caixa e gestão em uma operação conectada.</p><ul class="check-list"><li>Frente de caixa e controle de estoque</li><li>Financeiro e relatórios de gestão</li><li>Acompanhamento pelo Flow Gestor</li><li>Orientação na implantação</li></ul><a class="button dark" data-contact="Quero conhecer as condições do plano mensal FlowPDV de R$ 89,90." href="https://wa.me/5519989632127">Consultar condições <span aria-hidden="true">↗</span></a><small>Confirme módulos, quantidade de terminais e serviços adicionais na proposta. Outras periodicidades disponíveis.</small></article></section>
 
-    </div>
-  </section>
+    <section class="faq shell" id="duvidas"><div><div class="section-label">ANTES DE COMEÇAR.</div><h2>Boas perguntas.<br><em>Respostas diretas.</em></h2></div><div class="faq-items"><details><summary>Preciso de internet para vender?<span aria-hidden="true">+</span></summary><p>O PDV registra as vendas localmente. Para sincronizar com a nuvem e com o Flow Gestor, é necessário estar conectado. Serviços fiscais e pagamentos integrados têm suas próprias exigências de conexão.</p></details><details><summary>Funciona com a minha maquininha?<span aria-hidden="true">+</span></summary><p>Você pode receber na maquininha e confirmar o pagamento no PDV. Para integração, é preciso verificar provedor, credenciamento e equipamentos compatíveis. A conexão deve ser configurada e validada na implantação.</p></details><details><summary>Posso usar em mais de um caixa?<span aria-hidden="true">+</span></summary><p>Sim. O FlowPDV trabalha com múltiplos terminais conforme os acessos contratados. Na demonstração, avaliamos a configuração e a sincronização para a operação da sua loja.</p></details><details><summary>Consigo acompanhar pelo celular?<span aria-hidden="true">+</span></summary><p>Sim. O Flow Gestor permite acompanhar os dados sincronizados do PDV pelo navegador do celular, tablet ou computador, com acesso da sua loja.</p></details><details><summary>Como funciona a implantação?<span aria-hidden="true">+</span></summary><p>Começamos entendendo a sua operação. Depois, orientamos a configuração dos módulos, o cadastro ou importação dos produtos e o uso do sistema com seus equipamentos.</p></details></div></section>
 
-  <!-- ========================================================
-       SEÇÃO: RECURSOS E BENEFÍCIOS MATADORES
-       ======================================================== -->
-  <section class="section-padding" id="recursos">
-    <div class="container">
-      
-      <div class="section-header">
-        <span class="section-tag">Engenharia de Ponta</span>
-        <h2 class="section-title">Tudo o que seu negócio precisa para faturar mais e não perder 1 centavo</h2>
-        <p class="section-subtitle">Construído especificamente para Adegas, Mercadinhos, Conveniências, Empórios e Lojas que precisam de agilidade real.</p>
-      </div>
-
-      <div class="features-grid">
-        
-        <!-- Card 1 -->
-        <div class="feature-card">
-          <div class="feature-icon-box">⚡</div>
-          <h3 class="feature-card-title">Frente de Caixa em 0ms (Local-First)</h3>
-          <p class="feature-card-desc">
-            Nunca mais veja sua fila travar porque a internet oscilou. Toda a venda, leitura de código de barras e impressão térmica acontecem 100% no seu computador em milissegundos.
-          </p>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="feature-card">
-          <div class="feature-icon-box">📊</div>
-          <h3 class="feature-card-title">Curva ABC & Inteligência de Lucro</h3>
-          <p class="feature-card-desc">
-            Descubra na hora quais são os 20% de produtos responsáveis por 80% do seu faturamento (Classe A). Pare de empatar dinheiro em mercadoria que fica parada na prateleira.
-          </p>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="feature-card">
-          <div class="feature-icon-box">📖</div>
-          <h3 class="feature-card-title">Caderneta de Fiado com WhatsApp</h3>
-          <p class="feature-card-desc">
-            Controle o saldo devedor de cada cliente com limite de crédito. Quando a conta vencer, envie uma mensagem educada de cobrança com 1 clique direto no WhatsApp.
-          </p>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="feature-card">
-          <div class="feature-icon-box">📦</div>
-          <h3 class="feature-card-title">Venda de Unidade & Fardo (Kit)</h3>
-          <p class="feature-card-desc">
-            Cadastre o código da latinha e o código do fardo no mesmo produto. Vendeu o fardo? O sistema dá baixa proporcional automática de 12 ou 24 unidades no estoque.
-          </p>
-        </div>
-
-        <!-- Card 5 -->
-        <div class="feature-card">
-          <div class="feature-icon-box">💰</div>
-          <h3 class="feature-card-title">Fechamento Cego de Caixa</h3>
-          <p class="feature-card-desc">
-            O operador não vê o saldo da gaveta ao fechar o turno. O sistema cruza o valor digitado com as vendas e aponta quebras ou sobras no painel do dono com auditoria rigorosa.
-          </p>
-        </div>
-
-        <!-- Card 6 -->
-        <div class="feature-card">
-          <div class="feature-icon-box">🛒</div>
-          <h3 class="feature-card-title">Lista de Compras Automática</h3>
-          <p class="feature-card-desc">
-            Filtre itens com estoque baixo com 1 clique e gere planilhas prontas em Excel (.xlsx) com a quantidade exata calculada para repor com seus fornecedores.
-          </p>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ========================================================
-       SEÇÃO: GESTÃO MOBILE (FLOW GESTOR)
-       ======================================================== -->
-  <section class="container" id="gestao-mobile">
-    <div class="companion-section">
-      
-      <div class="companion-content">
-        <span class="companion-pill">📱 Flow Gestor Mobile Incluso</span>
-        <h2 class="companion-title">Acompanhe seu faturamento ao vivo direto do celular</h2>
-        <p style="color: var(--text-muted); font-size: 16px; line-height: 1.6;">
-          Fechou a loja e foi para casa? Não precisa ligar o computador. Abra o <strong>Flow Gestor</strong> no seu smartphone para acompanhar tudo em tempo real na nuvem.
-        </p>
-
-        <ul class="companion-list">
-          <li class="companion-list-item">
-            <span>✅</span>
-            <span>Faturamento do dia e do mês atualizados em tempo real</span>
-          </li>
-          <li class="companion-list-item">
-            <span>✅</span>
-            <span>Saldo estimado em dinheiro na gaveta do caixa</span>
-          </li>
-          <li class="companion-list-item">
-            <span>✅</span>
-            <span>Alertas de produtos esgotados e sugestão de reposição</span>
-          </li>
-          <li class="companion-list-item">
-            <span>✅</span>
-            <span>Auditoria ao vivo de cortesias e sangrias de operadores</span>
-          </li>
-          <li class="companion-list-item">
-            <span>✅</span>
-            <span>Sem precisar baixar nada da PlayStore: funciona direto como PWA</span>
-          </li>
-        </ul>
-
-        <div style="margin-top: 10px;">
-          <a href="https://cliente.flowpdv.com.br" target="_blank" class="btn-primary-glow" style="padding: 14px 28px; font-size: 15px;">
-            <span>🚀 Abrir o Flow Gestor Mobile</span>
-            <span>➔</span>
-          </a>
-        </div>
-      </div>
-
-      <!-- Mockup do Celular -->
-      <div>
-        <div class="companion-phone-mockup">
-          <div class="phone-screen">
-            
-            <!-- Topo do App Mobile -->
-            <div class="mockup-header">
-              <div style="display: flex; align-items: center; gap: 8px;">
-                <img src="assets/logos/FlowPDV-icone-escuro.png" alt="Logo FlowPDV" style="width: 26px; height: 26px; object-fit: contain;">
-                <div>
-                  <strong style="font-size: 12.5px; color: #fff; display: block; line-height: 1.2;">Empresa de Teste</strong>
-                  <span style="font-size: 9.5px; color: var(--accent-green); font-weight: 700; display: flex; align-items: center; gap: 4px;">
-                    <span style="font-size: 6px;">🟢</span> Ao Vivo na Nuvem
-                  </span>
-                </div>
-              </div>
-              <div style="display: flex; gap: 6px;">
-                <span class="mockup-header-btn">🔄</span>
-                <span class="mockup-header-btn">🚪</span>
-              </div>
-            </div>
-            
-            <!-- Hero: Faturamento Hoje -->
-            <div class="mockup-hero-card">
-              <div style="display: flex; justify-content: space-between; align-items: center;">
-                <span style="font-size: 9px; color: var(--text-muted); text-transform: uppercase; font-weight: 800;">💰 FATURAMENTO HOJE</span>
-                <span style="font-size: 9px; color: var(--text-dim); font-weight: 700;">HOJE</span>
-              </div>
-              <strong style="font-size: 22px; color: #fff; font-family: 'JetBrains Mono'; display: block; margin: 4px 0;">R$ 4.892,40</strong>
-              <div style="font-size: 10px; color: var(--text-muted); font-weight: 600; display: flex; gap: 8px; align-items: center;">
-                <span>🧾 <strong style="color: #fff;">42</strong> vendas</span>
-                <span>•</span>
-                <span>🎯 Ticket Médio: <strong style="color: #fff;">R$ 116,48</strong></span>
-              </div>
-            </div>
-
-            <!-- 2 Mini Cards: Total no Caixa & Faturamento Mês -->
-            <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px;">
-              <div class="mockup-small-card">
-                <span style="font-size: 8.5px; color: var(--text-dim); text-transform: uppercase; font-weight: 800; display: block;">💵 Total no Caixa</span>
-                <strong style="font-size: 13.5px; color: var(--accent-cyan); display: block; font-family: 'JetBrains Mono'; margin-top: 2px;">R$ 1.250,00</strong>
-              </div>
-              <div class="mockup-small-card">
-                <span style="font-size: 8.5px; color: var(--text-dim); text-transform: uppercase; font-weight: 800; display: block;">📅 Faturamento Mês</span>
-                <strong style="font-size: 13.5px; color: var(--accent-green); display: block; font-family: 'JetBrains Mono'; margin-top: 2px;">R$ 28.450,00</strong>
-              </div>
-            </div>
-
-            <!-- Alerta de Estoque Baixo -->
-            <div class="mockup-alert-card">
-              <div style="display: flex; align-items: center; justify-content: space-between;">
-                <div style="display: flex; align-items: center; gap: 6px;">
-                  <span style="font-size: 14px;">⚠️</span>
-                  <div>
-                    <strong style="font-size: 10.5px; color: #fca5a5; display: block;">Itens com Estoque Baixo</strong>
-                    <span style="font-size: 9px; color: var(--text-muted);">1 produto precisa de reposição</span>
-                  </div>
-                </div>
-                <span class="mockup-badge-danger">1</span>
-              </div>
-            </div>
-
-            <!-- Breakdown de Pagamentos -->
-            <div style="background: var(--bg-surface-1); border: 1px solid var(--border-card); border-radius: 10px; padding: 10px; display: flex; flex-direction: column; gap: 8px;">
-              <div style="display: flex; justify-content: space-between; font-size: 10.5px; font-weight: 800; color: #fff;">
-                <span>💳 Vendas por Pagamento</span>
-              </div>
-
-              <!-- PIX -->
-              <div>
-                <div style="display: flex; justify-content: space-between; font-size: 10px; font-weight: 700; margin-bottom: 3px;">
-                  <span>⚡ PIX</span>
-                  <span style="font-family: 'JetBrains Mono'; color: #fff;">R$ 2.450,00 <small style="color: var(--text-dim);">(50%)</small></span>
-                </div>
-                <div class="mockup-progress-track">
-                  <div class="mockup-progress-bar" style="width: 50%; background: linear-gradient(90deg, #06b6d4, #38bdf8);"></div>
-                </div>
-              </div>
-
-              <!-- Dinheiro -->
-              <div>
-                <div style="display: flex; justify-content: space-between; font-size: 10px; font-weight: 700; margin-bottom: 3px;">
-                  <span>💵 Dinheiro</span>
-                  <span style="font-family: 'JetBrains Mono'; color: #fff;">R$ 1.250,00 <small style="color: var(--text-dim);">(26%)</small></span>
-                </div>
-                <div class="mockup-progress-track">
-                  <div class="mockup-progress-bar" style="width: 26%; background: linear-gradient(90deg, #059669, #10b981);"></div>
-                </div>
-              </div>
-
-              <!-- Cartão Crédito -->
-              <div>
-                <div style="display: flex; justify-content: space-between; font-size: 10px; font-weight: 700; margin-bottom: 3px;">
-                  <span>💳 Cartão Crédito</span>
-                  <span style="font-family: 'JetBrains Mono'; color: #fff;">R$ 910,00 <small style="color: var(--text-dim);">(18%)</small></span>
-                </div>
-                <div class="mockup-progress-track">
-                  <div class="mockup-progress-bar" style="width: 18%; background: linear-gradient(90deg, #6366f1, #a855f7);"></div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Venda Recente -->
-            <div style="background: var(--bg-surface-1); border: 1px solid var(--border-card); border-radius: 10px; padding: 9px 10px;">
-              <div style="display: flex; justify-content: space-between; align-items: center;">
-                <strong style="font-size: 10.5px; color: #fff;">Venda #01042</strong>
-                <span style="font-size: 11px; font-weight: 800; font-family: 'JetBrains Mono'; color: var(--accent-green);">R$ 17,98</span>
-              </div>
-              <div style="display: flex; justify-content: space-between; font-size: 9px; color: var(--text-muted); margin-top: 4px;">
-                <span>👤 Caixa 01 • 📦 2 itens</span>
-                <span>🕒 10:14 • <span class="mockup-badge-pix">PIX</span></span>
-              </div>
-            </div>
-
-            <!-- Bottom Tabbar do Mockup com Aba Resumo Ativa -->
-            <div class="mockup-tabbar">
-              <div class="mockup-tab-item active">
-                <span style="font-size: 12px;">📊</span>
-                <span>Resumo</span>
-              </div>
-              <div class="mockup-tab-item">
-                <span style="font-size: 12px;">📦</span>
-                <span>Estoque</span>
-              </div>
-              <div class="mockup-tab-item">
-                <span style="font-size: 12px;">💸</span>
-                <span>Financeiro</span>
-              </div>
-              <div class="mockup-tab-item">
-                <span style="font-size: 12px;">🛡️</span>
-                <span>Auditoria</span>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ========================================================
-       SEÇÃO: TABELA COMPARATIVA
-       ======================================================== -->
-  <section class="section-padding" id="comparativo">
-    <div class="container">
-      
-      <div class="section-header">
-        <span class="section-tag">Por Que Escolher o FlowPDV?</span>
-        <h2 class="section-title">Chega de sistemas pesados, lentos e que cobram por tudo</h2>
-        <p class="section-subtitle">Compare e veja por que milhares de comerciantes estão migrando para o FlowPDV.</p>
-      </div>
-
-      <div class="mobile-table-hint">
-        <span>👈 Deslize a tabela para comparar todos os recursos 👉</span>
-      </div>
-
-      <div class="comparison-table-card">
-        <table class="comparison-table">
-          <thead>
-            <tr>
-              <th style="width: 40%;">Recursos & Benefícios</th>
-              <th class="flow-col" style="width: 30%;">🚀 FlowPDV</th>
-              <th style="width: 30%;">❌ Outros Sistemas</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Velocidade no Caixa</strong></td>
-              <td class="flow-col">⚡ 0ms (Instantâneo)</td>
-              <td>Lento / Trava com internet fraca</td>
-            </tr>
-            <tr>
-              <td><strong>Funciona 100% Sem Internet?</strong></td>
-              <td class="flow-col">✅ Sim, tecnologia Local-First</td>
-              <td>❌ Não, se cair o sinal você não vende</td>
-            </tr>
-            <tr>
-              <td><strong>Flow Gestor no Celular Incluso?</strong></td>
-              <td class="flow-col">✅ Sim, sem custo adicional</td>
-              <td>❌ Cobram mensalidade extra ou não têm</td>
-            </tr>
-            <tr>
-              <td><strong>Caderneta / Fiado com Cobrança WhatsApp</strong></td>
-              <td class="flow-col">✅ Sim, com 1 clique</td>
-              <td>❌ Caderneta de papel ou manual</td>
-            </tr>
-            <tr>
-              <td><strong>Curva ABC Matemática de Lucro</strong></td>
-              <td class="flow-col">✅ Sim, automática (80/15/5)</td>
-              <td>❌ Relatórios confusos e estáticos</td>
-            </tr>
-            <tr>
-              <td><strong>Backup Automático em Nuvem</strong></td>
-              <td class="flow-col">✅ Sim, diário e seguro</td>
-              <td>❌ Risco de perder tudo se o HD queimar</td>
-            </tr>
-            <tr>
-              <td><strong>Facilidade de Uso</strong></td>
-              <td class="flow-col">✅ Simples: qualquer pessoa aprende em 5 min</td>
-              <td>❌ Telas complexas e cheias de menus</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ========================================================
-       SEÇÃO: PLANOS & PREÇOS TRANSPARENTES
-       ======================================================== -->
-  <section class="section-padding" id="precos">
-    <div class="container">
-      
-      <div class="section-header">
-        <span class="section-tag">Investimento Acessível</span>
-        <h2 class="section-title">Escolha o plano ideal para o seu estabelecimento</h2>
-        <p class="section-subtitle">Sem taxa de adesão, sem taxa de cancelamento e com suporte humanizado via WhatsApp.</p>
-      </div>
-
-      <div class="pricing-grid">
-        
-        <!-- Plano Mensal -->
-        <div class="pricing-card">
-          <h3 class="pricing-name">Plano Mensal</h3>
-          <p style="font-size: 13px; color: var(--text-dim);">Ideal para quem quer flexibilidade total sem fidelidade.</p>
-          
-          <div class="pricing-price-box">
-            <span class="pricing-currency">R$</span>
-            <span class="pricing-value">89</span>
-            <span class="pricing-period">/mês</span>
-          </div>
-
-          <a href="https://wa.me/5519989632127?text=Ol%C3%A1%20Douglas!%20Quero%20assinar%20o%20Plano%20Mensal%20do%20FlowPDV." target="_blank" class="btn-pricing-cta outline">
-            Assinar Mensal
-          </a>
-
-          <ul class="pricing-features-list">
-            <li class="pricing-feature-item"><span>✓</span> Frente de Caixa PDV Completa</li>
-            <li class="pricing-feature-item"><span>✓</span> Controle de Estoque & Reposição</li>
-            <li class="pricing-feature-item"><span>✓</span> Caderneta de Fiado com WhatsApp</li>
-            <li class="pricing-feature-item"><span>✓</span> Flow Gestor Mobile Incluso</li>
-            <li class="pricing-feature-item"><span>✓</span> Backup Automático em Nuvem</li>
-            <li class="pricing-feature-item"><span>✓</span> Suporte Técnico por WhatsApp</li>
-          </ul>
-        </div>
-
-        <!-- Plano Anual (Destaque) -->
-        <div class="pricing-card featured">
-          <span class="pricing-badge-popular">⭐ O Mais Escolhido</span>
-          <h3 class="pricing-name">Plano Anual</h3>
-          <p style="font-size: 13px; color: var(--text-muted);">Economia máxima com 2 meses grátis de desconto.</p>
-          
-          <div class="pricing-price-box">
-            <span class="pricing-currency">R$</span>
-            <span class="pricing-value">69</span>
-            <span class="pricing-period">/mês (no plano anual)</span>
-          </div>
-
-          <a href="https://wa.me/5519989632127?text=Ol%C3%A1%20Douglas!%20Quero%20a%20promo%C3%A7%C3%A3o%20do%20Plano%20Anual%20do%20FlowPDV." target="_blank" class="btn-pricing-cta primary">
-            ⚡ Aproveitar Oferta Anual
-          </a>
-
-          <ul class="pricing-features-list">
-            <li class="pricing-feature-item"><span>✓</span> <strong>Tudo do Plano Mensal</strong></li>
-            <li class="pricing-feature-item"><span>✓</span> Curva ABC & Gestão de Lucro VIP</li>
-            <li class="pricing-feature-item"><span>✓</span> Suporte Prioritário no WhatsApp</li>
-            <li class="pricing-feature-item"><span>✓</span> Importação Grátis da sua Planilha</li>
-            <li class="pricing-feature-item"><span>✓</span> Atualizações Novas Gratuitas</li>
-            <li class="pricing-feature-item"><span>✓</span> Garantia Incondicional de 7 Dias</li>
-          </ul>
-        </div>
-
-        <!-- Plano Semestral -->
-        <div class="pricing-card">
-          <h3 class="pricing-name">Plano Semestral</h3>
-          <p style="font-size: 13px; color: var(--text-dim);">Equilíbrio perfeito entre economia e curto prazo.</p>
-          
-          <div class="pricing-price-box">
-            <span class="pricing-currency">R$</span>
-            <span class="pricing-value">79</span>
-            <span class="pricing-period">/mês</span>
-          </div>
-
-          <a href="https://wa.me/5519989632127?text=Ol%C3%A1%20Douglas!%20Quero%20assinar%20o%20Plano%20Semestral%20do%20FlowPDV." target="_blank" class="btn-pricing-cta outline">
-            Assinar Semestral
-          </a>
-
-          <ul class="pricing-features-list">
-            <li class="pricing-feature-item"><span>✓</span> Frente de Caixa PDV Completa</li>
-            <li class="pricing-feature-item"><span>✓</span> Controle de Estoque & Reposição</li>
-            <li class="pricing-feature-item"><span>✓</span> Caderneta de Fiado com WhatsApp</li>
-            <li class="pricing-feature-item"><span>✓</span> Flow Gestor Mobile Incluso</li>
-            <li class="pricing-feature-item"><span>✓</span> Backup Automático em Nuvem</li>
-            <li class="pricing-feature-item"><span>✓</span> Suporte Técnico por WhatsApp</li>
-          </ul>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ========================================================
-       SEÇÃO: PERGUNTAS FREQUENTES (FAQ)
-       ======================================================== -->
-  <section class="section-padding" id="faq">
-    <div class="container">
-      
-      <div class="section-header">
-        <span class="section-tag">Tire Suas Dúvidas</span>
-        <h2 class="section-title">Perguntas Frequentes</h2>
-      </div>
-
-      <div class="faq-list">
-        
-        <div class="faq-item active">
-          <button type="button" class="faq-question" onclick="SiteApp.toggleFaq(this)">
-            <span>O sistema funciona mesmo sem internet?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <strong>Sim! 100%!</strong> O FlowPDV foi arquitetado no modelo <em>Local-First</em>. Você pode passar compras, bipar código de barras, calcular troco e imprimir cupons normalmente mesmo que a internet caia. Quando a conexão voltar, ele sincroniza os backups silenciosamente em segundo plano.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button type="button" class="faq-question" onclick="SiteApp.toggleFaq(this)">
-            <span>Funciona com a minha impressora térmica e leitor de código de barras?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <strong>Sim!</strong> O sistema é compatível com qualquer impressora térmica do mercado (58mm e 80mm como Elgin, Bematech, Daruma, Epson, POS-58/80) e com qualquer leitor de código de barras USB ou sem fio.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button type="button" class="faq-question" onclick="SiteApp.toggleFaq(this)">
-            <span>Como o gestor acessa o aplicativo pelo celular?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            Basta acessar o link <code>cliente.flowpdv.com.br</code> pelo navegador do celular (Safari no iPhone ou Chrome no Android) e digitar a Chave da Licença e seu PIN. Você pode adicionar um ícone na tela inicial do celular como um aplicativo nativo (PWA).
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button type="button" class="faq-question" onclick="SiteApp.toggleFaq(this)">
-            <span>Consigo importar meus produtos de uma planilha Excel?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <strong>Sim!</strong> O FlowPDV possui um importador em massa inteligente. Você baixa nosso modelo de planilha em Excel (.xlsx), preenche seus produtos e sobe centenas ou milhares de itens de uma só vez em menos de 2 segundos.
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button type="button" class="faq-question" onclick="SiteApp.toggleFaq(this)">
-            <span>Em quais computadores o FlowPDV pode ser instalado?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            Em qualquer computador ou notebook com <strong>Windows 10 ou Windows 11</strong> (64 bits). Não exige placa de vídeo nem computadores caros para rodar suavemente.
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ========================================================
-       BANNER FINAL DE CONVERSÃO NO WHATSAPP
-       ======================================================== -->
-  <section class="container">
-    <div class="final-cta-card">
-      <h2 style="font-size: 36px; font-weight: 900; color: #fff; margin-bottom: 16px;">
-        Pronto para transformar a gestão da sua loja?
-      </h2>
-      <p style="font-size: 17.5px; color: var(--text-muted); max-width: 650px; margin: 0 auto 30px auto;">
-        Fale agora mesmo com Douglas Batista e receba o instalador completo para testar no seu computador sem compromisso.
-      </p>
-      <a href="https://wa.me/5519989632127?text=Ol%C3%A1%20Douglas!%20Quero%20come%C3%A7ar%20a%20usar%20o%20FlowPDV%20na%20minha%20loja%20hoje." target="_blank" class="btn-hero-main" style="display: inline-flex;">
-        <span>💬 Chamar no WhatsApp (19) 98963-2127</span>
-        <span>➔</span>
-      </a>
-    </div>
-  </section>
-
-  <!-- ========================================================
-       RODAPÉ OFICIAL
-       ======================================================== -->
-  <footer class="footer">
-    <div class="container footer-content">
-      <div style="display: flex; align-items: center; gap: 10px;">
-        <img src="assets/logos/FlowPDV-icone-escuro.png" alt="Logo" style="width: 28px; height: 28px; object-fit: contain;">
-        <span style="font-weight: 800; color: #fff;">FlowPDV © 2026</span>
-        <span>— Todos os direitos reservados.</span>
-      </div>
-
-      <div style="display: flex; align-items: center; gap: 16px; font-size: 13px;">
-        <a href="mailto:contato@flowpdv.com.br" style="color: #94a3b8; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: color 0.2s;" onmouseover="this.style.color='#ffffff'" onmouseout="this.style.color='#94a3b8'">
-          <span>✉️</span> contato@flowpdv.com.br
-        </a>
-        <a href="https://wa.me/5519989632127" target="_blank" style="color: #10b981; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center; gap: 6px;">
-          <span>💬</span> (19) 98963-2127
-        </a>
-      </div>
-
-      <ul class="footer-links">
-        <li><a href="javascript:void(0)" class="footer-link" onclick="SiteApp.rolarPara('inicio', event)">Início</a></li>
-        <li><a href="javascript:void(0)" class="footer-link" onclick="SiteApp.rolarPara('recursos', event)">Recursos</a></li>
-        <li><a href="javascript:void(0)" class="footer-link" onclick="SiteApp.rolarPara('gestao-mobile', event)">Gestão Mobile</a></li>
-        <li><a href="javascript:void(0)" class="footer-link" onclick="SiteApp.rolarPara('precos', event)">Preços</a></li>
-        <li><a href="https://cliente.flowpdv.com.br" target="_blank" class="footer-link">Área do Cliente</a></li>
-      </ul>
-    </div>
-  </footer>
-
-  <!-- SCRIPT JS INTERATIVO -->
-  <script>
-    window.SiteApp = {
-      init() {
-        this.carregarVersaoOficial();
-      },
-
-      async carregarVersaoOficial() {
-        try {
-          const res = await fetch('https://api.github.com/repos/DouglasNico/flowpdv/releases/latest');
-          if (res.ok) {
-            const data = await res.json();
-            if (data && data.tag_name) {
-              const tag = data.tag_name.startsWith('v') ? data.tag_name : `v${data.tag_name}`;
-              const badge = document.getElementById('hero-version-badge');
-              if (badge) badge.textContent = `🚀 Versão ${tag} Oficial`;
-            }
-          }
-        } catch(e) {}
-      },
-
-      screenshots: {
-        'pdv': {
-          src: 'assets/screenshot-pdv.png',
-          title: 'FlowPDV — Frente de Caixa [F1]'
-        },
-        'curva-abc': {
-          src: 'assets/screenshot-curva-abc.png',
-          title: 'FlowPDV — Curva ABC & Rentabilidade'
-        },
-        'estoque': {
-          src: 'assets/screenshot-estoque.png',
-          title: 'FlowPDV — Produtos & Controle de Estoque'
-        },
-        'auditoria': {
-          src: 'assets/screenshot-auditoria.png',
-          title: 'FlowPDV — Central do Dono & Auditoria'
-        }
-      },
-
-      toggleMenuMobile() {
-        const drawer = document.getElementById('mobile-nav-drawer');
-        const overlay = document.getElementById('mobile-nav-overlay');
-        const btn = document.getElementById('btn-menu-mobile');
-        if (drawer && overlay) {
-          const isOpen = drawer.classList.contains('active');
-          if (isOpen) {
-            drawer.classList.remove('active');
-            overlay.classList.remove('active');
-            if (btn) btn.classList.remove('active');
-          } else {
-            drawer.classList.add('active');
-            overlay.classList.add('active');
-            if (btn) btn.classList.add('active');
-          }
-        }
-      },
-
-      fecharMenuMobile() {
-        const drawer = document.getElementById('mobile-nav-drawer');
-        const overlay = document.getElementById('mobile-nav-overlay');
-        const btn = document.getElementById('btn-menu-mobile');
-        if (drawer) drawer.classList.remove('active');
-        if (overlay) overlay.classList.remove('active');
-        if (btn) btn.classList.remove('active');
-      },
-
-      rolarPara(sectionId, event) {
-        if (event) {
-          event.preventDefault();
-        }
-        this.fecharMenuMobile();
-
-        if (sectionId === 'inicio') {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-          return;
-        }
-
-        const el = document.getElementById(sectionId);
-        if (!el) return;
-
-        // Procura o cabeçalho interno da seção para parar rente ao título sem espaço vazio
-        const target = el.querySelector('.section-header') || el.querySelector('.section-title') || el;
-        const navHeight = window.innerWidth <= 768 ? 64 : 72;
-        const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - (navHeight + 16);
-
-        window.scrollTo({
-          top: Math.max(0, targetPosition),
-          behavior: 'smooth'
-        });
-      },
-
-      trocarScreenshot(tipo, btnClicado) {
-        const item = this.screenshots[tipo];
-        if (!item) return;
-
-        const img = document.getElementById('showcase-main-img');
-        const title = document.getElementById('showcase-window-title');
-
-        if (img) {
-          img.style.opacity = '0.2';
-          setTimeout(() => {
-            img.src = item.src;
-            img.style.opacity = '1';
-          }, 120);
-        }
-
-        if (title) title.textContent = item.title;
-
-        document.querySelectorAll('.showcase-tab-btn').forEach(b => b.classList.remove('active'));
-        if (btnClicado) {
-          btnClicado.classList.add('active');
-        }
-      },
-
-      toggleFaq(btn) {
-        const item = btn.closest('.faq-item');
-        if (!item) return;
-
-        const isCurrentlyActive = item.classList.contains('active');
-        document.querySelectorAll('.faq-item').forEach(f => f.classList.remove('active'));
-
-        if (!isCurrentlyActive) {
-          item.classList.add('active');
-        }
-      }
-    };
-
-    document.addEventListener('DOMContentLoaded', () => SiteApp.init());
-  </script>
+    <section class="contact-band"><div class="shell"><div class="section-label">VAMOS CONVERSAR SOBRE A SUA LOJA?</div><div class="contact-row"><h2>Deixe o comércio<br><em>fluir.</em></h2><div><p>Conheça o FlowPDV em uma demonstração<br>pensada para a sua operação.</p><a class="button dark" data-contact="Olá! Quero agendar uma demonstração do FlowPDV para minha loja." href="https://wa.me/5519989632127">Agendar uma conversa <span aria-hidden="true">↗</span></a></div></div></div></section>
+  </main>
+  <footer class="footer shell"><div class="footer-top"><a class="brand" href="#inicio"><img src="assets/logos/FlowPDV-horizontal-claro.png" width="158" height="42" alt="FlowPDV"></a><p>Tecnologia que acompanha<br>quem faz o comércio acontecer.</p><div><a href="https://cliente.flowpdv.com.br/">Área do cliente ↗</a><a href="https://wa.me/5519989632127">(19) 98963-2127 ↗</a></div></div><div class="footer-bottom"><span>© <span id="year">2026</span> FlowPDV. Todos os direitos reservados.</span><a href="https://www.batistadev.com.br/" target="_blank" rel="noopener noreferrer">Desenvolvido por batistadev ↗</a></div></footer>
+  <dialog id="screen-dialog" aria-labelledby="dialog-title"><div class="dialog-toolbar"><h2 id="dialog-title">FlowPDV</h2><button id="close-dialog" aria-label="Fechar imagem">Fechar ×</button></div><img id="dialog-image" alt="" width="1440" height="900"></dialog>
 </body>
 </html>
