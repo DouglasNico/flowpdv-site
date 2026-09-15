@@ -23,7 +23,7 @@
   const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');
   const header = document.querySelector('.header');
   function headerOffset() {
-    return Math.ceil((header ? header.getBoundingClientRect().height : 90) + 18);
+    return Math.ceil(header ? header.getBoundingClientRect().height : 90);
   }
   function syncScrollPadding() {
     document.documentElement.style.setProperty('--nav-h', headerOffset() + 'px');
@@ -35,7 +35,9 @@
     }
     const el = document.getElementById(id);
     if (!el) return;
-    const y = el.getBoundingClientRect().top + window.scrollY - headerOffset();
+    const pad = parseFloat(getComputedStyle(el).paddingTop) || 0;
+    const air = 16;
+    const y = el.getBoundingClientRect().top + window.scrollY - headerOffset() + Math.max(0, pad - air);
     window.scrollTo({ top: Math.max(0, y), behavior: reduceMotion.matches ? 'auto' : 'smooth' });
   }
   document.addEventListener('click', (event) => {
