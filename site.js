@@ -16,7 +16,7 @@
   navigation.querySelectorAll('a').forEach(a => a.addEventListener('click',closeMenu));
   document.addEventListener('keydown',event => { if(event.key === 'Escape') closeMenu(); });
   document.addEventListener('click',event => { if(!event.target.closest('.header')) closeMenu(); });
-  matchMedia('(min-width:681px)').addEventListener('change',event => { if(event.matches) closeMenu(); });
+  matchMedia('(min-width:1101px)').addEventListener('change',event => { if(event.matches) closeMenu(); });
   document.querySelectorAll('[data-contact]').forEach(link => { link.href = 'https://wa.me/5519989632127?text=' + encodeURIComponent(link.dataset.contact); link.target = '_blank'; link.rel = 'noopener noreferrer'; });
   document.querySelector('#year').textContent = new Date().getFullYear();
   const tabs = [...document.querySelectorAll('[role=tab]')];
