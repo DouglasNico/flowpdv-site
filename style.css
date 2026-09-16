@@ -62,8 +62,8 @@ dialog img{max-height:calc(94dvh - 70px);object-fit:contain;display:block}
 .carousel-stage{position:relative;isolation:isolate;padding:12px 12% 28px;margin-top:0;overflow:visible;background:radial-gradient(ellipse at 50% 70%,#41674c55,transparent 68%)}
 .carousel-stage .screen-panel{position:relative;z-index:2;margin:0;border:1px solid #91a58e;border-radius:12px;box-shadow:0 28px 45px -23px #000b}
 .carousel-stage .screen-top{padding:14px 18px;background:#f2f4ee}
-.carousel-stage .gallery-image{touch-action:pan-y pinch-zoom;background:#eef1eb;cursor:zoom-in}
-.carousel-stage .gallery-image img{user-select:none;aspect-ratio:16/9;max-height:600px;object-fit:contain}
+.carousel-stage .gallery-image{display:flex;justify-content:center;align-items:center;touch-action:pan-y pinch-zoom;background:#eef1eb;cursor:zoom-in}
+.carousel-stage .gallery-image img{user-select:none;width:auto;max-width:100%;height:auto;aspect-ratio:16/9;max-height:min(600px,62dvh);object-fit:contain;object-position:center top}
 .carousel-peek{position:absolute;top:18%;width:18%;height:62%;padding:0;border:1px solid #9eaf9450;border-radius:12px;overflow:hidden;background:#dbe3d5;opacity:.5;transition:opacity .3s,transform .4s;box-shadow:0 14px 28px #0005}
 .carousel-peek img{width:100%;height:100%;object-fit:cover;object-position:center;filter:saturate(.6)}
 .carousel-peek span{position:absolute;top:50%;font-size:22px;background:#183529dd;color:white;border:1px solid #ffffff60;border-radius:50%;width:36px;height:36px;display:grid;place-items:center}
@@ -251,4 +251,24 @@ dialog img{max-height:calc(94dvh - 70px);object-fit:contain;display:block}
   .dialog-actions{gap:6px}
   .dialog-bottom{padding:8px max(12px,env(safe-area-inset-right)) calc(10px + env(safe-area-inset-bottom)) max(12px,env(safe-area-inset-left))}
   #dialog-hint{font-size:11px}
+}
+
+/* Notebook / 125% / 150%: o carrossel encolhe com a altura da janela. Monitor grande permanece 600px. */
+@media (max-height: 920px) and (min-width: 681px) {
+  .showcase { padding: 22px 0 32px; }
+  .showcase-heading { margin-bottom: 6px; gap: 20px; }
+  .showcase-heading h2 { font-size: clamp(30px, 3.2vw, 48px); }
+  .carousel-stage { padding: 6px 10% 12px; }
+  .carousel-stage .screen-top { padding: 10px 14px; }
+  .carousel-stage .gallery-image img { max-height: min(520px, 62dvh); }
+  .carousel-footer { margin-bottom: 12px; }
+  .showcase .screen-tabs { padding-bottom: 12px; gap: 10px; }
+  .thumb-image { aspect-ratio: 16 / 9; }
+  .thumb-label { padding: 7px 2px 0; }
+}
+@media (max-height: 780px) and (min-width: 681px) {
+  .carousel-stage .gallery-image img { max-height: min(440px, 58dvh); }
+  .carousel-peek { height: 54%; top: 22%; }
+  .showcase .screen-tabs { gap: 8px; }
+  .thumb-label { font-size: 10px; padding: 5px 2px 0; }
 }
