@@ -60,3 +60,12 @@ A landing page oficial do **FlowPDV** foi desenvolvida em **HTML5 Semântico, CS
 
 ## 23/09/2026 — Reconstrucao visual e publicacao autorizada
 Nova camada reconstruction.css (Master em css/) com identidade clara, navegacao, superficies, formularios e responsividade. IDs e integracoes preservados. PRODUCT.md, DESIGN.md e .impeccable/design.json registram sistema. Usuario autorizou publicar todos os sites nesta noite, testes completos/otimizacao ficam para amanha. Previews locais sinteticas nao sao dados reais nem homologacao funcional. Publicacao e URLs devem ser confirmadas no registro final.
+
+## 23/09/2026 — Hero com cena de balcão e tela real
+- Pedido: substituir a abertura com aparência genérica; direção delegada pelo usuário ("segue o melhor").
+- index.html: hero assimétrica, texto direto, CTA de demonstração e legenda que identifica o ambiente ilustrativo. A captura existente do PDV abre no diálogo de ampliação.
+- hero-counter.css: estilos restritos à hero, composição em duas colunas no desktop e empilhamento no celular; demais seções preservadas.
+- assets/hero-balcao-v2.jpg: cena ilustrativa, JPEG de 200.458 bytes. Prompt e procedência em assets/hero-balcao-v2.provenance.md. Higgsfield recusou geração por exigir plano Basic; imagem gerada com ferramenta nativa, sem contratação de plano.
+- DESIGN.md, .impeccable/design.json e .impeccable/surface-brief.md: decisões e tokens atualizados.
+- Verificação local: capturas desktop/celular, imagens decodificadas, ausência de overflow horizontal, abrir/fechar ampliação e sintaxe de site.js. Revisão Impeccable restrita à hero sem correções materiais; não equivale a teste funcional completo do ecossistema.
+- Publicação: envio para main autorizado pela instrução persistente do usuário; confirmação HTTPS será registrada no acompanhamento central após implantação.

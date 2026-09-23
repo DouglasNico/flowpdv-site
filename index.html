@@ -31,6 +31,7 @@
   <link rel="stylesheet" href="style.css?v=20260916d">
   <script src="site.js?v=20260916d" defer></script>
   <link rel="stylesheet" href="reconstruction.css?v=20260923">
+  <link rel="stylesheet" href="hero-counter.css?v=20260924">
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
@@ -46,20 +47,26 @@
     </div>
   </header>
   <main id="conteudo">
-    <section class="hero shell" id="inicio">
+    <section class="hero shell hero-counter" id="inicio" aria-labelledby="hero-title">
       <div class="hero-copy">
-        
-        <h1>Seu comércio.<br>No seu <em>ritmo.</em></h1>
-        <p class="hero-description">Do primeiro cliente ao último fechamento.<br class="desktop-break"> Um sistema que conecta o caixa, o estoque e as decisões da sua loja.</p>
-        <div class="hero-actions"><a class="button orange" data-contact="Quero ver uma demonstração do FlowPDV." href="https://wa.me/5519989632127">Conhecer o FlowPDV <svg class="arrow-out" viewBox="0 0 16 16" aria-hidden="true"><path d="M4.8 11.2 11.2 4.8M6.2 4.8h5v5" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"/></svg></a><a class="text-link" href="#sistema">Ver o sistema em ação <svg class="arrow-down" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3.2v9.2M4.6 9.2 8 12.6l3.4-3.4" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-        <p class="hero-note"><span aria-hidden="true">✓</span> Atendimento direto. Implantação acompanhada.</p>
+        <h1 id="hero-title">Seu caixa pronto para o próximo cliente.</h1>
+        <p class="hero-description">Venda, acompanhe o estoque e feche o caixa no mesmo sistema. E continue de olho na loja pelo celular.</p>
+        <div class="hero-actions">
+          <a class="button orange" data-contact="Quero ver uma demonstração do FlowPDV para minha loja." href="https://wa.me/5519989632127">Ver uma demonstração <svg class="arrow-out" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 12 12 4M5 4h7v7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a class="text-link" href="#sistema">Explorar as telas</a>
+        </div>
+        <p class="hero-note">Atendimento direto. Implantação acompanhada.</p>
       </div>
-      <div class="hero-product">
-        <div class="product-label"><span id="hero-label">01 / FRENTE DE CAIXA</span><span>Feito para o seu dia a dia</span></div>
-        <button class="hero-screen screenshot-open" data-screen="pdv" aria-label="Ampliar a tela da frente de caixa"><span class="hero-fade"><img class="hero-slide is-active" src="assets/screenshot-pdv.png" width="1440" height="900" alt="Frente de caixa do FlowPDV: produtos, carrinho e fechamento da venda" fetchpriority="high"><img class="hero-slide" src="assets/screenshot-estoque.png" width="1440" height="900" alt="" aria-hidden="true"></span><span class="expand-tag" aria-hidden="true">Explorar a tela <svg class="arrow-out" viewBox="0 0 16 16"><path d="M4.8 11.2 11.2 4.8M6.2 4.8h5v5" fill="none" stroke="currentColor" stroke-width="1.55" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-        <div class="product-foot"><span class="status-dot"></span><span>O movimento do balcão.<br><strong>A clareza na gestão.</strong></span><span class="product-index" aria-hidden="true">F.</span></div>
-      </div>
-      <div class="hero-bottom"><span>UM SISTEMA. TODA A OPERAÇÃO.</span><div><span>Caixa</span><i>/</i><span>Estoque</span><i>/</i><span>Financeiro</span><i>/</i><span>Gestão</span></div></div>
+      <figure class="hero-counter-visual">
+        <div class="counter-scene">
+          <img class="counter-photo" src="assets/hero-balcao-v2.jpg" width="1584" height="992" alt="Ambiente ilustrativo de um balcão de comércio com terminal, impressora e leitor" fetchpriority="high" decoding="async">
+          <button class="counter-display screenshot-open" data-screen="pdv" aria-label="Ampliar a tela real do FlowPDV">
+            <img src="assets/screenshot-pdv.png" width="1440" height="900" alt="Frente de caixa real do FlowPDV" decoding="async">
+          </button>
+        </div>
+        <figcaption><span>O FlowPDV no balcão da sua loja.</span><small>Ambiente ilustrativo · tela real do sistema</small></figcaption>
+      </figure>
+      <div class="counter-capabilities" aria-label="Recursos do sistema"><span>Frente de caixa</span><span>Controle de estoque</span><span>Fechamento de caixa</span><span>Gestão pelo celular</span></div>
     </section>
 
     <section class="intro shell" id="recursos">

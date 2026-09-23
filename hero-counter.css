@@ -1,0 +1,24 @@
+/* Scoped hero: product on a real-world counter. Rest of the site retains its layout. */
+.hero.hero-counter{display:grid;grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);align-items:center;gap:36px 56px;padding-top:68px;text-align:left}
+.hero-counter .hero-copy{width:auto;max-width:460px;margin:0;padding:0 0 12px}
+.hero-counter h1{font-size:clamp(38px,4.2vw,62px);font-family:'DM Sans',sans-serif;line-height:1.06;font-weight:600;letter-spacing:-.035em;text-wrap:balance;margin:0 0 26px;max-width:440px}
+.hero-counter .hero-description{font-size:16px;line-height:1.8;color:#60665f;margin:0;max-width:38ch}
+.hero-counter .hero-actions{display:flex;align-items:center;justify-content:flex-start;flex-wrap:wrap;gap:16px 22px;margin:28px 0 17px}
+.hero-counter .hero-actions .button{font-size:14px;min-height:52px;padding:16px 20px}
+.hero-counter .hero-actions .text-link{font-size:13px;white-space:nowrap}
+.hero-counter .hero-note{font-size:11px;margin:0;color:#60665f;line-height:1.7}
+.hero-counter-visual{min-width:0;width:100%;margin:0}
+.counter-scene{position:relative;border-radius:12px;overflow:hidden;background:#e3d3bd;isolation:isolate}
+.counter-photo{display:block;width:100%;height:auto;aspect-ratio:1584/992}
+.counter-display{position:absolute;left:30.3%;top:19.96%;width:48.55%;height:43.54%;min-height:0;padding:0;border:0;background:#f5f6f7;cursor:zoom-in;overflow:hidden;clip-path:polygon(.5% 0,98.1% 0,100% 100%,0 100%)}
+.counter-display img{display:block;width:100%;height:100%;max-width:none;object-fit:contain;object-position:center}
+.counter-display:focus-visible{outline:none;box-shadow:inset 0 0 0 4px #b94b1b}
+.counter-display:focus-visible img{opacity:.8}
+.hero-counter-visual figcaption{display:flex;justify-content:space-between;gap:10px;align-items:baseline;padding-top:14px;color:#454f3f;font-size:11px;line-height:1.6}
+.hero-counter-visual figcaption small{font-size:10px;color:#66705e}
+.counter-capabilities{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:25px 0;border-bottom:1px solid #dedfd6;color:#60665f;font-size:12px}
+.counter-capabilities span{white-space:nowrap}
+@media(min-width:1500px){.hero.hero-counter{padding-top:82px;gap:42px 66px}.hero-counter h1{font-size:64px}}
+@media(max-width:1000px){.hero.hero-counter{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:30px;padding-top:46px}.hero-counter h1{font-size:43px}.hero-counter .hero-description{font-size:14px}.hero-counter-visual figcaption{display:block}.hero-counter-visual figcaption small{display:block;margin-top:2px}}
+@media(max-width:700px){.hero.hero-counter{grid-template-columns:1fr;gap:26px;padding-top:36px}.hero-counter .hero-copy{max-width:100%;padding:0}.hero-counter h1{font-size:clamp(37px,10vw,48px);max-width:440px;line-height:1.08;margin-bottom:18px;text-wrap:pretty}.hero-counter .hero-description{max-width:40ch;font-size:15px;line-height:1.7}.hero-counter .hero-actions{flex-direction:row;justify-content:flex-start;gap:17px;margin-top:24px}.hero-counter .hero-actions .button{width:auto;font-size:13px;padding:14px 16px}.hero-counter .hero-note{font-size:11px;margin-top:16px}.counter-scene{border-radius:9px}.hero-counter-visual figcaption{font-size:11px}.hero-counter-visual figcaption small{font-size:10px}.counter-capabilities{display:grid;grid-template-columns:1fr 1fr;gap:12px 20px;padding:0 0 24px;font-size:11px}.counter-capabilities span{white-space:normal}}
+@media(prefers-reduced-motion:reduce){.counter-display img{transition:none}}

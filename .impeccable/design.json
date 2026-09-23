@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-23T06:58:34.299Z",
+  "generatedAt": "2026-09-23T12:26:26.8935267Z",
   "title": "Design System: FlowPDV site",
   "extensions": {
     "colorMeta": {
@@ -115,6 +115,34 @@
           "oklch(84% 0.1107 51.1)",
           "oklch(95% 0.1107 51.1)"
         ]
+      },
+      "hero-photo-backdrop": {
+        "role": "neutral",
+        "displayName": "Fundo local da cena de balcão",
+        "tonalRamp": [
+          "oklch(15% 0.035 76)",
+          "oklch(26% 0.035 76)",
+          "oklch(38% 0.035 76)",
+          "oklch(49% 0.035 76)",
+          "oklch(61% 0.035 76)",
+          "oklch(72% 0.035 76)",
+          "oklch(84% 0.035 76)",
+          "oklch(95% 0.035 76)"
+        ]
+      },
+      "hero-screen-backdrop": {
+        "role": "neutral",
+        "displayName": "Fundo local da captura",
+        "tonalRamp": [
+          "oklch(15% 0.002 248)",
+          "oklch(26% 0.002 248)",
+          "oklch(38% 0.002 248)",
+          "oklch(49% 0.002 248)",
+          "oklch(61% 0.002 248)",
+          "oklch(72% 0.002 248)",
+          "oklch(84% 0.002 248)",
+          "oklch(95% 0.002 248)"
+        ]
       }
     },
     "shadows": [
@@ -153,8 +181,26 @@
       {
         "name": "phone-max",
         "value": "680px"
+      },
+      {
+        "name": "hero-wide-min",
+        "value": "1500px"
+      },
+      {
+        "name": "hero-compact-max",
+        "value": "1000px"
+      },
+      {
+        "name": "hero-stacked-max",
+        "value": "700px"
       }
-    ]
+    ],
+    "typographyMeta": {
+      "display": {
+        "displayName": "Título do hero",
+        "purpose": "Sans-serif alinhada à esquerda; ênfases serifadas das outras seções preservadas."
+      }
+    }
   },
   "components": [
     {
@@ -196,10 +242,10 @@
   ],
   "narrative": {
     "northStar": "Caderno de produto",
-    "overview": "Um caderno editorial de produto: títulos amplos, intervalos generosos e capturas reais demonstram o sistema. Marfim e grafite estruturam a leitura; laranja conecta marca, ênfases e chamadas para demonstração. A expressividade tipográfica convive com informação comercial precisa.",
+    "overview": "Um caderno editorial de produto: títulos amplos, intervalos generosos e capturas reais demonstram o sistema. Marfim e grafite estruturam a leitura; laranja conecta marca, ênfases e chamadas para demonstração. A expressividade tipográfica convive com informação comercial precisa.\n\nPublicação autorizada pelo usuário; atualização do hero em preparação, ainda sem confirmação de publicação. A revisão desta rodada se limita ao hero; testes funcionais completos e revisão ampla permanecem adiados para amanhã.",
     "keyCharacteristics": [
       "Capturas reais do produto como evidência.",
-      "Títulos editoriais com ênfases em serifada.",
+      "Hero em sans-serif; ênfases editoriais em serifada nas demais seções.",
       "Galeria grafite e chamadas laranja."
     ],
     "rules": [
@@ -217,7 +263,7 @@
     "donts": [
       "Don't alterar IDs, autenticação ou regras de negócio para obter um efeito visual.",
       "Don't usar verde como identidade dominante ou adicionar brilho decorativo.",
-      "Don't considerar esta documentação evidência de validação renderizada."
+      "Don't extrapolar a verificação do hero para uma validação completa do site."
     ]
   }
 }
