@@ -1,13 +1,13 @@
 (() => {
   'use strict';
   const screens = {
-    pdv: { title:'Frente de caixa', file:'assets/screenshot-pdv.png', description:'Produtos, carrinho e pagamentos reunidos para facilitar o atendimento.' },
-    estoque: { title:'Estoque', file:'assets/screenshot-estoque.png', description:'Acompanhe o cadastro, os saldos e os produtos que precisam de atenção.' },
-    'curva-abc': { title:'Curva ABC', file:'assets/screenshot-curva-abc.png', description:'Identifique os produtos de maior participação nas vendas da loja.' },
-    financeiro: {title:'Financeiro',file:'assets/screenshot-financeiro.png',description:'Contas, vencimentos e despesas organizados para acompanhar os compromissos da loja.'},
-    comandas: {title:'Mesas e comandas',file:'assets/screenshot-comandas.png',description:'Visualize os atendimentos, o consumo e as mesas disponíveis.'},
-    login: {title:'Acesso por operador',file:'assets/screenshot-login.png',description:'Acesso por perfil para organizar as responsabilidades da equipe.'},
-    auditoria: { title:'Auditoria', file:'assets/screenshot-auditoria.png', description:'Consulte o histórico das operações para conferir a rotina do caixa.' }
+    pdv: { title:'Frente de caixa', file:'assets/screenshot-pdv-20260923.jpg', description:'Produtos, carrinho e pagamentos reunidos para facilitar o atendimento.' },
+    estoque: { title:'Estoque', file:'assets/screenshot-estoque-20260923.jpg', description:'Acompanhe o cadastro, os saldos e os produtos que precisam de atenção.' },
+    'curva-abc': { title:'Curva ABC', file:'assets/screenshot-curva-abc-20260923.jpg', description:'Identifique os produtos de maior participação nas vendas da loja.' },
+    financeiro: {title:'Financeiro',file:'assets/screenshot-financeiro-20260923.jpg',description:'Contas, vencimentos e despesas organizados para acompanhar os compromissos da loja.'},
+    comandas: {title:'Mesas e comandas',file:'assets/screenshot-comandas-20260923.jpg',description:'Visualize os atendimentos, o consumo e as mesas disponíveis.'},
+    login: {title:'Acesso por operador',file:'assets/screenshot-login-20260923.jpg',description:'Acesso por perfil para organizar as responsabilidades da equipe.'},
+    auditoria: { title:'Auditoria', file:'assets/screenshot-auditoria-20260923.jpg', description:'Consulte o histórico das operações para conferir a rotina do caixa.' }
   };
   const menu = document.querySelector('.menu-toggle');
   const navigation = document.querySelector('#navigation');

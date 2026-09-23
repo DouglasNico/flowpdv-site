@@ -1,0 +1,53 @@
+/* Interaction polish and the image viewer share the existing site palette. */
+.navigation .nav-client-link { display: inline-flex; align-items: center; gap: 6px; }
+.nav-client-link .arrow-out { width: 11px; height: 11px; }
+.feature a .arrow-out { width: 14px; height: 14px; margin: 0; flex: none; }
+.phone img { min-height: 0; height: auto; object-fit: contain; }
+.visual-caption { max-width: calc(100% - 32px); text-align: center; line-height: 1.5; letter-spacing: .08em; }
+.button.orange:hover, .button.orange:focus-visible { background: #9f3e15; color: #fff; }
+.button.dark:hover, .button.dark:focus-visible { background: #304031; color: #fff; }
+.faq summary:hover, .faq summary:focus-visible { padding-left: 0; padding-right: 0; }
+.showcase .screen-tabs button:hover { transform: none; }
+.feature a:hover, .footer a:hover, .text-link:hover, .navigation a:hover { text-decoration: underline; text-underline-offset: 4px; }
+.menu-toggle:hover, .dialog-toolbar button:hover, .dialog-navigation button:hover { background: #e9ece2; }
+#dialog-zoom:hover { background: #304031; color: #fff; }
+@media (min-width: 681px) {
+  .feature { display: flex; flex-direction: column; align-items: flex-start; }
+  .feature > svg { flex: none; }
+  .feature a { margin-top: auto; padding-top: 24px; width: 100%; align-items: center; }
+}
+@media (hover: none) {
+  .button:hover { box-shadow: none; }
+  .button.orange:hover { background: #b94b1b; }
+  .button.dark:hover { background: #222923; }
+  .float-btn:hover, .gallery-controls button:hover { transform: none; }
+  .showcase .screen-tabs button:hover img { opacity: .55; }
+  .showcase .screen-tabs button[aria-selected=true] img { opacity: 1; }
+}
+
+.viewer-frame { display: flex; flex-direction: column; flex: 1; min-width: 0; min-height: 0; width: 100%; height: 100%; background: var(--paper); }
+.viewer-frame:fullscreen { width: 100%; height: 100%; max-width: none; max-height: none; }
+#screen-dialog .dialog-toolbar { flex-wrap: wrap; }
+#screen-dialog .dialog-toolbar h2 { flex: 1; min-width: 0; line-height: 1.4; }
+.viewer-tools { display: flex; flex-wrap: wrap; gap: 6px; }
+.viewer-tools [hidden], #viewer-status[hidden] { display: none; }
+#screen-dialog .dialog-toolbar button { min-height: 44px; }
+#viewer-status { text-align: center; font-size: 12px; line-height: 1.5; margin: 6px 0 0; color: var(--ink); }
+.viewer-frame:fullscreen .dialog-toolbar { padding-top: max(8px, env(safe-area-inset-top)); padding-left: max(12px, env(safe-area-inset-left)); padding-right: max(12px, env(safe-area-inset-right)); }
+.viewer-frame:fullscreen .dialog-bottom { padding-bottom: max(8px, env(safe-area-inset-bottom)); }
+@media (max-width: 700px), (pointer: coarse) and (max-width: 1100px), (max-height: 500px) and (max-width: 1100px) {
+  #screen-dialog { width: 100%; max-width: 100%; height: 100dvh; max-height: 100dvh; margin: 0; border: 0; border-radius: 0; }
+  #screen-dialog .dialog-toolbar { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px 12px; padding: max(6px, env(safe-area-inset-top)) max(10px, env(safe-area-inset-right)) 6px max(10px, env(safe-area-inset-left)); }
+  #screen-dialog .dialog-toolbar h2 { font-size: 13px; }
+  #screen-dialog .dialog-actions { grid-column: 2; grid-row: 1; margin: 0; }
+  .viewer-tools { grid-column: 1 / -1; grid-row: 2; }
+  #screen-dialog .viewer-tools button { font-size: 12px; padding: 8px 10px; }
+  .dialog-bottom { padding: 6px max(10px, env(safe-area-inset-right)) max(6px, env(safe-area-inset-bottom)) max(10px, env(safe-area-inset-left)); }
+  #dialog-hint { font-size: 11px; margin-top: 4px; }
+}
+@media (orientation: landscape) and (max-height: 500px) {
+  #screen-dialog .dialog-toolbar { display: flex; flex-wrap: nowrap; }
+  .viewer-tools { flex-wrap: nowrap; }
+  #screen-dialog .dialog-toolbar button { white-space: nowrap; padding-inline: 10px; font-size: 12px; }
+  #dialog-hint { display: none; }
+}

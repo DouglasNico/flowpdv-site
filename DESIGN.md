@@ -122,3 +122,8 @@ A cena de comércio é uma ilustração fotográfica gerada, identificada como t
 Preço tem tipografia fluida e quebra de linha disponível; conteúdo e mensalidade R$ 217,90 são preservados. Galeria no celular dispõe imagem e indicação de ampliação verticalmente. Telefone ilustrativo fica alinhado sem rotação nas larguras pequenas. Botões flutuantes cedem espaço às seções de planos/contato/rodapé e ao menu aberto; o foco por teclado permanece visível.
 
 Verificação: matriz Chromium de 320px a 2560px, tablets nas duas orientações, áreas úteis equivalentes a notebooks HD/FHD com escala 125% e 150%, e mudança de orientação. Simulação não equivale a teste físico de Windows/iOS/Android ou Safari. Evidência central em `../flowpdv-sistema/output/reconstrucao-web-20260923/responsive-*`.
+
+## Galeria e estados — 23/09/2026
+Cabeçalho tem apenas um link Área do cliente dentro da navegação compartilhada. Links dos três recursos terminam na mesma linha quando em colunas. Hover da ação laranja usa #9f3e15 e branco; ações grafite usam #304031. Links recebem sublinhado; FAQ e miniaturas não deslocam ao passar o mouse. Telas novas estão mapeadas em assets/screenshots-20260923.md. Mockup do Gestor usa interface atual com dados ilustrativos identificados.
+
+O visualizador mantém diálogo acessível e uma moldura interna elegível para Fullscreen API. No celular usa a viewport inteira como base e tenta tela cheia nativa a partir do toque. Rotação natural acompanha o aparelho; botão Horizontal tenta lock apenas por ação explícita, com mensagem alternativa se recusado. Ao fechar, libera somente a orientação/tela cheia que o visualizador adquiriu. Não há promessa de acesso à trava de rotação do sistema.

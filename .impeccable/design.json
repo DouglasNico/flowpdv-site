@@ -211,6 +211,14 @@
       "smallPhoneMaxWidth": "360px",
       "preserves": "Brand, copy, product screenshots and R$ 217,90 monthly plan",
       "verification": "Chromium viewport and DPR emulation; physical-device/browser validation remains separate"
+    },
+    "viewer": {
+      "stylesheet": "viewer.css",
+      "module": "viewer-mode.js",
+      "hoverPrimary": "#9f3e15",
+      "hoverDark": "#304031",
+      "mobile": "viewport dialog plus optional native fullscreen",
+      "orientation": "explicit landscape action only; capability-dependent fallback"
     }
   },
   "components": [

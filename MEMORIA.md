@@ -79,3 +79,10 @@ Usuário definiu R$ 217,90 para os valores do plano no site. index.html: mensage
 - site.js: IntersectionObserver recolhe os atalhos flutuantes nas seções com contato direto, evitando sobreposição; foco mantido.
 - DESIGN.md e .impeccable: regras de adaptação documentadas.
 - Verificação: matriz de 16 viewports 320–2560px incluindo HD/FHD 125%/150%, tablet e celular nas duas orientações; confirmação específica da galeria, ações e rotação após correções. Sem overflow de página, cabeçalho sobreposto ou preço cortado nos cenários conferidos. Evidências no output/reconstrucao-web-20260923 do repositório central; não substituem teste físico em dispositivos/Safari.
+
+## 23/09/2026 — Alinhamentos, hovers, capturas e visualizador
+- index.html: um único acesso Área do cliente no cabeçalho, mockup atualizado do Gestor, nova estrutura interna do modal e recursos versionados.
+- viewer.css: links de recursos alinhados, hover laranja com contraste legível, foco sem deslocamento, adaptação de toque e visualizador móvel ocupando a viewport.
+- viewer-mode.js: pedido nativo de tela cheia no toque móvel, controles Tela cheia/Horizontal por capacidade, fallback sem bloqueio e liberação de orientação/tela cheia ao fechar. Não consulta a trava do aparelho nem força giro ao abrir; Horizontal é opção explícita quando a API permite.
+- site.js e assets/screenshot-*-20260923: sete prints fornecidos pelo usuário, selecionados da pasta prints; dados do mockup Gestor são ilustrativos. Mapeamento em assets/screenshots-20260923.md.
+- Validação: seis viewports 320/390/768/844/1280/1920px, sem overflow de conteúdo/preço; acesso do cabeçalho único, links dos recursos com base alinhada nas colunas; sete abas, troca 07→01, zoom e fechar conferidos no navegador. Cinco testes Node passaram (sem suporte, permissão recusada e fechamento durante operações assíncronas). API de orientação recusada no navegador desktop apresentou orientação manual, conforme previsto; aparelho físico/Safari não homologado.

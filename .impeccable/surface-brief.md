@@ -34,3 +34,5 @@ O conteúdo remoto de origin/main foi preservado, incluindo os ajustes da seçã
 
 ## Adaptação solicitada em 23/09/2026
 Usuário pediu alinhamento em telas grandes, médias e pequenas, notebooks 125%/150%, tablet e celular em retrato/paisagem. Mantida a direção visual publicada. Ajustados gutters, cabeçalho/menu rolável, hero em janela baixa, preço estreito, galeria móvel e ações flutuantes. Escalas verificadas por viewport/DPR no Chromium, sem alegar teste físico.
+
+Rodada de revisão solicitada: alinhamentos/hovers, acesso duplicado, Gestor e capturas atuais, visualizador fullscreen móvel. Mantida identidade. Inspeção em seis viewports e controles do carrossel, testes focados de fallback/fechamento. Limitação nativa de orientação explicitada; sem teste físico.
