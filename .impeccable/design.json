@@ -200,6 +200,17 @@
         "displayName": "Título do hero",
         "purpose": "Sans-serif alinhada à esquerda; ênfases serifadas das outras seções preservadas."
       }
+    },
+    "responsiveAdaptation": {
+      "stylesheet": "responsive.css",
+      "maxContentWidth": "1240px",
+      "pageGutter": "clamp(18px, 3vw, 40px)",
+      "menuMaxWidth": "1100px",
+      "compactWindowMaxHeight": "650px",
+      "landscapePhoneMaxHeight": "500px",
+      "smallPhoneMaxWidth": "360px",
+      "preserves": "Brand, copy, product screenshots and R$ 217,90 monthly plan",
+      "verification": "Chromium viewport and DPR emulation; physical-device/browser validation remains separate"
     }
   },
   "components": [

@@ -1,0 +1,86 @@
+/* Adapt to available CSS pixels, including OS scaling and browser zoom. */
+:root { --page-gutter: clamp(18px, 3vw, 40px); }
+.shell {
+  width: min(1240px, calc(100% - 2 * max(var(--page-gutter), env(safe-area-inset-left), env(safe-area-inset-right))));
+}
+.header { padding-top: env(safe-area-inset-top); }
+.nav-row { height: auto; min-height: 88px; }
+.intro-grid > *, .feature-grid > *, .mobile-section > *, .operation-grid > *,
+.details-row > *, .plans > *, .faq > *, .contact-row > *, .footer-top > * { min-width: 0; }
+.contact-email, .footer a { overflow-wrap: anywhere; }
+.price { flex-wrap: wrap; column-gap: 6px; row-gap: 4px; }
+.price strong { font-size: clamp(46px, 5.2vw, 65px); white-space: nowrap; }
+.plan-card { padding: clamp(20px, 3vw, 38px); }
+.counter-photo { aspect-ratio: 1586 / 992; }
+.float-dock {
+  right: max(20px, env(safe-area-inset-right));
+  bottom: max(20px, env(safe-area-inset-bottom));
+}
+body.contact-actions-visible .float-dock:not(:focus-within),
+body:has(.navigation.is-open) .float-dock { visibility: hidden; pointer-events: none; }
+
+@media (max-width: 1100px) {
+  .nav-row { min-height: 76px; }
+  .nav-actions { margin-left: auto; }
+  .navigation {
+    top: 100%;
+    max-height: calc(100dvh - var(--nav-h, 77px));
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    padding: 8px max(var(--page-gutter), env(safe-area-inset-right)) max(12px, env(safe-area-inset-bottom)) max(var(--page-gutter), env(safe-area-inset-left));
+    scroll-padding-block: 8px;
+  }
+  .navigation a { min-height: 44px; display: flex; align-items: center; gap: 8px; }
+}
+
+@media (min-width: 701px) and (max-height: 650px) {
+  .nav-row { min-height: 68px; }
+  .hero.hero-counter { padding-top: 28px; gap: 24px; }
+  .hero-counter h1 { font-size: clamp(36px, 4vw, 54px); margin-bottom: 18px; }
+  .hero-counter .hero-actions { margin-top: 20px; margin-bottom: 12px; }
+  .counter-capabilities { padding-block: 18px; }
+}
+
+@media (max-width: 700px) {
+  .nav-row { min-height: 68px; }
+  .header .brand img { width: 122px; }
+  .nav-actions { display: none; }
+  .hero-counter .hero-actions { align-items: flex-start; }
+  .hero-counter .hero-actions .text-link { align-self: flex-start; }
+  .phone { transform: none; max-width: 100%; }
+  .phone img { min-height: 0; height: auto; }
+  .mobile-visual { min-height: 0; padding: 32px 24px 64px; }
+  .float-dock { right: max(12px, env(safe-area-inset-right)); bottom: max(12px, env(safe-area-inset-bottom)); gap: 8px; }
+  .float-btn { width: 44px; height: 44px; }
+  .footer { padding-bottom: max(76px, env(safe-area-inset-bottom)); }
+  .carousel-stage .gallery-image { flex-direction: column; }
+  .carousel-stage .gallery-image img { width: 100%; min-width: 0; }
+  .carousel-stage .gallery-image::after { align-self: stretch; }
+}
+
+/* A rotated phone has plenty of width but very little vertical space. */
+@media (orientation: landscape) and (max-height: 500px) and (max-width: 1100px) {
+  .nav-row { min-height: 60px; }
+  .hero.hero-counter { grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); padding-top: 24px; gap: 22px; }
+  .hero-counter h1 { font-size: clamp(30px, 4.2vw, 40px); margin-bottom: 16px; }
+  .hero-counter .hero-description { font-size: 14px; line-height: 1.65; }
+  .hero-counter .hero-actions { margin-top: 16px; gap: 12px; }
+  .hero-counter .hero-actions .button { font-size: 13px; padding: 12px 14px; min-height: 44px; gap: 12px; }
+  .counter-capabilities { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); font-size: 11px; gap: 16px; padding-block: 16px; }
+  .counter-capabilities span { white-space: normal; }
+  #screen-dialog { width: 100%; max-width: 100%; height: 100dvh; max-height: 100dvh; margin: 0; border: 0; border-radius: 0; }
+  #screen-dialog .dialog-toolbar { padding-block: 6px; }
+  #screen-dialog .dialog-toolbar h2 { font-size: 12px; }
+  .dialog-bottom { padding-block: 6px; }
+  .float-dock { flex-direction: row; gap: 8px; }
+  .float-btn { width: 44px; height: 44px; }
+}
+
+@media (max-width: 360px) {
+  .price strong { font-size: 44px; }
+  .hero-counter .hero-actions .button { width: 100%; justify-content: center; gap: 14px; }
+  .footer-top { grid-template-columns: 1fr; }
+  .footer-top > div { justify-self: start; }
+  #screen-dialog .dialog-toolbar { flex-wrap: wrap; }
+  #screen-dialog .dialog-actions { margin-left: auto; }
+}

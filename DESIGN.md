@@ -75,7 +75,7 @@ O título principal usa o papel display em sans-serif, sem ênfase serifada. Aci
 
 ## Layout
 
-A largura máxima é de 1240px, com margens totais de 80px. O hero usa composição assimétrica: texto alinhado à esquerda e cena de balcão à direita, em proporções .78fr/1.22fr. A cena não gira; uma captura real do PDV ocupa o monitor e abre a ampliação existente. Até 1000px, as proporções passam a .9fr/1.1fr; até 700px, texto e cena se empilham. A faixa de capacidades usa duas colunas no celular.
+A largura máxima é de 1240px, com margens laterais fluidas de 18px a 40px e respeito às áreas seguras do aparelho. O hero usa composição assimétrica: texto alinhado à esquerda e cena de balcão à direita, em proporções .78fr/1.22fr. A cena não gira; uma captura real do PDV ocupa o monitor e abre a ampliação existente. Até 1000px, as proporções passam a .9fr/1.1fr; até 700px, texto e cena se empilham. A faixa de capacidades usa duas colunas no celular.
 
 As demais seções preservam a composição existente. A galeria usa fundo grafite e miniaturas com seleção evidente. Os ajustes gerais de 1100px e 800px reduzem margens e intervalos. Até 680px, a margem lateral fica em 18px, os conteúdos se empilham e as miniaturas usam quatro colunas.
 
@@ -114,3 +114,11 @@ A cena de comércio é uma ilustração fotográfica gerada, identificada como t
 - **Don't** alterar IDs, autenticação ou regras de negócio para obter um efeito visual.
 - **Don't** usar verde como identidade dominante ou adicionar brilho decorativo.
 - **Don't** extrapolar a verificação do hero para uma validação completa do site.
+
+## Adaptação de telas — 23/09/2026
+
+`responsive.css` é a camada final de adaptação por espaço disponível em CSS pixels. Cabeçalho de 88px no desktop, 76px até 1100px, 68px nas janelas compactas e 60px no celular deitado. Menu começa no fim do cabeçalho, limita altura pela viewport dinâmica e permite rolagem interna. A hero reduz tipografia e espaçamento em janelas baixas; no celular deitado mantém texto e cena lado a lado. Telas largas preservam o limite de 1240px.
+
+Preço tem tipografia fluida e quebra de linha disponível; conteúdo e mensalidade R$ 217,90 são preservados. Galeria no celular dispõe imagem e indicação de ampliação verticalmente. Telefone ilustrativo fica alinhado sem rotação nas larguras pequenas. Botões flutuantes cedem espaço às seções de planos/contato/rodapé e ao menu aberto; o foco por teclado permanece visível.
+
+Verificação: matriz Chromium de 320px a 2560px, tablets nas duas orientações, áreas úteis equivalentes a notebooks HD/FHD com escala 125% e 150%, e mudança de orientação. Simulação não equivale a teste físico de Windows/iOS/Android ou Safari. Evidência central em `../flowpdv-sistema/output/reconstrucao-web-20260923/responsive-*`.

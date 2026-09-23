@@ -31,3 +31,6 @@ Capturas: `../flowpdv-sistema/output/reconstrucao-web-20260923/hero-desktop.png`
 Preservar IDs, autenticação, regras de negócio e integrações. Publicação autorizada pelo usuário; atualização do hero em preparação, ainda sem confirmação de publicação. A revisão desta rodada se limita ao hero; testes funcionais completos e revisão ampla permanecem adiados para amanhã.
 
 O conteúdo remoto de origin/main foi preservado, incluindo os ajustes da seção de planos.
+
+## Adaptação solicitada em 23/09/2026
+Usuário pediu alinhamento em telas grandes, médias e pequenas, notebooks 125%/150%, tablet e celular em retrato/paisagem. Mantida a direção visual publicada. Ajustados gutters, cabeçalho/menu rolável, hero em janela baixa, preço estreito, galeria móvel e ações flutuantes. Escalas verificadas por viewport/DPR no Chromium, sem alegar teste físico.

@@ -72,3 +72,10 @@ Nova camada reconstruction.css (Master em css/) com identidade clara, navegacao,
 
 ## 23/09/2026 — Valor comercial padronizado
 Usuário definiu R$ 217,90 para os valores do plano no site. index.html: mensagem do botão Consultar condições corrigida de R$ 89,90 para R$ 217,90; preço visível já estava correto. Busca nos arquivos HTML/JS/JSON confirmou apenas essa divergência comercial. Valores de produtos das prévias ilustrativas não representam mensalidade.
+
+## 23/09/2026 — Responsividade em telas e escalas
+- responsive.css: margens fluidas/áreas seguras, cabeçalho consistente, menu rolável em landscape, hero compacta, preço que cabe em 320px, galeria móvel inteira, telefone sem inclinação em telas pequenas e rodapé adaptável.
+- index.html: inclusão da folha final, versão de site.js e dimensões naturais da foto corrigidas.
+- site.js: IntersectionObserver recolhe os atalhos flutuantes nas seções com contato direto, evitando sobreposição; foco mantido.
+- DESIGN.md e .impeccable: regras de adaptação documentadas.
+- Verificação: matriz de 16 viewports 320–2560px incluindo HD/FHD 125%/150%, tablet e celular nas duas orientações; confirmação específica da galeria, ações e rotação após correções. Sem overflow de página, cabeçalho sobreposto ou preço cortado nos cenários conferidos. Evidências no output/reconstrucao-web-20260923 do repositório central; não substituem teste físico em dispositivos/Safari.

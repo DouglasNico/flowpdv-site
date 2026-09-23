@@ -245,6 +245,19 @@
   }
   window.addEventListener('scroll', syncBackTop, { passive: true });
   syncBackTop();
+  // In contact sections the inline actions replace the floating shortcuts.
+  // Keep a focused shortcut visible until keyboard focus moves away.
+  if ('IntersectionObserver' in window) {
+    const visibleContactSections = new Set();
+    const contactObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) visibleContactSections.add(entry.target);
+        else visibleContactSections.delete(entry.target);
+      });
+      document.body.classList.toggle('contact-actions-visible', visibleContactSections.size > 0);
+    });
+    document.querySelectorAll('.plans, .contact-band, .footer').forEach(section => contactObserver.observe(section));
+  }
   (function startHeroFade() {
     const button = document.querySelector('.hero-screen');
     const label = document.querySelector('#hero-label');
