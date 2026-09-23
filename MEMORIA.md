@@ -69,3 +69,6 @@ Nova camada reconstruction.css (Master em css/) com identidade clara, navegacao,
 - DESIGN.md, .impeccable/design.json e .impeccable/surface-brief.md: decisões e tokens atualizados.
 - Verificação local: capturas desktop/celular, imagens decodificadas, ausência de overflow horizontal, abrir/fechar ampliação e sintaxe de site.js. Revisão Impeccable restrita à hero sem correções materiais; não equivale a teste funcional completo do ecossistema.
 - Publicação: envio para main autorizado pela instrução persistente do usuário; confirmação HTTPS será registrada no acompanhamento central após implantação.
+
+## 23/09/2026 — Valor comercial padronizado
+Usuário definiu R$ 217,90 para os valores do plano no site. index.html: mensagem do botão Consultar condições corrigida de R$ 89,90 para R$ 217,90; preço visível já estava correto. Busca nos arquivos HTML/JS/JSON confirmou apenas essa divergência comercial. Valores de produtos das prévias ilustrativas não representam mensalidade.
