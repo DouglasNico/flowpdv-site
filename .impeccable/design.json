@@ -1,0 +1,223 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-23T06:58:34.299Z",
+  "title": "Design System: FlowPDV site",
+  "extensions": {
+    "colorMeta": {
+      "primary": {
+        "role": "primary",
+        "displayName": "primary",
+        "tonalRamp": [
+          "oklch(15% 0.1538 41.1)",
+          "oklch(26% 0.1538 41.1)",
+          "oklch(38% 0.1538 41.1)",
+          "oklch(49% 0.1538 41.1)",
+          "oklch(61% 0.1538 41.1)",
+          "oklch(72% 0.1538 41.1)",
+          "oklch(84% 0.1538 41.1)",
+          "oklch(95% 0.1538 41.1)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "paper",
+        "tonalRamp": [
+          "oklch(15% 0.0067 97.4)",
+          "oklch(26% 0.0067 97.4)",
+          "oklch(38% 0.0067 97.4)",
+          "oklch(49% 0.0067 97.4)",
+          "oklch(61% 0.0067 97.4)",
+          "oklch(72% 0.0067 97.4)",
+          "oklch(84% 0.0067 97.4)",
+          "oklch(95% 0.0067 97.4)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "surface",
+        "tonalRamp": [
+          "oklch(15% 0.0000 89.9)",
+          "oklch(26% 0.0000 89.9)",
+          "oklch(38% 0.0000 89.9)",
+          "oklch(49% 0.0000 89.9)",
+          "oklch(61% 0.0000 89.9)",
+          "oklch(72% 0.0000 89.9)",
+          "oklch(84% 0.0000 89.9)",
+          "oklch(95% 0.0000 89.9)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "ink",
+        "tonalRamp": [
+          "oklch(15% 0.0148 149.3)",
+          "oklch(26% 0.0148 149.3)",
+          "oklch(38% 0.0148 149.3)",
+          "oklch(49% 0.0148 149.3)",
+          "oklch(61% 0.0148 149.3)",
+          "oklch(72% 0.0148 149.3)",
+          "oklch(84% 0.0148 149.3)",
+          "oklch(95% 0.0148 149.3)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "muted",
+        "tonalRamp": [
+          "oklch(15% 0.0132 141.2)",
+          "oklch(26% 0.0132 141.2)",
+          "oklch(38% 0.0132 141.2)",
+          "oklch(49% 0.0132 141.2)",
+          "oklch(61% 0.0132 141.2)",
+          "oklch(72% 0.0132 141.2)",
+          "oklch(84% 0.0132 141.2)",
+          "oklch(95% 0.0132 141.2)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "line",
+        "tonalRamp": [
+          "oklch(15% 0.0121 111.8)",
+          "oklch(26% 0.0121 111.8)",
+          "oklch(38% 0.0121 111.8)",
+          "oklch(49% 0.0121 111.8)",
+          "oklch(61% 0.0121 111.8)",
+          "oklch(72% 0.0121 111.8)",
+          "oklch(84% 0.0121 111.8)",
+          "oklch(95% 0.0121 111.8)"
+        ]
+      },
+      "tint": {
+        "role": "neutral",
+        "displayName": "tint",
+        "tonalRamp": [
+          "oklch(15% 0.0353 63.2)",
+          "oklch(26% 0.0353 63.2)",
+          "oklch(38% 0.0353 63.2)",
+          "oklch(49% 0.0353 63.2)",
+          "oklch(61% 0.0353 63.2)",
+          "oklch(72% 0.0353 63.2)",
+          "oklch(84% 0.0353 63.2)",
+          "oklch(95% 0.0353 63.2)"
+        ]
+      },
+      "gallery-accent": {
+        "role": "neutral",
+        "displayName": "gallery-accent",
+        "tonalRamp": [
+          "oklch(15% 0.1107 51.1)",
+          "oklch(26% 0.1107 51.1)",
+          "oklch(38% 0.1107 51.1)",
+          "oklch(49% 0.1107 51.1)",
+          "oklch(61% 0.1107 51.1)",
+          "oklch(72% 0.1107 51.1)",
+          "oklch(84% 0.1107 51.1)",
+          "oklch(95% 0.1107 51.1)"
+        ]
+      }
+    },
+    "shadows": [
+      {
+        "name": "button-hover",
+        "value": "0 8px 20px #22292314",
+        "purpose": "Sobreposição e separação de planos."
+      },
+      {
+        "name": "product",
+        "value": "0 14px 35px #22292317",
+        "purpose": "Sobreposição e separação de planos."
+      },
+      {
+        "name": "dialog",
+        "value": "0 24px 70px #0005",
+        "purpose": "Sobreposição e separação de planos."
+      }
+    ],
+    "motion": [
+      {
+        "name": "state-transition",
+        "value": ".2s",
+        "purpose": "Transições de botões; respeitar prefers-reduced-motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact-max",
+        "value": "1100px"
+      },
+      {
+        "name": "tablet-max",
+        "value": "800px"
+      },
+      {
+        "name": "phone-max",
+        "value": "680px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Ação principal",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Ação central de uma etapa.",
+      "html": "<button class=\"ds-primary\">Continuar</button>",
+      "css": ".ds-primary{background:var(--flow-orange, #b94b1b);color:#fff;border:1px solid transparent;border-radius:8px;padding:12px 18px;min-height:44px;font:600 14px DM Sans, sans-serif;transition:filter .18s}.ds-primary:hover{filter:brightness(.9)}.ds-primary:active{filter:brightness(.83)}.ds-primary:focus-visible{outline:3px solid var(--flow-orange, #b94b1b);outline-offset:3px}"
+    },
+    {
+      "name": "Ação secundária",
+      "kind": "button",
+      "description": "Ação de apoio.",
+      "html": "<button class=\"ds-secondary\">Voltar</button>",
+      "css": ".ds-secondary{background:#f0f1ea;color:var(--ink, #222923);border:1px solid var(--line, #dedfd6);border-radius:8px;padding:12px 18px;min-height:44px;font:600 14px DM Sans, sans-serif}.ds-secondary:hover{background:#e2e5dc}.ds-secondary:focus-visible{outline:3px solid var(--flow-orange, #b94b1b);outline-offset:3px}"
+    },
+    {
+      "name": "Navegação principal",
+      "kind": "nav",
+      "description": "Links e acesso ao conteúdo do site.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-link\" href=\"#sistema\">O sistema</a><a class=\"ds-link\" href=\"#recursos\">Recursos</a></nav>",
+      "css": ".ds-nav{display:flex;gap:24px;background:var(--paper,#f5f4ef);padding:16px}.ds-link{color:#4c5749;font:500 13px 'DM Sans',sans-serif;text-decoration:none}.ds-link:hover{color:#a63f17}.ds-link:focus-visible{outline:3px solid var(--flow-orange,#b94b1b);outline-offset:3px}"
+    },
+    {
+      "name": "Segmento de operação",
+      "kind": "chip",
+      "description": "Etiqueta textual de um segmento atendido.",
+      "html": "<span class=\"ds-segment\">Comércio</span>",
+      "css": ".ds-segment{display:inline-block;padding:10px 14px;border:1px solid #cdd5c2;border-radius:6px;color:#4e5a45;background:transparent;font:400 12px 'DM Sans',sans-serif}"
+    },
+    {
+      "name": "Superfície",
+      "kind": "card",
+      "description": "Agrupamento de conteúdo sem elevação decorativa.",
+      "html": "<article class=\"ds-surface\"><strong>Resumo</strong><p>Informação organizada por contexto.</p></article>",
+      "css": ".ds-surface{padding:24px;border:1px solid var(--line, #dedfd6);border-radius:14px;background:#fff;color:var(--ink, #222923);font:400 16px DM Sans, sans-serif}.ds-surface p{margin:8px 0 0;color:#60665f;line-height:1.6}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Caderno de produto",
+    "overview": "Um caderno editorial de produto: títulos amplos, intervalos generosos e capturas reais demonstram o sistema. Marfim e grafite estruturam a leitura; laranja conecta marca, ênfases e chamadas para demonstração. A expressividade tipográfica convive com informação comercial precisa.",
+    "keyCharacteristics": [
+      "Capturas reais do produto como evidência.",
+      "Títulos editoriais com ênfases em serifada.",
+      "Galeria grafite e chamadas laranja."
+    ],
+    "rules": [
+      {
+        "name": "The Signal Rule",
+        "body": "A cor deve comunicar ação, seleção ou estado; não transformar cada dado em um bloco colorido.",
+        "section": "colors"
+      }
+    ],
+    "dos": [
+      "Do preservar as marcas existentes e seus arquivos.",
+      "Do tornar seleção, foco e ações primárias identificáveis.",
+      "Do manter nomes, valores e estados vinculados aos dados reais."
+    ],
+    "donts": [
+      "Don't alterar IDs, autenticação ou regras de negócio para obter um efeito visual.",
+      "Don't usar verde como identidade dominante ou adicionar brilho decorativo.",
+      "Don't considerar esta documentação evidência de validação renderizada."
+    ]
+  }
+}
